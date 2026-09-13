@@ -1647,8 +1647,13 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     const hdr = $('.hdr');
     const clear = opts.top === 0 ? 0 : (hdr ? hdr.getBoundingClientRect().height : 0) + 8;
     const y = Math.max(0, el.getBoundingClientRect().top + window.scrollY - clear);
-    if (lenis) lenis.scrollTo(y, { duration: 1.1 });
+    /* We just reserved room for the header, so it must not auto-hide on the
+       way there - otherwise that reserved strip shows the previous section. */
+    if (typeof setHdrHidden === 'function') { hdrLocked = true; setHdrHidden(false); }
+    const release = () => { hdrLocked = false; lastScroll = window.scrollY; };
+    if (lenis) lenis.scrollTo(y, { duration: 1.1, onComplete: release });
     else window.scrollTo({ top: y, behavior: prefersReduce() ? 'auto' : 'smooth' });
+    setTimeout(release, prefersReduce() ? 60 : 1400);
   }
   /* Anchors move focus as well as the viewport - scrolling alone leaves
      keyboard and screen-reader users where they started. */
@@ -1687,7 +1692,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
   /* === Auto-hiding header === */
   const hdrEl = $('.hdr');
-  let lastScroll = window.scrollY, hidden = false;
+  let lastScroll = window.scrollY, hidden = false, hdrLocked = false;
   function setHdrHidden(v) {
     if (v === hidden) return;
     hidden = v;
@@ -1695,7 +1700,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   }
   function onScrollDir(y) {
     /* Never hide at the top, while the menu is open, or with motion off. */
-    if (prefersReduce() || nav.classList.contains('open') || leadDlg.open) {
+    if (hdrLocked || prefersReduce() || nav.classList.contains('open') || leadDlg.open) {
       setHdrHidden(false); lastScroll = y; return;
     }
     const dy = y - lastScroll;
