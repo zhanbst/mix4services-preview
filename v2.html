@@ -161,7 +161,9 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
 </style>
 <style>
 /* =========== HEADER =========== */
-.hdr{position:sticky; top:0; z-index:60; background:color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
+.hdr{position:sticky; top:0; z-index:60; background:color-mix(in srgb, var(--surface) 72%, transparent);
+  -webkit-backdrop-filter:blur(16px) saturate(1.5); backdrop-filter:blur(16px) saturate(1.5);
+  border-bottom:1px solid var(--line)}
 :root[data-contrast='high'] .hdr{background:var(--surface); border-bottom-width:2px}
 .hdr-in{display:flex; align-items:center; gap:1.25rem; min-height:4.6rem}
 .brand{display:flex; align-items:center; text-decoration:none; color:var(--ink); flex:none}
@@ -404,7 +406,6 @@ fieldset.fld{border:0; margin:0; padding:0; min-width:0}
   display:grid; grid-template-columns:120px minmax(0,1fr) auto; align-items:center;
   gap:1.6rem; padding:1.25rem .6rem;
   transition:background var(--dur) var(--ease)}
-.svc-row:hover,.svc-row:focus-within{background:var(--surface)}
 .svc-thumb{line-height:0}
 .svc-thumb img{width:120px; height:90px; object-fit:cover; border-radius:var(--r-sm);
   display:block; filter:saturate(.85); transition:filter var(--dur) var(--ease)}
@@ -481,6 +482,12 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
    this rule had been quietly flattening both to relative. */
 body > *:not(.bg-tools):not(.skip):not(.hdr){position:relative; z-index:1}
 .hdr{z-index:60}
+/* auto-hide: slides away going down, comes back going up */
+.hdr{transition:transform .32s var(--ease), background var(--dur) var(--ease)}
+.hdr.is-hidden{transform:translateY(-100%)}
+/* must never hide from a keyboard user who has tabbed into it */
+.hdr:focus-within{transform:none !important}
+:root[data-motion='off'] .hdr{transform:none !important; transition:none}
 .bt{position:absolute; width:clamp(260px, 30vw, 540px); height:auto; color:var(--blue);
   opacity:.14; will-change:transform}
 /* Solid silhouettes, not hairlines: at parallax depth an outline disappears,
@@ -555,10 +562,7 @@ body > *:not(.bg-tools):not(.skip):not(.hdr){position:relative; z-index:1}
 /* frosted card so long-form text is not read through the grid */
 /* No backdrop-filter: blurring a block this size costs real frames on mid-range
    phones, and a flat tint reads the same over a faint grid. */
-.panel{background:color-mix(in srgb, var(--surface) 94%, var(--blue-soft));
-  border:1px solid var(--line); border-radius:var(--r-lg);
-  box-shadow:var(--shadow-1);
-  padding:clamp(1.25rem, .9rem + 1.6vw, 2.25rem)}
+.panel{border-radius:var(--r-lg); padding:clamp(1.25rem, .9rem + 1.6vw, 2.25rem)}
 :root[data-contrast='high'] .panel{background:var(--surface)}
 
 /* =========== SERVICE-AREA WALL =========== */
@@ -712,11 +716,88 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
   .lead .lb-close{top:.6rem; right:.6rem}
 }
 
+/* =========== MATTE GLASS =========== */
+/* Frosted rather than clear: high blur, low transparency, a touch of
+   saturation so colour behind does not go grey. Backdrop blur is expensive
+   over large areas, so it is switched off on small screens and in high
+   contrast, where the panel simply goes solid. */
+:root{
+  --glass:color-mix(in srgb, var(--surface) 66%, transparent);
+  --glass-edge:color-mix(in srgb, var(--ink) 12%, transparent);
+  --glass-blur:16px;
+}
+.glass{
+  background:var(--glass);
+  border:1px solid var(--glass-edge);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.5);
+  backdrop-filter:blur(var(--glass-blur)) saturate(1.5);
+  box-shadow:0 1px 0 color-mix(in srgb, #fff 45%, transparent) inset,
+             var(--shadow-1);
+}
+.band-dark .glass,.screen-photo .glass{
+  --glass:rgba(255,255,255,.10);
+  --glass-edge:rgba(255,255,255,.20);
+  box-shadow:0 1px 0 rgba(255,255,255,.14) inset;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  .glass{background:var(--surface)}
+}
+@media (max-width:720px){
+  .glass{-webkit-backdrop-filter:none; backdrop-filter:none;
+    background:color-mix(in srgb, var(--surface) 94%, transparent)}
+}
+:root[data-contrast='high'] .glass{-webkit-backdrop-filter:none; backdrop-filter:none;
+  background:var(--surface); border-color:currentColor}
+
+/* =========== BACK TO TOP =========== */
+.totop{position:fixed; right:24px; bottom:24px; z-index:50;
+  width:52px; height:52px; border-radius:50%; display:grid; place-items:center;
+  background:var(--glass); border:1px solid var(--glass-edge); color:var(--ink);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.5);
+  backdrop-filter:blur(var(--glass-blur)) saturate(1.5);
+  box-shadow:var(--shadow-2); cursor:pointer;
+  opacity:0; visibility:hidden; transform:translateY(12px) scale(.9);
+  transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease),
+             visibility var(--dur), border-color var(--dur) var(--ease)}
+.totop.on{opacity:1; visibility:visible; transform:none}
+.totop:hover{border-color:var(--blue); color:var(--blue)}
+.totop svg{width:22px; height:22px}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  .totop{background:var(--surface)}
+}
+:root[data-contrast='high'] .totop{background:var(--surface); backdrop-filter:none; border:2px solid currentColor}
+:root[data-motion='off'] .totop{transition:none}
+@media (max-width:720px){ .totop{right:16px; bottom:16px; width:48px; height:48px;
+  backdrop-filter:none; background:color-mix(in srgb, var(--surface) 94%, transparent)} }
+
+/* Hover deepens the frost and lifts the card. Buttons deliberately keep a
+   solid fill - a blurred control reads as less pressable, not more. */
+.glass{--glass-lift:0}
+.gal-card.glass,.rv.glass{transition:background var(--dur) var(--ease),
+  border-color var(--dur) var(--ease), transform var(--dur) var(--ease),
+  box-shadow var(--dur) var(--ease)}
+.gal-card.glass:hover,.gal-card.glass:focus-visible{
+  background:color-mix(in srgb, var(--surface) 86%, transparent);
+  border-color:var(--blue-line); transform:translateY(-3px); box-shadow:var(--shadow-2)}
+.rv.glass:hover{background:color-mix(in srgb, var(--surface) 82%, transparent)}
+.band-dark .gal-card.glass:hover,.screen-photo .gal-card.glass:hover,
+.band-dark .rv.glass:hover,.screen-photo .rv.glass:hover{background:rgba(255,255,255,.18)}
+/* service rows get the same frosted wash instead of a flat fill */
+.svc-row:hover,.svc-row:focus-within{
+  background:color-mix(in srgb, var(--surface) 62%, transparent);
+  -webkit-backdrop-filter:blur(10px) saturate(1.4); backdrop-filter:blur(10px) saturate(1.4)}
+@media (max-width:720px){
+  .svc-row:hover,.svc-row:focus-within{-webkit-backdrop-filter:none; backdrop-filter:none;
+    background:color-mix(in srgb, var(--surface) 92%, transparent)}
+}
+:root[data-contrast='high'] .svc-row:hover,:root[data-contrast='high'] .svc-row:focus-within{
+  background:var(--surface); backdrop-filter:none}
+:root[data-motion='off'] .gal-card.glass:hover{transform:none}
+
 /* =========== GALLERY =========== */
 .gal-bar{display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.6rem}
 .gal-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(288px,1fr)); gap:1.1rem}
-.gal-card{position:relative; padding:0; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; background:var(--surface); cursor:pointer; text-align:left; font:inherit; color:inherit; transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease)}
-.gal-card:hover{border-color:var(--blue-line); box-shadow:var(--shadow-2)}
+.gal-card{position:relative; padding:0; border-radius:var(--r-lg); overflow:hidden; background:var(--surface); cursor:pointer; text-align:left; font:inherit; color:inherit; transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease)}
 /* portrait: the equipment is tall, a 4:3 crop threw most of it away */
 .gal-thumb{display:block; position:relative; aspect-ratio:3/4; overflow:hidden; background:var(--surface-3)}
 .gal-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -754,7 +835,7 @@ dialog.lb::backdrop{background:rgba(8,16,24,.86); backdrop-filter:blur(3px)}
 .stars{display:inline-flex; gap:.12rem}
 .stars svg{width:18px;height:18px;color:var(--amber-bright)}
 .rv-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.1rem}
-.rv{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--blue); border-radius:0 var(--r-lg) var(--r-lg) 0; padding:1.3rem 1.4rem; display:flex; flex-direction:column; gap:.8rem}
+.rv{border-left:3px solid var(--blue); border-radius:0 var(--r-lg) var(--r-lg) 0; padding:1.3rem 1.4rem; display:flex; flex-direction:column; gap:.8rem}
 .rv q{quotes:none; font-size:.97rem; line-height:1.62; color:var(--ink)}
 .rv q::before{content:'\201C'} .rv q::after{content:'\201D'}
 .rv footer{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-top:auto; padding-top:.7rem; border-top:1px solid var(--line)}
@@ -877,6 +958,13 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   <svg class="bt bt5" viewBox="0 -960 960 960"><path d="m269-120-9-66 127-350q11 11 24.5 18t28.5 12L317-167l-48 47Zm422 0-48-47-125-338q15-5 29-12t25-18l128 349-9 66ZM395-555q-35-35-35-85 0-42 24.5-74.5T450-756v-84h60v84q41 9 65.5 41.5T600-640q0 50-35 85t-85 35q-50 0-85-35Zm127.5-42.5Q540-615 540-640t-17.5-42.5Q505-700 480-700t-42.5 17.5Q420-665 420-640t17.5 42.5Q455-580 480-580t42.5-17.5Z"/></svg>
   <svg class="bt bt6" viewBox="0 -960 960 960"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97 0-165-67.5T121-602q0-31 8-60.5t23-55.5l145 145 92-86-149-149q26-15 55-23.5t59-8.5q99 0 168.5 69.5T592-602q0 24-5 47t-13 46l259 258q11 11 11 26.5T833-198l-76 70q-11 11-26 11t-26-11Z"/></svg>
 </div>
+
+<button class="totop" id="toTop" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
 
 <a class="skip" href="#main">Skip to main content</a>
 
@@ -1252,7 +1340,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 <section class="band band-tint" id="faq" aria-labelledby="f-h">
   <div class="wrap" style="max-width:880px">
     <div class="head"><p class="eyebrow">Before you call</p><h2 id="f-h">Questions we get every week</h2></div>
-    <div class="faq panel">
+    <div class="faq panel glass">
       <details open><summary>Do you charge for estimates?</summary><div class="faq-a">On-site estimates are free for projects over $1,000. For smaller repairs there is an $89 service call, and it is credited toward the work if you hire us.</div></details>
       <details><summary>How fast can you get here?</summary><div class="faq-a">Weekday calls placed before 2pm usually get a same-day visit inside our core service area. Emergencies &mdash; active leaks, no power, storm damage &mdash; are answered around the clock.</div></details>
       <details><summary>Are the prices on this site final?</summary><div class="faq-a">No. They are typical ranges for the Houston market, published so you know roughly where you stand before picking up the phone. Your final price depends on access, the age and condition of what we find, the materials you choose and your exact location. You get a fixed written price after the on-site assessment.</div></details>
@@ -1562,6 +1650,49 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     setTimeout(() => el.focus({ preventScroll: true }), prefersReduce() ? 0 : 620);
   });
 
+
+
+  /* === Back to top === */
+  const toTop = $('#toTop');
+  toTop.hidden = false;
+  function syncToTop(y) {
+    const show = y > window.innerHeight * 0.9 && !leadDlg.open;
+    toTop.classList.toggle('on', show);
+    /* keep it out of the tab order while it is invisible */
+    toTop.tabIndex = show ? 0 : -1;
+  }
+  toTop.addEventListener('click', () => {
+    if (lenis) lenis.scrollTo(0, { duration: 1.1 });
+    else window.scrollTo({ top: 0, behavior: prefersReduce() ? 'auto' : 'smooth' });
+    setTimeout(() => $('.skip').focus({ preventScroll: true }), prefersReduce() ? 0 : 700);
+  });
+  syncToTop(window.scrollY);
+
+  /* === Auto-hiding header === */
+  const hdrEl = $('.hdr');
+  let lastScroll = window.scrollY, hidden = false;
+  function setHdrHidden(v) {
+    if (v === hidden) return;
+    hidden = v;
+    hdrEl.classList.toggle('is-hidden', v);
+  }
+  function onScrollDir(y) {
+    /* Never hide at the top, while the menu is open, or with motion off. */
+    if (prefersReduce() || nav.classList.contains('open') || leadDlg.open) {
+      setHdrHidden(false); lastScroll = y; return;
+    }
+    const dy = y - lastScroll;
+    if (y < 140) setHdrHidden(false);
+    else if (dy > 6) setHdrHidden(true);
+    else if (dy < -6) setHdrHidden(false);
+    lastScroll = y;
+    syncToTop(y);
+  }
+  if (lenis) lenis.on('scroll', e => onScrollDir(e.scroll ?? window.scrollY));
+  window.addEventListener('scroll', () => { if (!lenis) onScrollDir(window.scrollY); }, { passive: true });
+  /* A hidden header would swallow the first Tab stop. */
+  hdrEl.addEventListener('focusin', () => setHdrHidden(false));
+
   /* === Header: menu + theme === */
   const burger = $('#burger'), nav = $('#nav');
   burger.addEventListener('click', () => {
@@ -1641,7 +1772,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   const grid = $('#galGrid');
   function renderGallery() {
     grid.innerHTML = PROJECTS.map(p => `
-      <button class="gal-card" data-id="${p.id}" aria-label="Open ${p.title}">
+      <button class="gal-card glass" data-id="${p.id}" aria-label="Open ${p.title}">
         <span class="gal-thumb">
           <img src="${p.img}" alt="" loading="lazy" width="640" height="853">
         </span>
@@ -1940,7 +2071,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   const rvGrid = document.querySelector('.rv-grid');
   if (rvGrid) {
     rvGrid.innerHTML = REVIEWS.map(r => `
-      <article class="rv">
+      <article class="rv glass">
         ${r.verified ? '' : '<span class="badge-demo" style="position:static;align-self:flex-start">Placeholder</span>'}
         <q>${r.text}</q>
         <footer><span class="rv-who">${r.name}</span><span class="rv-meta">${r.job}</span></footer>
