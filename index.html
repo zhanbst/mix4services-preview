@@ -228,7 +228,8 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
 .hero h1{margin-block:1rem .9rem}
 .hero h1 em{font-style:normal; color:var(--blue)}
 .hero-cta{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.75rem}
-.chips{display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.6rem; padding-top:1.5rem; border-top:1px solid var(--line)}
+.chips{display:flex; flex-wrap:wrap; gap:.45rem; margin:1.6rem 0 0;
+  padding:1.5rem 0 0; list-style:none; border-top:1px solid var(--line)}
 .chip{display:inline-flex; align-items:center; gap:.4rem; font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:.42rem .7rem; border-radius:var(--r-sm); background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line)}
 .chip svg{width:13px;height:13px;color:var(--ok);flex:none}
 
@@ -866,7 +867,8 @@ textarea.inp{min-height:8rem; resize:vertical; line-height:1.6}
 .ft-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:2rem; padding-bottom:2.2rem; border-bottom:1px solid rgba(255,255,255,.14)}
 @media (max-width:900px){ .ft-grid{grid-template-columns:1fr 1fr} }
 @media (max-width:560px){ .ft-grid{grid-template-columns:1fr} }
-.ft h4{font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--on-dark-3); margin-bottom:.9rem}
+.ft .ft-h{font-family:var(--font); font-size:.72rem; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--on-dark-3); margin-bottom:.9rem; line-height:1.2}
 .ft ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.45rem}
 .ft a{color:var(--on-dark-2); text-decoration:none; font-size:.93rem}
 .ft ul a{display:inline-flex; align-items:center; min-height:2.25rem}
@@ -980,7 +982,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Katy &amp; West Houston &middot; 5.0 from 74 reviews</p>
       <h1>Hard water <em>ends here</em>.</h1>
       <p class="lede">Whole-house water softener and pre-filter installation. Katy sits on hard water, and it is what quietly kills heaters, fixtures and appliances years early. Most installs are finished and tested the same day &mdash; and we still do the rest of the handyman work you need.</p>
       <div class="hero-cta">
@@ -990,7 +991,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
         </a>
         <a class="btn btn-ghost btn-lg" href="#quote">What does it cost?</a>
       </div>
-      <ul class="chips" style="list-style:none;padding:0">
+      <ul class="chips">
         <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m4 12 6 6L20 6"/></svg>Installed in a day</li>
         <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m4 12 6 6L20 6"/></svg>Hardness tested before we leave</li>
         <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m4 12 6 6L20 6"/></svg>No plumbing licence required for a swap</li>
@@ -1365,7 +1366,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
         </div>
       </div>
       <div>
-        <h4>Services</h4>
+        <h3 class="ft-h">Services</h3>
         <ul>
           <li><a href="#services">Renovation &amp; remodeling</a></li>
           <li><a href="#services">Plumbing</a></li>
@@ -1376,7 +1377,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3 class="ft-h">Company</h3>
         <ul>
           <li><a href="#work">Our work</a></li>
           <li><a href="#quote">Pricing</a></li>
@@ -1387,7 +1388,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h3 class="ft-h">Contact</h3>
         <ul>
           <li><a href="tel:+19492832973" class="num">949-283-2973</a></li>
           <li><a href="mailto:mix4services@gmail.com">mix4services@gmail.com</a></li>
