@@ -477,7 +477,10 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
    on the way up. */
 .bg-tools{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
   contain:strict}
-body > *:not(.bg-tools):not(.skip){position:relative; z-index:1}
+/* The header must keep position:sticky and the skip link position:fixed -
+   this rule had been quietly flattening both to relative. */
+body > *:not(.bg-tools):not(.skip):not(.hdr){position:relative; z-index:1}
+.hdr{z-index:60}
 .bt{position:absolute; width:clamp(260px, 30vw, 540px); height:auto; color:var(--blue);
   opacity:.14; will-change:transform}
 /* Solid silhouettes, not hairlines: at parallax depth an outline disappears,
@@ -1480,8 +1483,13 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   function goTo(target, opts = {}) {
     const el = typeof target === 'string' ? $(target) : target;
     if (!el) return;
-    if (lenis) lenis.scrollTo(el, { offset: opts.offset ?? -88, duration: 1.1 });
-    else el.scrollIntoView({ behavior: prefersReduce() ? 'auto' : 'smooth', block: opts.block || 'start' });
+    /* Work out the destination ourselves rather than leaning on Lenis's
+       `offset`, whose sign convention left a 101px gap under the header. */
+    const hdr = $('.hdr');
+    const clear = opts.top === 0 ? 0 : (hdr ? hdr.getBoundingClientRect().height : 0) + 8;
+    const y = Math.max(0, el.getBoundingClientRect().top + window.scrollY - clear);
+    if (lenis) lenis.scrollTo(y, { duration: 1.1 });
+    else window.scrollTo({ top: y, behavior: prefersReduce() ? 'auto' : 'smooth' });
   }
   /* Anchors move focus as well as the viewport - scrolling alone leaves
      keyboard and screen-reader users where they started. */
@@ -1493,7 +1501,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     const el = document.querySelector(hash);
     if (!el) return;
     e.preventDefault();
-    goTo(el, { offset: hash === '#main' ? 0 : -88 });
+    goTo(el, { top: hash === '#main' ? 0 : undefined });
     if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
     setTimeout(() => el.focus({ preventScroll: true }), prefersReduce() ? 0 : 620);
   });
