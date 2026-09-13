@@ -496,6 +496,7 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
    whole page down by its own height. */
 main,.ft{position:relative; z-index:1}
 .hdr{z-index:60}
+.hdr:focus{outline:none}
 /* auto-hide: slides away going down, comes back going up */
 .hdr{transition:transform .32s var(--ease), background var(--dur) var(--ease)}
 .hdr.is-hidden{transform:translateY(-100%)}
@@ -982,7 +983,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
 <a class="skip" href="#main">Skip to main content</a>
 
-<header class="hdr">
+<header class="hdr" tabindex="-1">
   <div class="wrap hdr-in">
     <a class="brand" href="#main">
       <img class="logo-lt" src="img/logo-original.png" alt="Mix4Services &mdash; construction and repair"
@@ -1678,7 +1679,9 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   toTop.addEventListener('click', () => {
     if (lenis) lenis.scrollTo(0, { duration: 1.1 });
     else window.scrollTo({ top: 0, behavior: prefersReduce() ? 'auto' : 'smooth' });
-    setTimeout(() => $('.skip').focus({ preventScroll: true }), prefersReduce() ? 0 : 700);
+    /* Move focus to the top of the page WITHOUT landing on the skip link -
+       focusing that one reveals it, which is exactly what it is built to do. */
+    setTimeout(() => hdrEl.focus({ preventScroll: true }), prefersReduce() ? 0 : 700);
   });
   syncToTop(window.scrollY);
 
