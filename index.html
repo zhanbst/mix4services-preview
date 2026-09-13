@@ -1,0 +1,1890 @@
+<title>Water Softener Installation &mdash; Katy &amp; West Houston</title>
+<meta name="description" content="Whole-house water softener and pre-filter installation across Katy and West Houston. Installed and tested in a day. Rated 5.0 across 74 reviews on Thumbtack and Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&display=swap">
+<style>
+/* =========== TOKENS =========== */
+:root{
+  --blue:#0B63CE; --blue-deep:#08498F; --blue-soft:#E7F0FC; --blue-line:#B9D3F2;
+  --slate:#1E3247; --slate-deep:#14222F;
+  --amber:#8F4302; --amber-bright:#E8871E; --amber-soft:#FCEFE1;
+  --paper:#F6F8FB; --surface:#FFFFFF; --surface-2:#EFF3F8; --surface-3:#E4EBF3;
+  --ink:#0F1D2A; --ink-2:#3E5167; --ink-3:#5C6F85;
+  --line:#D5DEE8; --line-2:#BCCAD8;
+  --ok:#0E6A40; --ok-soft:#E2F3EA;
+  --on-dark:#EAF2F9; --on-dark-2:#A5BCD2; --on-dark-3:#98AFC6;
+  --focus:#0B63CE; --focus-ring:#FFFFFF;
+  --bp-line:#93ACC4; --bp-accent:#5BA2FF; --bp-fill:#22394F; --bp-dim:#63809B;
+  --shadow-1:0 1px 2px rgba(15,29,42,.06),0 1px 1px rgba(15,29,42,.04);
+  --shadow-2:0 6px 18px rgba(15,29,42,.10),0 1px 3px rgba(15,29,42,.06);
+  --shadow-3:0 22px 54px rgba(15,29,42,.20),0 3px 10px rgba(15,29,42,.10);
+  --font:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --display:'Big Shoulders Display','Archivo Narrow','Arial Narrow',sans-serif;
+  /* No monospace anywhere: uppercase technical mono is the single biggest
+     'generated template' tell. Labels are the body face, tightly tracked. */
+  --mono:'Archivo',system-ui,-apple-system,sans-serif;
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;--s8:4rem;--s9:6rem;
+  --r-sm:3px;--r-md:6px;--r-lg:10px;--r-xl:18px;
+  --container:1220px; --tap:44px;
+  --dur:200ms; --ease:cubic-bezier(.2,.6,.3,1);
+  --lsp:0em; --wsp:0em; --lh-mul:1;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme='light']){
+    --blue:#5BA2FF; --blue-deep:#8EC0FF; --blue-soft:#10283E; --blue-line:#245182;
+    --slate:#152534; --slate-deep:#0D1925;
+    --amber:#F0983A; --amber-bright:#F0983A; --amber-soft:#2C1D0D;
+    --paper:#0B1620; --surface:#121F2B; --surface-2:#182837; --surface-3:#1F3245;
+    --ink:#E9F0F7; --ink-2:#AEC2D5; --ink-3:#8AA2B9;
+    --line:#24384B; --line-2:#31495F;
+    --ok:#5FD6A0; --ok-soft:#0E2A1F;
+    --focus:#7FB8FF; --focus-ring:#0B1620;
+    --shadow-1:0 1px 2px rgba(0,0,0,.4);
+    --shadow-2:0 6px 18px rgba(0,0,0,.45);
+    --shadow-3:0 22px 54px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme='dark']{
+  --blue:#5BA2FF; --blue-deep:#8EC0FF; --blue-soft:#10283E; --blue-line:#245182;
+  --slate:#152534; --slate-deep:#0D1925;
+  --amber:#F0983A; --amber-bright:#F0983A; --amber-soft:#2C1D0D;
+  --paper:#0B1620; --surface:#121F2B; --surface-2:#182837; --surface-3:#1F3245;
+  --ink:#E9F0F7; --ink-2:#AEC2D5; --ink-3:#8AA2B9;
+  --line:#24384B; --line-2:#31495F;
+  --ok:#5FD6A0; --ok-soft:#0E2A1F;
+  --focus:#7FB8FF; --focus-ring:#0B1620;
+  --shadow-1:0 1px 2px rgba(0,0,0,.4);
+  --shadow-2:0 6px 18px rgba(0,0,0,.45);
+  --shadow-3:0 22px 54px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+/* High-contrast: pushes every pair past 7:1 and hardens every edge */
+:root[data-contrast='high']{
+  --paper:#FFFFFF; --surface:#FFFFFF; --surface-2:#FFFFFF; --surface-3:#F0F0F0;
+  --ink:#000000; --ink-2:#000000; --ink-3:#1A1A1A;
+  --line:#000000; --line-2:#000000;
+  --blue:#0040A8; --blue-deep:#002D77; --blue-soft:#FFFFFF; --blue-line:#0040A8;
+  --amber:#8A3D00; --amber-soft:#FFFFFF;
+  --slate:#000000; --slate-deep:#000000;
+  --on-dark:#FFFFFF; --on-dark-2:#FFFFFF; --on-dark-3:#EDEDED;
+  --ok:#00532F; --ok-soft:#FFFFFF;
+  --bp-line:#FFFFFF; --bp-accent:#8CCBFF; --bp-fill:#000000; --bp-dim:#FFFFFF;
+  --shadow-1:none; --shadow-2:none; --shadow-3:0 0 0 3px #000;
+}
+:root[data-contrast='high'][data-theme='dark'],
+:root[data-contrast='high'] :is(.band-dark){ }
+:root[data-contrast='high'] *{ border-color:currentColor }
+
+/* =========== BASE =========== */
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--font); font-size:1rem; line-height:calc(1.62*var(--lh-mul));
+  letter-spacing:var(--lsp); word-spacing:var(--wsp);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--display); font-weight:800; letter-spacing:-.012em;
+  line-height:calc(.92*var(--lh-mul)); text-transform:uppercase; text-wrap:balance; margin:0}
+h4{margin:0; font-weight:700; letter-spacing:-.01em; line-height:1.2}
+p{margin:0}
+a{color:var(--blue); text-underline-offset:.18em}
+:root[data-underline='on'] a{text-decoration:underline !important}
+img{max-width:100%; display:block}
+button,input,select,textarea{font:inherit; letter-spacing:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--focus); outline-offset:3px; border-radius:2px}
+:root[data-contrast='high'] :focus-visible{outline:4px solid #000; box-shadow:0 0 0 7px #FF0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+:root[data-motion='off'] *,
+:root[data-motion='off'] *::before,
+:root[data-motion='off'] *::after{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+/* `*` does not match pseudo-elements, so decorative rules drawn by an
+   animation need their finished state restored explicitly. */
+:root[data-motion='off'] .band::before{transform:none !important}
+html{scroll-behavior:smooth; scroll-padding-top:5.5rem}
+:root[data-motion='off']{scroll-behavior:auto !important}
+/* Lenis drives the easing itself, so native smooth scrolling must stand down
+   while it is running or the two fight each other. */
+html.lenis-on{scroll-behavior:auto}
+html.lenis-on,html.lenis-on body{height:auto}
+html.lenis-on.lenis-stopped{overflow:clip}
+[data-lenis-prevent]{overscroll-behavior:contain}
+
+.wrap{width:min(100% - 2.5rem, var(--container)); margin-inline:auto}
+@media (max-width:640px){ .wrap{width:min(100% - 1.75rem, var(--container))} }
+/* fixed + block: the parallax rule below was overriding position, and an
+   inline element ignores transform outright, so the link never moved out of
+   the way and sat visible at the top of the page. */
+/* fixed blue, not var(--blue): the token goes light in dark theme and
+   white-on-light failed at 2.61:1 */
+.skip{position:fixed; top:0; left:0; z-index:200; display:block; background:#08498F;
+  color:#fff; padding:.9rem 1.4rem; font-weight:700; border-radius:0 0 var(--r-md) 0;
+  transform:translateY(-140%); transition:transform var(--dur) var(--ease)}
+.skip:focus{transform:none}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* =========== TYPE ROLES =========== */
+.eyebrow{font-size:.8rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--amber); display:block}
+.band-dark .eyebrow{color:var(--on-dark-3)}
+h1{font-size:clamp(3.4rem,2.2rem + 5.4vw,7rem)}
+h2{font-size:clamp(2.5rem,1.8rem + 3.2vw,4.4rem)}
+h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
+.lede{font-size:clamp(1.05rem,1rem + .35vw,1.22rem); color:var(--ink-2); max-width:58ch}
+.band-dark .lede{color:var(--on-dark-2)}
+.num{font-family:var(--mono); font-variant-numeric:tabular-nums; font-weight:600}
+
+/* =========== SECTION RHYTHM =========== */
+.band{padding-block:clamp(3.5rem,2rem + 6vw,6.5rem)}
+.band-tint{background:var(--surface-2)}
+.band-dark{background:var(--slate); color:var(--on-dark)}
+.band-dark h2,.band-dark h3{color:#fff}
+.head{display:flex; flex-direction:column; gap:.85rem; margin-bottom:clamp(2rem,1.2rem + 2.5vw,3.25rem); max-width:64ch}
+
+/* =========== BUTTONS =========== */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.55rem; min-height:var(--tap); padding:.78rem 1.4rem; border-radius:var(--r-md); font-weight:700; font-size:.98rem; text-decoration:none; border:2px solid transparent; cursor:pointer; transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease)}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--amber-bright); color:#20160A; border-color:var(--amber-bright)}
+.btn-primary:hover{background:#D4790F; border-color:#D4790F}
+:root[data-theme='dark'] .btn-primary,:root:not([data-theme='light']) .btn-primary{color:#1A1103}
+.btn-blue{background:var(--blue); color:#fff; border-color:var(--blue)}
+:root[data-theme='dark'] .btn-blue{color:#06182C}
+.btn-blue:hover{background:var(--blue-deep); border-color:var(--blue-deep)}
+.btn-ghost{background:transparent; color:var(--ink); border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink); background:var(--surface)}
+.band-dark .btn-ghost{color:#fff; border-color:rgba(255,255,255,.35)}
+.band-dark .btn-ghost:hover{border-color:#fff; background:rgba(255,255,255,.08)}
+.btn-lg{padding:1rem 1.8rem; font-size:1.05rem}
+</style>
+<style>
+/* =========== HEADER =========== */
+.hdr{position:sticky; top:0; z-index:60; background:color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
+:root[data-contrast='high'] .hdr{background:var(--surface); border-bottom-width:2px}
+.hdr-in{display:flex; align-items:center; gap:1.25rem; min-height:4.6rem}
+.brand{display:flex; align-items:center; text-decoration:none; color:var(--ink); flex:none}
+.brand img{height:54px; width:auto}
+/* the supplied logo has a dark grey wordmark, so dark themes get a light copy */
+.brand .logo-dk{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme='light']) .brand .logo-lt{display:none}
+  :root:not([data-theme='light']) .brand .logo-dk{display:block}
+}
+:root[data-theme='dark'] .brand .logo-lt{display:none}
+:root[data-theme='dark'] .brand .logo-dk{display:block}
+:root[data-theme='light'] .brand .logo-lt{display:block}
+:root[data-theme='light'] .brand .logo-dk{display:none}
+.ft-logo{height:58px; width:auto}
+
+.brand-tx{display:flex; flex-direction:column; line-height:1.05}
+.brand-name{font-weight:800; font-size:1.14rem; letter-spacing:-.02em}
+.brand-name i{font-style:normal; color:var(--blue)}
+.brand-sub{font-family:var(--mono); font-size:.55rem; font-weight:500; letter-spacing:.17em; color:var(--ink-3); text-transform:uppercase}
+.nav{display:flex; gap:.25rem; margin-left:auto}
+.nav a{display:flex; align-items:center; min-height:var(--tap); padding:0 .8rem; color:var(--ink-2); text-decoration:none; font-weight:600; font-size:.94rem; border-radius:var(--r-md)}
+.nav a:hover{color:var(--ink); background:var(--surface-2)}
+.hdr-cta{display:flex; align-items:center; gap:.6rem; flex:none}
+.tel{display:inline-flex; align-items:center; gap:.5rem; min-height:var(--tap); padding:0 .85rem; font-family:var(--mono); font-weight:600; font-size:1rem; color:var(--ink); text-decoration:none; border-radius:var(--r-md); border:1px solid var(--line)}
+.tel:hover{border-color:var(--blue); color:var(--blue)}
+.tel svg{width:17px;height:17px;flex:none}
+.icon-btn{display:inline-flex; align-items:center; justify-content:center; width:var(--tap); height:var(--tap); border-radius:var(--r-md); border:1px solid var(--line); background:var(--surface); cursor:pointer; color:var(--ink-2)}
+.icon-btn:hover{border-color:var(--ink-3); color:var(--ink)}
+.icon-btn svg{width:20px;height:20px}
+.burger{display:none}
+@media (max-width:1080px){
+  .nav{display:none} .burger{display:inline-flex}
+  .nav.open{display:flex; position:absolute; inset:4.6rem 0 auto; flex-direction:column; background:var(--surface); border-bottom:1px solid var(--line); padding:.6rem 1.25rem 1.2rem; gap:.15rem; box-shadow:var(--shadow-2)}
+  .nav.open a{min-height:3.1rem; font-size:1.05rem}
+}
+@media (max-width:800px){
+  .tel span{display:none}
+  .brand-sub{display:none}
+  /* theme also lives in the display-settings panel, so drop the duplicate here */
+  #themeBtn{display:none}
+  .hdr-in{gap:.75rem}
+  .hdr-cta{gap:.4rem}
+  .brand img{height:42px}
+}
+
+/* =========== HERO =========== */
+.hero{padding-block:clamp(2.5rem,1.5rem + 4vw,4.5rem) clamp(3rem,2rem + 4vw,5rem); background:linear-gradient(178deg,var(--surface) 0%,var(--paper) 60%)}
+.hero-grid{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(2rem,1rem + 4vw,4rem); align-items:center}
+@media (max-width:980px){ .hero-grid{grid-template-columns:1fr; gap:2.5rem} }
+.hero h1{margin-block:1rem .9rem}
+.hero h1 em{font-style:normal; color:var(--blue)}
+.hero-cta{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.75rem}
+.chips{display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.6rem; padding-top:1.5rem; border-top:1px solid var(--line)}
+.chip{display:inline-flex; align-items:center; gap:.4rem; font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:.42rem .7rem; border-radius:var(--r-sm); background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line)}
+.chip svg{width:13px;height:13px;color:var(--ok);flex:none}
+
+/* before/after comparison */
+.ba{position:relative; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); background:var(--slate); aspect-ratio:3/2}
+.ba img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.ba-after{clip-path:inset(0 0 0 var(--pos,50%))}
+.ba-line{position:absolute; top:0; bottom:0; left:var(--pos,50%); width:3px; background:#fff; transform:translateX(-1.5px); pointer-events:none; box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.ba-knob{position:absolute; top:50%; left:var(--pos,50%); width:46px; height:46px; margin:-23px 0 0 -23px; border-radius:50%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.35); display:grid; place-items:center; pointer-events:none; color:var(--slate)}
+.ba-knob svg{width:22px;height:22px}
+.ba input[type=range]{position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize}
+.ba input[type=range]:focus-visible + .ba-line{box-shadow:0 0 0 3px var(--focus)}
+.ba-tag{position:absolute; bottom:.9rem; font-family:var(--mono); font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; padding:.35rem .6rem; border-radius:var(--r-sm); background:rgba(10,20,30,.78); color:#fff; pointer-events:none}
+.ba-tag.l{left:.9rem} .ba-tag.r{right:.9rem}
+.ba-cap{margin-top:.7rem; font-family:var(--mono); font-size:.73rem; color:var(--ink-3); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+
+/* =========== TRUST STRIP =========== */
+.trust{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; background:var(--surface)}
+@media (max-width:900px){ .trust{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:520px){ .trust{grid-template-columns:1fr} }
+.trust > div{padding:1.4rem 1.5rem; border-right:1px solid var(--line)}
+.trust > div:last-child{border-right:0}
+@media (max-width:900px){
+  .trust > div:nth-child(2n){border-right:0}
+  .trust > div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:520px){ .trust > div{border-right:0; border-bottom:1px solid var(--line)} .trust > div:last-child{border-bottom:0} }
+.trust dt{font-weight:700; font-size:1rem; margin-bottom:.3rem; display:flex; align-items:center; gap:.5rem}
+.trust dt svg{width:17px;height:17px;color:var(--blue);flex:none}
+.trust dd{margin:0; font-size:.9rem; color:var(--ink-2); line-height:1.5}
+
+/* =========== SERVICES =========== */
+.svc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(302px,1fr)); gap:1.25rem}
+.svc{display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease)}
+.svc:hover{border-color:var(--blue-line); box-shadow:var(--shadow-2)}
+.svc-img{position:relative; aspect-ratio:19/12; background:var(--surface-3)}
+.svc-img img{width:100%;height:100%;object-fit:cover}
+.svc-img::after{content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(12,24,36,.55), transparent 55%)}
+.svc-price{position:absolute; left:.8rem; bottom:.75rem; z-index:1; font-family:var(--mono); font-size:.78rem; font-weight:600; color:#fff; background:rgba(10,20,30,.72); padding:.32rem .6rem; border-radius:var(--r-sm); backdrop-filter:blur(4px)}
+.svc-b{padding:1.25rem 1.35rem 1.4rem; display:flex; flex-direction:column; gap:.6rem; flex:1}
+.svc-b h3{font-size:1.18rem}
+.svc-b p{font-size:.94rem; color:var(--ink-2)}
+.svc-tags{display:flex; flex-wrap:wrap; gap:.35rem; margin-top:auto; padding-top:.9rem}
+.svc-tags span{font-size:.76rem; font-family:var(--mono); color:var(--ink-3); background:var(--surface-2); border:1px solid var(--line); padding:.22rem .5rem; border-radius:var(--r-sm)}
+
+/* =========== QUOTE / WORK ORDER =========== */
+.wo{display:grid; grid-template-columns:1.15fr .85fr; gap:0; border:1px solid var(--line-2); border-radius:var(--r-lg); overflow:hidden; background:var(--surface); box-shadow:var(--shadow-2)}
+@media (max-width:900px){ .wo{grid-template-columns:1fr} }
+.wo-form{padding:clamp(1.4rem,1rem + 1.6vw,2.25rem); display:flex; flex-direction:column; gap:1.6rem}
+.wo-out{background:var(--slate); color:var(--on-dark); padding:clamp(1.4rem,1rem + 1.6vw,2.25rem); display:flex; flex-direction:column}
+.fld{display:flex; flex-direction:column; gap:.6rem}
+.fld > legend, .fld > .lbl{font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); padding:0}
+fieldset.fld{border:0; margin:0; padding:0; min-width:0}
+.opts{display:flex; flex-wrap:wrap; gap:.5rem}
+.opt{position:relative}
+.opt input{position:absolute; opacity:0; width:100%; height:100%; margin:0; cursor:pointer}
+.opt span{display:inline-flex; align-items:center; min-height:var(--tap); padding:.5rem .9rem; border:1.5px solid var(--line-2); border-radius:var(--r-md); font-size:.92rem; font-weight:600; color:var(--ink-2); cursor:pointer; transition:all var(--dur) var(--ease); background:var(--surface)}
+.opt input:checked + span{border-color:var(--blue); background:var(--blue-soft); color:var(--blue-deep)}
+.opt input:focus-visible + span{outline:3px solid var(--focus); outline-offset:3px}
+.opt input:hover:not(:checked) + span{border-color:var(--ink-3)}
+:root[data-contrast='high'] .opt input:checked + span{background:#000; color:#fff; border-color:#000}
+.wo-tot{margin-top:auto}
+.wo-range{font-family:var(--mono); font-weight:600; font-variant-numeric:tabular-nums; font-size:clamp(1.9rem,1.4rem + 2vw,2.9rem); line-height:1.1; color:#fff; letter-spacing:-.02em}
+.wo-note{font-size:.85rem; color:var(--on-dark-2); line-height:1.55; margin-top:.8rem}
+.wo-factors{list-style:none; padding:0; margin:1.3rem 0 0; display:flex; flex-direction:column; gap:.5rem; border-top:1px solid rgba(255,255,255,.16); padding-top:1.2rem}
+.wo-factors li{display:flex; gap:.6rem; font-size:.86rem; color:var(--on-dark-2); line-height:1.5}
+.wo-factors li::before{content:'+'; font-family:var(--mono); color:var(--amber-bright); font-weight:600; flex:none}
+.wo-line{display:flex; justify-content:space-between; align-items:baseline; gap:.75rem; flex-wrap:wrap; font-family:var(--mono); font-size:.8rem; padding:.5rem 0; border-bottom:1px dashed rgba(255,255,255,.18); color:var(--on-dark-2)}
+.wo-line > span{flex:0 0 auto}
+.wo-line b{flex:1 1 auto; min-width:0; color:#fff; font-weight:600; text-align:right; overflow-wrap:anywhere}
+</style>
+<style>
+/* =========== DRIVER: HERO -> SCROLL COMPANION =========== */
+/* The driver starts large beside the hero, shrinks into the gutter as the page
+   starts moving, then rides down the full document leaving a threaded line.
+   Position is bound to scroll, so scrolling back up reverses all of it.
+   Decorative and aria-hidden - the scrollbar carries the same information. */
+.rail{display:none}
+@media (min-width:1440px){
+  .rail{
+    display:block; position:fixed; z-index:40;
+    right:calc((100vw - var(--container))/2 - 52px);
+    top:calc(4.6rem + 30px); bottom:30px; width:34px; pointer-events:none;
+  }
+  .rail-track,.rail-fill{position:absolute; left:16px; top:0; bottom:0; width:2px}
+  .rail-track{background:rgba(125,148,175,.34)}
+  .rail-fill{
+    transform-origin:top center; transform:scaleY(0);
+    background:repeating-linear-gradient(180deg,
+      #4B93E8 0 5px, rgba(75,147,232,.30) 5px 9px);
+  }
+  .rail-tool{position:absolute; left:0; top:0; width:34px; height:44px; color:#4B93E8}
+  .rail-tool svg{width:34px; height:44px; display:block}
+  .rail-cap{position:absolute; left:9px; bottom:-1px; width:16px; height:2px;
+    background:rgba(125,148,175,.62)}
+  .rail-lbl{
+    position:absolute; left:50%; bottom:16px; transform:translateX(-50%) rotate(90deg);
+    transform-origin:center; font-family:var(--mono); font-size:.56rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--ink-3); white-space:nowrap;
+  }
+}
+@supports (animation-timeline: scroll(root)) {
+  @media (min-width:1440px) and (prefers-reduced-motion: no-preference) {
+    .rail-fill{animation:railFill linear both; animation-timeline:scroll(root block)}
+    .rail-tool{animation:railDrive cubic-bezier(.4,.1,.3,1) both;
+      animation-timeline:scroll(root block)}
+    .rail-bitspin{animation:railSpin linear both; animation-timeline:scroll(root block);
+      transform-box:fill-box; transform-origin:center}
+  }
+}
+@keyframes railDrive{
+  0%   {top:3%;  scale:1.8}
+  9%   {top:0%;  scale:1}
+  100% {top:calc(100% - 44px); scale:1}
+}
+@keyframes railFill{
+  0%   {transform:scaleY(0)}
+  9%   {transform:scaleY(0)}
+  100% {transform:scaleY(1)}
+}
+@keyframes railSpin{from{transform:rotate(0)} to{transform:rotate(1440deg)}}
+/* Motion off: park it at the top, no thread, never stranded mid-page. */
+:root[data-motion='off'] .rail-fill{transform:scaleY(0) !important}
+:root[data-motion='off'] .rail-tool{top:0 !important; scale:1 !important}
+
+/* =========== SECTION TRANSITIONS =========== */
+/* Every reveal is expressed ONLY through keyframes - never as a static
+   opacity:0 - so if scroll timelines are unsupported, or the visitor turns
+   motion off, the page simply renders finished. */
+.band{position:relative}
+.band::before{
+  content:''; position:absolute; left:0; right:0; top:0; height:2px;
+  background:var(--blue); transform-origin:left center}
+.band-dark::before{background:var(--bp-accent)}
+.band.no-rule::before{content:none}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .band::before{
+      animation:wipeIn cubic-bezier(.25,.6,.3,1) both;
+      animation-timeline:view(); animation-range:entry 0% cover 18%}
+
+    .rise,.stagger > *{
+      animation:revealUp cubic-bezier(.22,.62,.3,1) both; animation-timeline:view()}
+    .rise            {animation-range:entry 4%  cover 26%}
+    .stagger > *     {animation-range:entry 6%  cover 28%}
+    .stagger > *:nth-child(3n+2){animation-range:entry 13% cover 35%}
+    .stagger > *:nth-child(3n+3){animation-range:entry 20% cover 42%}
+    .stagger > *:nth-child(4n+4){animation-range:entry 26% cover 48%}
+
+    /* photographs settle rather than pop */
+    .svc-img img{animation:imgSettle linear both; animation-timeline:view();
+      animation-range:entry 0% entry 85%}
+  }
+}
+@keyframes wipeIn    {from{transform:scaleX(0)}            to{transform:scaleX(1)}}
+@keyframes revealUp  {from{opacity:0; transform:translateY(42px)} to{opacity:1; transform:none}}
+@keyframes imgSettle {from{transform:scale(1.07)}          to{transform:scale(1)}}
+
+/* =========== SCROLL-VELOCITY MARQUEE =========== */
+/* Position-bound, so scrolling down runs it left and scrolling up runs it
+   right. Duplicated content makes the -50% shift seamless. */
+.mq{overflow:hidden; border-block:2px solid var(--ink); background:var(--amber-bright);
+  padding-block:.35rem}
+.mq-dark{background:var(--slate); border-color:var(--slate)}
+.mq-row{display:flex; width:max-content; will-change:transform}
+.mq-row span{font-family:var(--display); font-weight:800; text-transform:uppercase;
+  font-size:clamp(2.6rem, 1.6rem + 4.4vw, 5.2rem); line-height:1; letter-spacing:-.01em;
+  color:#17120A; padding-inline:1.4rem; white-space:nowrap}
+.mq-dark .mq-row span{color:#fff}
+.mq-row span::after{content:'\2022'; margin-left:2.8rem; opacity:.4}
+@supports (animation-timeline: scroll(root)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .mq-row{animation:mqMove linear both; animation-timeline:scroll(root block)}
+    .mq-rev .mq-row{animation-name:mqMoveRev}
+  }
+}
+@keyframes mqMove   {from{transform:translateX(0)}     to{transform:translateX(-50%)}}
+@keyframes mqMoveRev{from{transform:translateX(-50%)}  to{transform:translateX(0)}}
+
+/* =========== SERVICES LIST =========== */
+/* No 01-07 numbering: these are not a sequence and the digits encoded
+   nothing. A thumbnail gives each row a visual anchor instead. */
+.svc-list{list-style:none; margin:0; padding:0; border-top:1px solid var(--line)}
+.svc-row{position:relative; border-bottom:1px solid var(--line);
+  display:grid; grid-template-columns:120px minmax(0,1fr) auto; align-items:center;
+  gap:1.6rem; padding:1.25rem .6rem;
+  transition:background var(--dur) var(--ease)}
+.svc-row:hover,.svc-row:focus-within{background:var(--surface)}
+.svc-thumb{line-height:0}
+.svc-thumb img{width:120px; height:90px; object-fit:cover; border-radius:var(--r-sm);
+  display:block; filter:saturate(.85); transition:filter var(--dur) var(--ease)}
+.svc-row:hover .svc-thumb img{filter:saturate(1.05)}
+.svc-txt{min-width:0}
+.svc-row h3{font-size:clamp(1.4rem,1.15rem + 1vw,2rem); color:var(--ink); margin-bottom:.15rem}
+.svc-hit{background:none; border:0; padding:0; margin:0; font:inherit; color:inherit;
+  letter-spacing:inherit; text-transform:inherit; cursor:pointer; text-align:left}
+/* stretched hit area: one focusable control, the whole row clickable */
+.svc-hit::after{content:''; position:absolute; inset:0}
+.svc-hit:hover{color:var(--blue)}
+.svc-hit:focus-visible{outline:3px solid var(--focus); outline-offset:4px}
+.svc-row p{font-size:.94rem; color:var(--ink-2); line-height:1.5; max-width:62ch}
+.svc-cost{text-align:right; font-weight:700; font-size:1.05rem;
+  font-variant-numeric:tabular-nums; color:var(--ink); white-space:nowrap}
+.svc-cost small{display:block; font-size:.68rem; font-weight:600; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--ink-3); margin-top:.1rem}
+.svc-go{display:block; font-size:.72rem; font-weight:700; letter-spacing:.05em;
+  color:var(--blue); margin-top:.35rem; opacity:0; transition:opacity var(--dur) var(--ease)}
+.svc-row:hover .svc-go,.svc-row:focus-within .svc-go{opacity:1}
+@media (max-width:860px){
+  .svc-row{grid-template-columns:84px minmax(0,1fr); gap:.4rem 1rem; padding:1.1rem .2rem}
+  .svc-thumb{grid-row:span 2}
+  .svc-thumb img{width:84px; height:84px}
+  .svc-cost{grid-column:2; text-align:left; font-size:.98rem}
+  .svc-go{opacity:1}
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .svc-row{animation:rowWipe cubic-bezier(.25,.7,.3,1) both;
+      animation-timeline:view(); animation-range:entry 4% cover 22%}
+  }
+}
+@keyframes rowWipe{from{opacity:0; clip-path:inset(0 100% 0 0); transform:translateX(-24px)}
+                   to{opacity:1; clip-path:inset(0 0 0 0);   transform:none}}
+
+/* --- step 2 lives inside the same container as the estimate --- */
+.wo-next-est{font-size:.92rem; color:var(--ink-2); margin-bottom:1.4rem;
+  padding-bottom:1.1rem; border-bottom:1px dashed var(--line-2)}
+.wo-next-est b{color:var(--ink); font-weight:700}
+@media (prefers-reduced-motion: no-preference){
+  .wo-next:not([hidden]){animation:stepIn .34s cubic-bezier(.2,.7,.3,1) both}
+}
+@keyframes stepIn{from{opacity:0; transform:translateY(-10px)} to{opacity:1; transform:none}}
+:root[data-motion='off'] .wo-next:not([hidden]){animation:none}
+
+/* --- lead dialog: the form opens where the visitor clicked --- */
+dialog.lead{border:0; padding:0; background:transparent; max-width:min(660px,94vw);
+  max-height:92vh; overflow:visible}
+dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
+.lead-in{background:var(--surface); color:var(--ink); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-3); padding:clamp(1.4rem,1rem + 1.6vw,2.25rem);
+  max-height:92vh; overflow-y:auto}
+.lead-in h2{font-size:clamp(1.8rem,1.4rem + 1.4vw,2.4rem); margin-bottom:.6rem}
+@media (prefers-reduced-motion: no-preference){
+  dialog.lead[open]{animation:stepIn .28s cubic-bezier(.2,.7,.3,1) both}
+}
+@media (max-width:560px){
+  dialog.lead{max-width:100vw; max-height:100vh; margin:0; width:100vw}
+  .lead-in{border-radius:0; min-height:100vh; max-height:100vh}
+  .lead .lb-close{top:.6rem; right:.6rem}
+}
+
+/* =========== DRIFTING TOOL BACKDROP =========== */
+/* Tool shapes are Google Material Symbols (Apache 2.0) - free for commercial
+   use with no attribution needed in the page. Freepik was the other option
+   but most of its free files require credit or a paid plan. */
+/* Large tools on a fixed layer behind the page. Position-bound to document
+   scroll, so they drift, turn and resize the whole way down and run backwards
+   on the way up. */
+.bg-tools{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+  contain:strict}
+body > *:not(.bg-tools):not(.skip){position:relative; z-index:1}
+.bt{position:absolute; width:clamp(260px, 30vw, 540px); height:auto; color:var(--blue);
+  opacity:.14; will-change:transform}
+/* Solid silhouettes, not hairlines: at parallax depth an outline disappears,
+   a filled shape reads as an object with weight. */
+.bt :is(path,circle,ellipse){fill:currentColor; stroke:none}
+.bt1{left:-8%;  top:2%}
+.bt2{right:-10%; top:20%}
+.bt3{left:2%;   top:52%}
+.bt4{right:4%;  top:70%}
+.bt5{left:14%;  top:86%}
+.bt6{right:16%; top:38%}
+/* the tint band lets the backdrop ghost through instead of hiding it */
+.band-tint{background-color:color-mix(in srgb, var(--surface-2) 82%, transparent)}
+@supports (animation-timeline: scroll(root)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .bt{animation:linear both; animation-timeline:scroll(root block)}
+    .bt1{animation-name:drift1}
+    .bt2{animation-name:drift2}
+    .bt3{animation-name:drift3}
+    .bt4{animation-name:drift4}
+    .bt5{animation-name:drift5}
+    .bt6{animation-name:drift6}
+  }
+}
+@keyframes drift1{from{transform:translate3d(0,28vh,0) rotate(-24deg) scale(.62); opacity:.05}
+                  50%{opacity:0.24}
+                  to{transform:translate3d(9vw,-38vh,0) rotate(18deg) scale(1.35); opacity:.04}}
+@keyframes drift2{from{transform:translate3d(0,44vh,0) rotate(28deg) scale(1.3); opacity:.03}
+                  45%{opacity:0.22}
+                  to{transform:translate3d(-11vw,-30vh,0) rotate(-16deg) scale(.68); opacity:.05}}
+@keyframes drift3{from{transform:translate3d(-6vw,36vh,0) rotate(-8deg) scale(.8); opacity:.04}
+                  55%{opacity:0.26}
+                  to{transform:translate3d(8vw,-42vh,0) rotate(22deg) scale(1.2); opacity:.03}}
+@keyframes drift4{from{transform:translate3d(6vw,40vh,0) rotate(16deg) scale(1.15); opacity:.03}
+                  60%{opacity:0.21}
+                  to{transform:translate3d(-7vw,-34vh,0) rotate(-20deg) scale(.72); opacity:.05}}
+@keyframes drift5{from{transform:translate3d(-4vw,30vh,0) rotate(12deg) scale(.7); opacity:.03}
+                  65%{opacity:0.24}
+                  to{transform:translate3d(10vw,-46vh,0) rotate(-26deg) scale(1.28); opacity:.03}}
+@keyframes drift6{from{transform:translate3d(5vw,34vh,0) rotate(-18deg) scale(1.1); opacity:.04}
+                  40%{opacity:0.20}
+                  to{transform:translate3d(-9vw,-40vh,0) rotate(24deg) scale(.75); opacity:.04}}
+@media (max-width:820px){ .bt5,.bt6{display:none} .bt{opacity:.10} }
+:root[data-motion='off'] .bg-tools{display:none}
+:root[data-contrast='high'] .bg-tools{display:none}
+
+/* dimension line: a drafting convention, not decoration - it carries a real figure */
+.dim{display:flex; align-items:center; gap:.75rem; margin-top:1.6rem; max-width:420px;
+  font-size:.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-3)}
+.band-dark .dim{color:var(--on-dark-3)}
+.dim-line{flex:1; height:1px; background:currentColor; position:relative;
+  transform-origin:left center}
+.dim-line::before,.dim-line::after{content:''; position:absolute; top:-4px; width:1px;
+  height:9px; background:currentColor}
+.dim-line::before{left:0} .dim-line::after{right:0}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .dim-line{animation:wipeIn cubic-bezier(.25,.6,.3,1) both;
+      animation-timeline:view(); animation-range:entry 10% cover 26%}
+  }
+}
+:root[data-motion='off'] .dim-line{transform:scaleX(1) !important}
+
+/* faint drafting grid on the tinted band */
+.band-tint{background-image:
+  linear-gradient(color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px),
+  linear-gradient(90deg, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px);
+  background-size:44px 44px, 44px 44px; background-position:center top}
+.band-tint > *{position:relative}
+
+/* frosted card so long-form text is not read through the grid */
+/* No backdrop-filter: blurring a block this size costs real frames on mid-range
+   phones, and a flat tint reads the same over a faint grid. */
+.panel{background:color-mix(in srgb, var(--surface) 94%, var(--blue-soft));
+  border:1px solid var(--line); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-1);
+  padding:clamp(1.25rem, .9rem + 1.6vw, 2.25rem)}
+:root[data-contrast='high'] .panel{background:var(--surface)}
+
+/* =========== SERVICE-AREA WALL =========== */
+/* Vertical columns hold the whole metro at once; a horizontal strip only ever
+   shows four names. Decorative - the readable list lives in the contact block. */
+.area-grid{display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(2rem,1rem + 4vw,4rem);
+  align-items:center}
+@media (max-width:900px){ .area-grid{grid-template-columns:1fr} }
+.wall{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; height:clamp(300px,42vh,440px);
+  overflow:hidden; position:relative;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent)}
+@media (max-width:620px){ .wall{grid-template-columns:repeat(2,1fr)} }
+.wall-col{overflow:hidden}
+.wall-run{display:flex; flex-direction:column; gap:.55rem; will-change:transform}
+.wall-run span{font-family:var(--display); font-weight:700; text-transform:uppercase;
+  font-size:clamp(.95rem,.8rem + .5vw,1.3rem); line-height:1.1; color:var(--on-dark-2);
+  white-space:nowrap; letter-spacing:.01em}
+.wall-col.rev .wall-run span{color:var(--bp-accent); opacity:.75}
+@supports (animation-timeline: scroll(root)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .wall-run{animation:wallUp linear both; animation-timeline:scroll(root block)}
+    .wall-col.rev .wall-run{animation-name:wallDown}
+  }
+}
+@keyframes wallUp  {from{transform:translateY(0)}    to{transform:translateY(-50%)}}
+@keyframes wallDown{from{transform:translateY(-50%)} to{transform:translateY(0)}}
+
+/* =========== ESTIMATE SHEET =========== */
+.wo-prog{display:flex; gap:.3rem; margin-bottom:.4rem}
+.wo-prog i{flex:1; height:4px; border-radius:2px; background:var(--line-2);
+  transition:background var(--dur) var(--ease)}
+.wo-prog i.on{background:var(--blue)}
+.wo-step{display:flex; align-items:baseline; gap:.6rem}
+.wo-step em{font-style:normal; font-size:.72rem; font-weight:700; color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.wo-range{font-family:var(--display); font-weight:800; text-transform:uppercase;
+  font-size:clamp(2.6rem,1.9rem + 3vw,4.4rem); line-height:.92; color:#fff;
+  letter-spacing:-.01em; font-variant-numeric:tabular-nums}
+.wo-sub{font-size:.8rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--amber-bright); margin-bottom:.5rem}
+.wo-chips{display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.9rem}
+.wo-chips span{font-size:.74rem; font-weight:600; color:var(--on-dark-2);
+  border:1px solid rgba(255,255,255,.22); border-radius:var(--r-sm); padding:.22rem .5rem}
+.wo-break{margin-top:1.3rem; border-top:1px solid rgba(255,255,255,.18)}
+.wo-break div{display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+  padding:.55rem 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:.85rem;
+  color:var(--on-dark-2)}
+.wo-break b{color:#fff; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap}
+.wo-break div.tot{border-bottom:0; padding-top:.8rem; font-size:.95rem; color:#fff}
+.wo-time{display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+  margin-top:1.1rem; padding:.7rem .9rem; border-radius:var(--r-md);
+  background:rgba(255,255,255,.07); font-size:.88rem; color:var(--on-dark-2)}
+.wo-time b{color:#fff; font-weight:700}
+.wo-inc{list-style:none; padding:0; margin:1.1rem 0 0; display:grid; gap:.35rem}
+.wo-inc li{font-size:.83rem; color:var(--on-dark-2); display:flex; gap:.5rem; line-height:1.45}
+.wo-inc li::before{content:'\2713'; color:var(--ok); font-weight:700; flex:none}
+.wo-inc li.no::before{content:'\2717'; color:var(--on-dark-3)}
+.wo-acts{display:flex; gap:.6rem; margin-top:1.4rem; flex-wrap:wrap}
+.wo-acts .btn{flex:1 1 auto}
+.wo-copy{background:transparent; color:#fff; border-color:rgba(255,255,255,.35)}
+.wo-copy:hover{border-color:#fff; background:rgba(255,255,255,.08)}
+@media (max-width:520px){ .wo-acts{flex-direction:column} }
+
+/* --- step 2 lives inside the same container as the estimate --- */
+.wo-next-est{font-size:.92rem; color:var(--ink-2); margin-bottom:1.4rem;
+  padding-bottom:1.1rem; border-bottom:1px dashed var(--line-2)}
+.wo-next-est b{color:var(--ink); font-weight:700}
+@media (prefers-reduced-motion: no-preference){
+  .wo-next:not([hidden]){animation:stepIn .34s cubic-bezier(.2,.7,.3,1) both}
+}
+@keyframes stepIn{from{opacity:0; transform:translateY(-10px)} to{opacity:1; transform:none}}
+:root[data-motion='off'] .wo-next:not([hidden]){animation:none}
+
+/* --- lead dialog: the form opens where the visitor clicked --- */
+dialog.lead{border:0; padding:0; background:transparent; max-width:min(660px,94vw);
+  max-height:92vh; overflow:visible}
+dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
+.lead-in{background:var(--surface); color:var(--ink); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-3); padding:clamp(1.4rem,1rem + 1.6vw,2.25rem);
+  max-height:92vh; overflow-y:auto}
+.lead-in h2{font-size:clamp(1.8rem,1.4rem + 1.4vw,2.4rem); margin-bottom:.6rem}
+@media (prefers-reduced-motion: no-preference){
+  dialog.lead[open]{animation:stepIn .28s cubic-bezier(.2,.7,.3,1) both}
+}
+@media (max-width:560px){
+  dialog.lead{max-width:100vw; max-height:100vh; margin:0; width:100vw}
+  .lead-in{border-radius:0; min-height:100vh; max-height:100vh}
+  .lead .lb-close{top:.6rem; right:.6rem}
+}
+
+/* =========== GALLERY =========== */
+.gal-bar{display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.6rem}
+.gal-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(288px,1fr)); gap:1.1rem}
+.gal-card{position:relative; padding:0; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; background:var(--surface); cursor:pointer; text-align:left; font:inherit; color:inherit; transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease)}
+.gal-card:hover{border-color:var(--blue-line); box-shadow:var(--shadow-2)}
+/* portrait: the equipment is tall, a 4:3 crop threw most of it away */
+.gal-thumb{display:block; position:relative; aspect-ratio:3/4; overflow:hidden; background:var(--surface-3)}
+.gal-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform var(--dur) var(--ease)}
+.gal-card:hover .gal-thumb img{transform:scale(1.04)}
+.gal-meta{padding:.9rem 1rem 1rem; display:flex; flex-direction:column; gap:.25rem}
+.gal-meta strong{font-size:1rem; font-weight:700}
+.gal-meta span{font-family:var(--mono); font-size:.76rem; color:var(--ink-3)}
+.badge-demo{position:absolute; top:.65rem; right:.65rem; z-index:2; font-family:var(--mono); font-size:.62rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; background:var(--amber-soft); color:var(--amber); border:1px solid var(--amber-bright); padding:.25rem .45rem; border-radius:var(--r-sm)}
+
+dialog.lb{border:0; padding:0; background:transparent; max-width:min(1100px,94vw); max-height:94vh; overflow:visible}
+dialog.lb::backdrop{background:rgba(8,16,24,.86); backdrop-filter:blur(3px)}
+.lb-in{background:var(--surface); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3)}
+.lb-close{position:absolute; top:-.5rem; right:-.5rem; z-index:3; width:var(--tap); height:var(--tap); border-radius:50%; border:0; background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:var(--shadow-2); display:grid; place-items:center}
+.lb-close svg{width:20px;height:20px}
+.lb-body{padding:1.1rem 1.25rem 1.35rem}
+.lb-body h3{margin-bottom:.3rem}
+.lb-body p{color:var(--ink-2); font-size:.95rem}
+
+/* =========== PROCESS =========== */
+.steps{list-style:none; padding:0; margin:0; counter-reset:s; display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden}
+.band-dark .steps{background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.16)}
+.steps li{counter-increment:s; background:var(--surface); padding:1.35rem 1.5rem; display:grid; grid-template-columns:auto 1fr; gap:1.1rem; align-items:start}
+.band-dark .steps li{background:var(--slate)}
+.steps li::before{content:counter(s,decimal-leading-zero); font-family:var(--mono); font-size:.82rem; font-weight:600; color:var(--blue); background:var(--blue-soft); border:1px solid var(--blue-line); width:2.3rem; height:2.3rem; display:grid; place-items:center; border-radius:var(--r-md)}
+.steps h3{font-size:1.05rem; margin-bottom:.2rem}
+.steps p{font-size:.93rem; color:var(--ink-2)}
+.band-dark .steps p{color:var(--on-dark-2)}
+
+/* =========== REVIEWS =========== */
+.rv-top{display:flex; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:2rem; padding-bottom:1.6rem; border-bottom:1px solid var(--line)}
+.rv-score{display:flex; align-items:baseline; gap:.6rem}
+.rv-score b{font-family:var(--mono); font-size:3rem; font-weight:600; line-height:1; letter-spacing:-.03em}
+.rv-score span{font-size:.9rem; color:var(--ink-2)}
+.stars{display:inline-flex; gap:.12rem}
+.stars svg{width:18px;height:18px;color:var(--amber-bright)}
+.rv-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.1rem}
+.rv{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--blue); border-radius:0 var(--r-lg) var(--r-lg) 0; padding:1.3rem 1.4rem; display:flex; flex-direction:column; gap:.8rem}
+.rv q{quotes:none; font-size:.97rem; line-height:1.62; color:var(--ink)}
+.rv q::before{content:'\201C'} .rv q::after{content:'\201D'}
+.rv footer{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-top:auto; padding-top:.7rem; border-top:1px solid var(--line)}
+.rv-who{font-weight:700; font-size:.92rem}
+.rv-meta{font-family:var(--mono); font-size:.74rem; color:var(--ink-3)}
+
+/* =========== FAQ =========== */
+.faq.panel{border-top:1px solid var(--line)}
+.faq details:last-of-type{border-bottom:0}
+.faq details:first-of-type summary{padding-top:0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding:1.15rem 0; font-weight:700; font-size:1.05rem; min-height:var(--tap)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:''; width:13px; height:13px; flex:none; border-right:2.5px solid var(--blue); border-bottom:2.5px solid var(--blue); transform:rotate(45deg) translateY(-3px); transition:transform var(--dur) var(--ease)}
+.faq details[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.faq summary:hover{color:var(--blue)}
+.faq-a{padding:0 0 1.3rem; color:var(--ink-2); max-width:70ch; font-size:.97rem}
+
+/* =========== CONTACT =========== */
+.ct-grid{display:grid; grid-template-columns:1fr .82fr; gap:clamp(1.5rem,1rem + 3vw,3.5rem); align-items:start}
+@media (max-width:900px){ .ct-grid{grid-template-columns:1fr} }
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+@media (max-width:560px){ .form-grid{grid-template-columns:1fr} }
+.f-full{grid-column:1/-1}
+label.lb{display:block; font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-bottom:.4rem}
+label.lb .req{color:var(--amber); margin-left:.2rem}
+.inp{width:100%; min-height:var(--tap); padding:.7rem .85rem; border:1.5px solid var(--line-2); border-radius:var(--r-md); background:var(--surface); color:var(--ink); transition:border-color var(--dur) var(--ease)}
+.inp:hover{border-color:var(--ink-3)}
+.inp:focus{border-color:var(--blue)}
+textarea.inp{min-height:8rem; resize:vertical; line-height:1.6}
+.hint{font-size:.8rem; color:var(--ink-3); margin-top:.35rem}
+.err{font-size:.84rem; color:var(--amber); margin-top:.35rem; font-weight:600; display:none; align-items:center; gap:.35rem}
+.inp[aria-invalid='true']{border-color:var(--amber); background:var(--amber-soft)}
+.inp[aria-invalid='true'] ~ .err{display:flex}
+.status{margin-top:1rem; padding:.95rem 1.1rem; border-radius:var(--r-md); background:var(--ok-soft); border:1px solid var(--ok); color:var(--ok); font-weight:600; font-size:.93rem}
+.status:empty{display:none}
+.ct-side{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:1.5rem; display:flex; flex-direction:column; gap:1.3rem}
+.ct-row{display:flex; flex-direction:column; gap:.25rem}
+.ct-row .k{font-family:var(--mono); font-size:.7rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+.ct-row .v{font-size:1.02rem; font-weight:600}
+.ct-row .v a{color:var(--ink); text-decoration:none}
+.ct-row .v a:hover{color:var(--blue)}
+.area-list{display:flex; flex-wrap:wrap; gap:.3rem}
+.area-list span{font-family:var(--mono); font-size:.75rem; color:var(--ink-2); background:var(--surface-2); border:1px solid var(--line); padding:.2rem .45rem; border-radius:var(--r-sm)}
+
+.ct-est{display:none; gap:1rem; align-items:flex-start; justify-content:space-between;
+  padding:.95rem 1.1rem; margin-bottom:1.3rem; border:1px solid var(--blue-line);
+  background:var(--blue-soft); border-radius:var(--r-md)}
+.ct-est.on{display:flex}
+.ct-est b{display:block; font-size:.72rem; font-weight:700; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--blue-deep); margin-bottom:.25rem}
+.ct-est p{font-size:.92rem; color:var(--ink); line-height:1.5}
+.ct-est button{flex:none; background:none; border:0; cursor:pointer; font-size:.82rem;
+  font-weight:600; color:var(--ink-2); text-decoration:underline; min-height:var(--tap);
+  padding:0 .25rem}
+.ct-est button:hover{color:var(--ink)}
+
+/* profile links: the proof lives off-site, so make getting there obvious */
+.proof{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.4rem}
+.proof a{display:inline-flex; align-items:center; gap:.5rem; min-height:var(--tap);
+  padding:.5rem .9rem; border:1.5px solid var(--line-2); border-radius:var(--r-md);
+  text-decoration:none; color:var(--ink); font-weight:700; font-size:.9rem;
+  transition:border-color var(--dur) var(--ease), background var(--dur) var(--ease)}
+.proof a:hover{border-color:var(--blue); background:var(--blue-soft)}
+.proof b{font-variant-numeric:tabular-nums}
+.proof small{font-weight:600; color:var(--ink-3); font-size:.78rem}
+.ft-proof{display:flex; flex-direction:column; gap:.4rem; margin-top:1rem}
+.ft-proof a{color:var(--on-dark-2); text-decoration:none; font-size:.9rem;
+  display:inline-flex; align-items:center; gap:.4rem; min-height:2.5rem}
+.ft-proof a:hover{color:#fff}
+.ft-proof span{color:var(--amber-bright); font-weight:700}
+
+/* =========== FOOTER =========== */
+.ft{background:var(--slate-deep); color:var(--on-dark); padding-block:clamp(2.5rem,2rem + 3vw,4rem) 2rem}
+.ft-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:2rem; padding-bottom:2.2rem; border-bottom:1px solid rgba(255,255,255,.14)}
+@media (max-width:900px){ .ft-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .ft-grid{grid-template-columns:1fr} }
+.ft h4{font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--on-dark-3); margin-bottom:.9rem}
+.ft ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.45rem}
+.ft a{color:var(--on-dark-2); text-decoration:none; font-size:.93rem}
+.ft ul a{display:inline-flex; align-items:center; min-height:2.25rem}
+.ft a:hover{color:#fff}
+.ft-brand svg{width:44px;height:44px}
+.ft-legal{display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; padding-top:1.4rem; font-family:var(--mono); font-size:.76rem; color:var(--on-dark-3)}
+.soc{display:flex; gap:.5rem}
+.soc a{display:grid; place-items:center; width:var(--tap); height:var(--tap); border-radius:var(--r-md); border:1px solid rgba(255,255,255,.2); color:var(--on-dark-2)}
+.soc a:hover{border-color:#fff; color:#fff}
+.soc svg{width:18px;height:18px}
+
+/* =========== A11Y PANEL =========== */
+dialog.a11y{border:0; padding:0; border-radius:var(--r-lg); background:var(--surface); color:var(--ink); box-shadow:var(--shadow-3); max-width:min(430px,94vw); width:100%; margin-left:auto; margin-right:1.2rem}
+dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
+.a11y-in{padding:1.4rem 1.5rem 1.6rem; display:flex; flex-direction:column; gap:1.35rem}
+.a11y-hd{display:flex; align-items:center; justify-content:space-between; gap:1rem}
+.a11y-hd h2{font-size:1.2rem}
+.seg{display:flex; gap:.35rem; flex-wrap:wrap}
+.seg .opt span{flex:1; justify-content:center; min-width:3.6rem; font-size:.88rem}
+.sw{display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:var(--tap); cursor:pointer}
+.sw-t{display:flex; flex-direction:column; gap:.1rem}
+.sw-t b{font-size:.96rem; font-weight:600}
+.sw-t small{font-size:.8rem; color:var(--ink-3)}
+.sw input{position:absolute; opacity:0; pointer-events:none}
+.sw-ui{flex:none; width:48px; height:28px; border-radius:14px; background:var(--line-2); position:relative; transition:background var(--dur) var(--ease)}
+.sw-ui::after{content:''; position:absolute; top:3px; left:3px; width:22px; height:22px; border-radius:50%; background:#fff; transition:transform var(--dur) var(--ease); box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.sw input:checked + .sw-ui{background:var(--blue)}
+.sw input:checked + .sw-ui::after{transform:translateX(20px)}
+.sw input:focus-visible + .sw-ui{outline:3px solid var(--focus); outline-offset:3px}
+.a11y-reset{background:none; border:0; color:var(--blue); font-weight:600; font-size:.9rem; cursor:pointer; text-decoration:underline; padding:.5rem 0; text-align:left; min-height:var(--tap)}
+
+/* text-size + spacing hooks */
+:root[data-size='lg']{font-size:112.5%}
+:root[data-size='xl']{font-size:125%}
+:root[data-spacing='on']{--lsp:.045em; --wsp:.12em; --lh-mul:1.12}
+</style>
+<div class="bg-tools" aria-hidden="true">
+  <svg class="bt bt1" viewBox="0 -960 960 960"><path d="M615-99q-8 8-19 12.5T573-82q-12 0-23.5-4.5T530-99l-79-78q-8-8-12.5-18t-5.5-21q-1-11 2.5-21t10.5-20l16-21-339-479 143-143 533 532q9 9 13.5 20t4.5 22q0 11-4.5 22.5T799-283L615-99Zm-43-42 185-185-81-80-184 185 80 80Z"/></svg>
+  <svg class="bt bt2" viewBox="0 -960 960 960"><path d="M781-597 650-728 545-622 444-723l127-127q11-11 23-15.5t26-4.5q14 0 26.5 4.5T670-850l104 104q15 15 23 34t9 39q1 20-5 39.5T781-597ZM238-416q-20-20-20-51.5t20-51.5l91-92 103 103-92 92q-22 22-52 21t-50-21Zm-64 307q-10-10-15-23t-5-27q0-14 5-27t15-23l300-299-144-145q-15-15-15-35t15-35q15-15 35.5-15t35.5 15l144 144 57-57 105 107q9 9 9 21t-9 21q-13 13-25.5 8.5T658-494L273-109q-10 10-22.5 15T224-89q-14 0-27-5t-23-15Z"/></svg>
+  <svg class="bt bt3" viewBox="0 -960 960 960"><path d="M437-80q-24 0-42-17.5T377-140v-200H220q-24 0-42-18t-18-42v-303q0-55 39.5-96t95.5-41h505v440q0 24-18 42t-42 18H583v200q0 25-18 42.5T523-80h-86ZM220-554h520v-226h-56v171h-60v-171h-71v85h-60v-85H295q-32 0-53.5 23T220-703v149Z"/></svg>
+  <svg class="bt bt4" viewBox="0 -960 960 960"><path d="M340-640h280v-100H340v100ZM80-160v-210h160v60h60v-60h360v60h60v-60h160v210H80Zm0-270v-150q0-24.75 17.63-42.38Q115.25-640 140-640h140v-100q0-24.75 17.63-42.38Q315.25-800 340-800h280q24.75 0 42.38 17.62Q680-764.75 680-740v100h140q24.75 0 42.38 17.62Q880-604.75 880-580v150H720v-60h-60v60H300v-60h-60v60H80Z"/></svg>
+  <svg class="bt bt5" viewBox="0 -960 960 960"><path d="m269-120-9-66 127-350q11 11 24.5 18t28.5 12L317-167l-48 47Zm422 0-48-47-125-338q15-5 29-12t25-18l128 349-9 66ZM395-555q-35-35-35-85 0-42 24.5-74.5T450-756v-84h60v84q41 9 65.5 41.5T600-640q0 50-35 85t-85 35q-50 0-85-35Zm127.5-42.5Q540-615 540-640t-17.5-42.5Q505-700 480-700t-42.5 17.5Q420-665 420-640t17.5 42.5Q455-580 480-580t42.5-17.5Z"/></svg>
+  <svg class="bt bt6" viewBox="0 -960 960 960"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97 0-165-67.5T121-602q0-31 8-60.5t23-55.5l145 145 92-86-149-149q26-15 55-23.5t59-8.5q99 0 168.5 69.5T592-602q0 24-5 47t-13 46l259 258q11 11 11 26.5T833-198l-76 70q-11 11-26 11t-26-11Z"/></svg>
+</div>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#main">
+      <img class="logo-lt" src="img/logo-original.png" alt="Mix4Services &mdash; construction and repair"
+           width="393" height="200">
+      <img class="logo-dk" src="img/logo-original-light.png" alt="" aria-hidden="true"
+           width="393" height="200">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#quote">Get a price</a>
+      <a href="#work">Our work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hdr-cta">
+      <a class="tel" href="tel:+19492832973">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span>949-283-2973</span>
+      </a>
+      <button class="icon-btn" id="a11yOpen" aria-haspopup="dialog" aria-label="Accessibility settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="4.2" r="1.9"/><path d="M3.6 8.1c5.6 1.7 11.2 1.7 16.8 0M12 8.6v5.1m0 0-3 6.6m3-6.6 3 6.6"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Switch to dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="rail" aria-hidden="true">
+  <span class="rail-track"></span>
+  <span class="rail-fill"></span>
+  <span class="rail-cap"></span>
+  <span class="rail-lbl">Depth</span>
+  <span class="rail-tool">
+    <svg viewBox="0 0 34 44" fill="none" stroke="currentColor" stroke-width="2.4"
+         stroke-linejoin="round" stroke-linecap="round">
+      <g class="rail-bitspin">
+        <path d="M17 4 L17 30" />
+        <path d="M11 11 L23 14 M11 17 L23 20 M11 23 L23 26" stroke-width="1.7" opacity=".8"/>
+        <path d="M17 40 L12 30 L22 30 Z" fill="currentColor" stroke="none"/>
+      </g>
+    </svg>
+  </span>
+</div>
+
+<main id="main">
+
+<!-- =========== HERO =========== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Katy &amp; West Houston &middot; 5.0 from 74 reviews</p>
+      <h1>Hard water <em>ends here</em>.</h1>
+      <p class="lede">Whole-house water softener and pre-filter installation. Katy sits on hard water, and it is what quietly kills heaters, fixtures and appliances years early. Most installs are finished and tested the same day &mdash; and we still do the rest of the handyman work you need.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="tel:+19492832973">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Call 949-283-2973
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#quote">What does it cost?</a>
+      </div>
+      <ul class="chips" style="list-style:none;padding:0">
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m4 12 6 6L20 6"/></svg>Installed in a day</li>
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m4 12 6 6L20 6"/></svg>Hardness tested before we leave</li>
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m4 12 6 6L20 6"/></svg>No plumbing licence required for a swap</li>
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m4 12 6 6L20 6"/></svg>Hired 87 times</li>
+      </ul>
+    </div>
+
+    <figure style="margin:0">
+      <div class="ba" id="ba" style="--pos:50%">
+        <img src="img/hero-before.jpg" alt="Water softener still boxed on the garage floor before installation.">
+        <img class="ba-after" src="img/hero-after.jpg" alt="The softener installed on the garage wall with its bypass manifold.">
+        <div class="ba-line" aria-hidden="true"></div>
+        <div class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6-5 6 5 6M15 6l5 6-5 6"/></svg></div>
+        <span class="ba-tag l" aria-hidden="true">Before</span>
+        <span class="ba-tag r" aria-hidden="true">After</span>
+        <input type="range" id="baRange" min="0" max="100" value="50" step="1"
+               aria-label="Reveal more of the before or after photo">
+      </div>
+      <figcaption class="ba-cap">
+        <span>Water softener &middot; delivered, then installed</span>
+        <span>Drag, or use &larr; &rarr;</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =========== TRUST =========== -->
+<section class="band no-rule" style="padding-block:0" aria-label="Why homeowners hire us">
+  <div class="wrap">
+    <dl class="trust stagger">
+      <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Same-day response</dt><dd>Call before 2pm on a weekday and we aim to be out the same day.</dd></div>
+      <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Written estimates</dt><dd>Scope, materials and price in writing before any work starts.</dd></div>
+      <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/></svg>Hired 87 times</dt><dd>Background checked, five on the crew, Top Pro on Thumbtack.</dd></div>
+      <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>5.0 across 74 reviews</dt><dd>Rated five stars on both Thumbtack and Google.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="mq" aria-hidden="true">
+  <div class="mq-row"><span>Handyman</span><span>Water softeners</span><span>TV mounting</span><span>Gym assembly</span><span>Plumbing</span><span>Electrical</span><span>Custom kitchens</span><span>Epoxy tables</span><span>Remodeling</span><span>Welding</span><span>Patio covers</span><span>Handyman</span><span>Water softeners</span><span>TV mounting</span><span>Gym assembly</span><span>Plumbing</span><span>Electrical</span><span>Custom kitchens</span><span>Epoxy tables</span><span>Remodeling</span><span>Welding</span><span>Patio covers</span></div>
+</div>
+
+<!-- =========== SERVICES =========== -->
+<section class="has-sketch band" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">The specialism, and the rest</p>
+      <h2 id="svc-h">Water first. Everything else still stands.</h2>
+      <p class="lede">Water treatment is what we do most and do best &mdash; softeners, pre-filters and whole-house systems. The rest of the list is real work we still take on, and whoever Azamat brings with him, you deal with one person and one schedule. Tap any line to price it.</p>
+    </div>
+
+    <ul class="svc-list">
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-softener.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="softener">Water Softener Installation</button></h3>
+          <p>Katy sits on hard water, and it is what kills heaters, fixtures and appliances early. A softener swap needs no plumbing licence, so we do it same day.</p>
+        </span>
+        <span class="svc-cost">$450&ndash;$2,400<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-plumbing.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="plumbing">Plumbing</button></h3>
+          <p>Freeze events and hard water are rough on supply lines. We say plainly when replacing beats repairing.</p>
+        </span>
+        <span class="svc-cost">$150&ndash;$2,400<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-installation.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="installation">Handyman &amp; Mounting</button></h3>
+          <p>TV brackets, ceiling fans, light fixtures, shelving, appliance hook-ups. Quick for us, miserable for a Saturday afternoon.</p>
+        </span>
+        <span class="svc-cost">$120&ndash;$900<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-installation.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="gym">Gym &amp; Fitness Equipment Assembly</button></h3>
+          <p>Racks, cable machines, treadmills and benches, built and levelled. We have kitted out a full gym floor, so a home setup is an afternoon.</p>
+        </span>
+        <span class="svc-cost">$150&ndash;$6,000<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-electrical.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="electrical">Electrical</button></h3>
+          <p>Older West Houston stock runs out of panel capacity long before it runs out of life.</p>
+        </span>
+        <span class="svc-cost">$150&ndash;$4,000<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-remodeling.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="remodeling">Renovation &amp; Remodeling</button></h3>
+          <p>Demolition through final punch list. Bathrooms finish in two to three weeks; kitchens in four to eight.</p>
+        </span>
+        <span class="svc-cost">$8,000&ndash;$55,000<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-remodeling.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="furniture">Custom Furniture &amp; Kitchens</button></h3>
+          <p>Non-standard kitchens, built-ins and epoxy river tables, built with a cabinetmaker who has done it his whole life. Drawn to your room, not ordered from a catalogue.</p>
+        </span>
+        <span class="svc-cost">$1,500&ndash;$25,000<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-welding.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="welding">Welding &amp; Fabrication</button></h3>
+          <p>Most home-service companies subcontract this. We build gates and railings to your opening.</p>
+        </span>
+        <span class="svc-cost">$800&ndash;$4,500<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+      <li class="svc-row">
+        <span class="svc-thumb"><img src="img/svc-outdoor.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-txt">
+          <h3><button type="button" class="svc-hit" data-svc="outdoor">Outdoor Structures</button></h3>
+          <p>Covers and pergolas rated for Gulf Coast wind, on footings that survive the clay.</p>
+        </span>
+        <span class="svc-cost">$3,500&ndash;$14,000<small>typical range</small>
+          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========== QUOTE =========== -->
+<section class="band band-tint" id="quote" aria-labelledby="q-h">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">Ballpark in 20 seconds</p>
+      <h2 id="q-h">What will it actually cost?</h2>
+      <p class="lede">Pick the shape of your job and we will show the range most Houston jobs like it land in. No email required &mdash; the number appears on this page.</p>
+    </div>
+
+    <div class="wo">
+      <form class="wo-form" id="qForm">
+        <div class="wo-prog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+        <fieldset class="fld">
+          <legend class="wo-step"><em>01</em> What needs doing</legend>
+          <div class="opts" role="radiogroup">
+            <label class="opt"><input type="radio" name="svc" value="installation"><span>Handyman &amp; mounting</span></label>
+            <label class="opt"><input type="radio" name="svc" value="softener" checked><span>Water softener</span></label>
+            <label class="opt"><input type="radio" name="svc" value="plumbing"><span>Plumbing</span></label>
+            <label class="opt"><input type="radio" name="svc" value="gym"><span>Gym equipment</span></label>
+            <label class="opt"><input type="radio" name="svc" value="electrical"><span>Electrical</span></label>
+            <label class="opt"><input type="radio" name="svc" value="remodeling"><span>Remodeling</span></label>
+            <label class="opt"><input type="radio" name="svc" value="furniture"><span>Custom furniture</span></label>
+            <label class="opt"><input type="radio" name="svc" value="welding"><span>Welding</span></label>
+            <label class="opt"><input type="radio" name="svc" value="outdoor"><span>Outdoor build</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fld">
+          <legend class="wo-step"><em>02</em> How big</legend>
+          <div class="opts" role="radiogroup">
+            <label class="opt"><input type="radio" name="size" value="s" checked><span id="szS">One item</span></label>
+            <label class="opt"><input type="radio" name="size" value="m"><span id="szM">One room</span></label>
+            <label class="opt"><input type="radio" name="size" value="l"><span id="szL">Whole project</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fld">
+          <legend class="wo-step"><em>03</em> Materials &amp; finish</legend>
+          <div class="opts" role="radiogroup">
+            <label class="opt"><input type="radio" name="finish" value="std" checked><span>Builder standard</span></label>
+            <label class="opt"><input type="radio" name="finish" value="mid"><span>Mid-range</span></label>
+            <label class="opt"><input type="radio" name="finish" value="hi"><span>High-end</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fld">
+          <legend class="wo-step"><em>04</em> When</legend>
+          <div class="opts" role="radiogroup">
+            <label class="opt"><input type="radio" name="when" value="flex" checked><span>I&rsquo;m flexible</span></label>
+            <label class="opt"><input type="radio" name="when" value="soon"><span>Within 2 weeks</span></label>
+            <label class="opt"><input type="radio" name="when" value="asap"><span>Emergency</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fld">
+          <legend class="wo-step"><em>05</em> Property</legend>
+          <div class="opts" role="radiogroup">
+            <label class="opt"><input type="radio" name="prop" value="house" checked><span>House</span></label>
+            <label class="opt"><input type="radio" name="prop" value="town"><span>Townhome / condo</span></label>
+            <label class="opt"><input type="radio" name="prop" value="comm"><span>Commercial</span></label>
+          </div>
+        </fieldset>
+
+        <p style="font-size:.82rem;color:var(--ink-3);line-height:1.55;margin-top:auto;padding-top:1rem;border-top:1px solid var(--line)">
+          Nothing is charged here and no contact details are collected. The estimate is built
+          from typical Katy and West Houston jobs.
+        </p>
+      </form>
+
+      <div class="wo-out">
+        <p class="wo-sub">Preliminary estimate</p>
+        <p class="wo-range" id="qRange" role="status" aria-live="polite">$120 &ndash; $290</p>
+        <div class="wo-chips" id="qChips"></div>
+
+        <div class="wo-break" id="qBreak"></div>
+
+        <div class="wo-time"><span>Typical time on site</span><b id="qTime">Same day</b></div>
+
+        <ul class="wo-inc" id="qInc"></ul>
+
+        <div class="wo-acts">
+          <button type="button" class="btn btn-primary" id="qSend">Book a free estimate</button>
+          <a class="btn btn-ghost wo-copy" href="tel:+19492832973">Or call 949-283-2973</a>
+        </div>
+        <p style="font-size:.75rem;color:var(--on-dark-3);margin-top:.9rem;line-height:1.5" id="qMsg">
+          A range, not an offer. Your fixed written price comes after the on-site assessment.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========== WORK =========== -->
+<section class="band" id="work" aria-labelledby="w-h">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">Our work</p>
+      <h2 id="w-h">Recent installs</h2>
+      <p class="lede">Real jobs, photographed on completion. Tap any one to see what went into it. We are adding the other trades as we photograph them.</p>
+    </div>
+
+    <div class="gal-grid stagger" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- =========== PROCESS =========== -->
+<section class="has-sketch band band-dark" aria-labelledby="p-h">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">How a job runs</p>
+      <h2 id="p-h">Five steps, no surprises in the middle</h2>
+    </div>
+    <ol class="steps stagger">
+      <li><div><h3>Call or request a quote</h3><p>Tell us the job. Most questions get answered on the first call, including whether you actually need us.</p></div></li>
+      <li><div><h3>On-site assessment</h3><p>We look at real conditions &mdash; access, age, what is behind the wall. This is where guesses turn into numbers.</p></div></li>
+      <li><div><h3>Written estimate</h3><p>Fixed scope and fixed price, permits itemised separately. You approve before anything is ordered.</p></div></li>
+      <li><div><h3>The work</h3><p>Daily clean-up. If something behind the wall changes the price, you hear it that day &mdash; not at the end.</p></div></li>
+      <li><div><h3>Walkthrough &amp; warranty</h3><p>We walk it with you, clear the punch list, and hand over the 1-year workmanship warranty.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========== REVIEWS =========== -->
+<section class="has-sketch band band-tint" id="reviews" aria-labelledby="r-h">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">What customers say</p>
+      <h2 id="r-h">Reviews</h2>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem;margin-bottom:1.8rem;border:1px solid var(--blue-line);background:var(--blue-soft);border-radius:var(--r-md);color:var(--blue-deep);font-size:.88rem;font-weight:600">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="flex:none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+      <span>Every quote below is a real review from the Google or Thumbtack profile, unedited.</span>
+    </div>
+
+    <div class="rv-top">
+      <div class="rv-score">
+        <b class="num">5.0</b>
+        <div>
+          <span class="stars" aria-hidden="true"></span>
+          <span style="display:block"><span class="num">58</span> reviews on Thumbtack, <span class="num">16</span> on Google &middot;
+            <a href="https://www.thumbtack.com/tx/katy/handyman/mix4services-installation-delivery/service/551977354051584000" rel="noopener">Thumbtack</a> &middot;
+            <a href="https://www.google.com/search?q=Mix4services+LLC" rel="noopener">Google</a></span>
+        </div>
+      </div>
+      <div class="proof" style="margin-left:auto">
+          <a href="https://www.thumbtack.com/tx/katy/handyman/mix4services-installation-delivery/service/551977354051584000" rel="noopener" target="_blank"><b>58</b> reviews<small>Thumbtack</small></a>
+          <a href="https://www.google.com/search?q=Mix4services+LLC" rel="noopener" target="_blank"><b>16</b> reviews<small>Google</small></a>
+        </div>
+    </div>
+
+    <div class="rv-grid stagger panel" style="border:0;background:transparent;padding:0"></div>
+  </div>
+</section>
+
+<!-- =========== FAQ =========== -->
+<section class="band band-tint" id="faq" aria-labelledby="f-h">
+  <div class="wrap" style="max-width:880px">
+    <div class="head"><p class="eyebrow">Before you call</p><h2 id="f-h">Questions we get every week</h2></div>
+    <div class="faq panel">
+      <details open><summary>Do you charge for estimates?</summary><div class="faq-a">On-site estimates are free for projects over $1,000. For smaller repairs there is an $89 service call, and it is credited toward the work if you hire us.</div></details>
+      <details><summary>How fast can you get here?</summary><div class="faq-a">Weekday calls placed before 2pm usually get a same-day visit inside our core service area. Emergencies &mdash; active leaks, no power, storm damage &mdash; are answered around the clock.</div></details>
+      <details><summary>Are the prices on this site final?</summary><div class="faq-a">No. They are typical ranges for the Houston market, published so you know roughly where you stand before picking up the phone. Your final price depends on access, the age and condition of what we find, the materials you choose and your exact location. You get a fixed written price after the on-site assessment.</div></details>
+      <details><summary>Do you pull permits?</summary><div class="faq-a">Yes, wherever the work requires one. Permit fees appear as their own line on your estimate rather than buried inside the labour rate.</div></details>
+      <details><summary>What areas do you cover?</summary><div class="faq-a">Katy and West Houston first &mdash; Cypress, Fulshear, Richmond, Brookshire, the Energy Corridor, Memorial and Sugar Land. Call us for anything just outside that.</div></details>
+      <details><summary>Is there a warranty?</summary><div class="faq-a">Every completed job carries a 1-year workmanship warranty. Manufacturer warranties on materials and appliances pass through to you.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SERVICE AREA =========== -->
+<section class="band band-dark area" aria-labelledby="area-h">
+  <div class="wrap area-grid">
+    <div class="rise">
+      <p class="eyebrow">Where we work</p>
+      <h2 id="area-h">Greater Houston</h2>
+      <p class="lede">Katy and West Houston are the base, and we run out across the metro
+        from there. If your suburb is not on the list, it is still worth a call &mdash;
+        the answer is usually yes.</p>
+      <p class="dim" style="max-width:340px"><span>Katy base</span><span class="dim-line"></span><span>45 mi</span></p>
+    </div>
+
+    <div class="wall" aria-hidden="true">
+        <div class="wall-col"><div class="wall-run"><span>Katy</span><span>Brookshire</span><span>Missouri City</span><span>Memorial</span><span>Bridgeland</span><span>Tomball</span><span>Conroe</span><span>Atascocita</span><span>Deer Park</span><span>Clear Lake</span><span>Manvel</span><span>Sienna</span><span>Katy</span><span>Brookshire</span><span>Missouri City</span><span>Memorial</span><span>Bridgeland</span><span>Tomball</span><span>Conroe</span><span>Atascocita</span><span>Deer Park</span><span>Clear Lake</span><span>Manvel</span><span>Sienna</span></div></div>
+        <div class="wall-col rev"><div class="wall-run"><span>West Houston</span><span>Richmond</span><span>Stafford</span><span>Energy Corridor</span><span>Towne Lake</span><span>Klein</span><span>Magnolia</span><span>Crosby</span><span>Pasadena</span><span>League City</span><span>Alvin</span><span>Needville</span><span>West Houston</span><span>Richmond</span><span>Stafford</span><span>Energy Corridor</span><span>Towne Lake</span><span>Klein</span><span>Magnolia</span><span>Crosby</span><span>Pasadena</span><span>League City</span><span>Alvin</span><span>Needville</span></div></div>
+        <div class="wall-col"><div class="wall-run"><span>Cypress</span><span>Rosenberg</span><span>Bellaire</span><span>Spring Branch</span><span>Hockley</span><span>Spring</span><span>Humble</span><span>Channelview</span><span>La Porte</span><span>Friendswood</span><span>Dickinson</span><span>Sealy</span><span>Cypress</span><span>Rosenberg</span><span>Bellaire</span><span>Spring Branch</span><span>Hockley</span><span>Spring</span><span>Humble</span><span>Channelview</span><span>La Porte</span><span>Friendswood</span><span>Dickinson</span><span>Sealy</span></div></div>
+        <div class="wall-col rev"><div class="wall-run"><span>Fulshear</span><span>Sugar Land</span><span>West University</span><span>Jersey Village</span><span>Waller</span><span>The Woodlands</span><span>Kingwood</span><span>Baytown</span><span>Webster</span><span>Pearland</span><span>Texas City</span><span>Houston</span><span>Fulshear</span><span>Sugar Land</span><span>West University</span><span>Jersey Village</span><span>Waller</span><span>The Woodlands</span><span>Kingwood</span><span>Baytown</span><span>Webster</span><span>Pearland</span><span>Texas City</span><span>Houston</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== CONTACT =========== -->
+<section class="band" id="contact" aria-labelledby="c-h">
+  <div class="wrap ct-grid">
+    <div class="rise">
+      <p class="eyebrow">Reach us</p>
+      <h2 id="c-h">Straight to a person</h2>
+      <p class="lede">No call centre and no ticket number. The phone is answered by someone who
+        can tell you whether the job is worth doing before anyone comes out.</p>
+      <p class="dim"><span>Katy base</span><span class="dim-line"></span><span>45 mi</span></p>
+
+      <div class="hero-cta" style="margin-top:1.6rem">
+        <a class="btn btn-primary btn-lg" href="tel:+19492832973">Call 949-283-2973</a>
+        <button type="button" class="btn btn-ghost btn-lg" data-lead>Request a callback</button>
+      </div>
+    </div>
+
+    <aside class="ct-side">
+      <div class="ct-row"><span class="k">Call</span><span class="v"><a href="tel:+19492832973" class="num">949-283-2973</a></span></div>
+      <div class="ct-row"><span class="k">Email</span><span class="v"><a href="mailto:mix4services@gmail.com">mix4services@gmail.com</a></span></div>
+      <div class="ct-row"><span class="k">Hours</span><span class="v" style="font-weight:500;font-size:.95rem">Mon&ndash;Sat 7:00&ndash;20:00<br><span style="color:var(--ink-3)">Emergencies answered 24/7</span></span></div>
+      <div class="ct-row">
+        <span class="k">Service area &mdash; Greater Houston</span>
+        <div class="area-list" style="margin-top:.4rem">
+          <span>Katy</span><span>West Houston</span><span>Cypress</span><span>Fulshear</span><span>Brookshire</span><span>Richmond</span><span>Rosenberg</span><span>Sugar Land</span><span>Missouri City</span><span>Stafford</span><span>Bellaire</span><span>West University</span><span>Memorial</span><span>Energy Corridor</span><span>Spring Branch</span><span>Jersey Village</span><span>Tomball</span><span>Spring</span><span>The Woodlands</span><span>Humble</span><span>Kingwood</span><span>Atascocita</span><span>Pearland</span><span>Friendswood</span><span>League City</span><span>Clear Lake</span><span>Pasadena</span><span>Baytown</span><span>Conroe</span><span>Magnolia</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<!-- =========== FOOTER =========== -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img class="ft-logo" src="img/logo-original-light.png" alt="Mix4Services" width="393" height="200">
+        <p style="color:var(--on-dark-2);font-size:.9rem;margin-top:1rem;max-width:34ch">Whole-house water softener and pre-filter installation across Katy and West Houston, plus the handyman work we have always done.</p>
+        <div class="ft-proof">
+          <a href="https://www.thumbtack.com/tx/katy/handyman/mix4services-installation-delivery/service/551977354051584000" rel="noopener" target="_blank"><span>5.0</span> &middot; 58 reviews on Thumbtack</a>
+          <a href="https://www.google.com/search?q=Mix4services+LLC" rel="noopener" target="_blank"><span>5.0</span> &middot; 16 reviews on Google</a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Renovation &amp; remodeling</a></li>
+          <li><a href="#services">Plumbing</a></li>
+          <li><a href="#services">Electrical</a></li>
+          <li><a href="#services">Installation &amp; mounting</a></li>
+          <li><a href="#services">Welding &amp; fabrication</a></li>
+          <li><a href="#services">Outdoor structures</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#work">Our work</a></li>
+          <li><a href="#quote">Pricing</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="https://www.thumbtack.com/tx/katy/handyman/mix4services-installation-delivery/service/551977354051584000" rel="noopener" target="_blank">Thumbtack profile</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19492832973" class="num">949-283-2973</a></li>
+          <li><a href="mailto:mix4services@gmail.com">mix4services@gmail.com</a></li>
+          <li style="color:var(--on-dark-2);font-size:.9rem">Katy &amp; West Houston, TX</li>
+        </ul>
+        <div class="soc" style="margin-top:1rem">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6A22 22 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5ZM3 9.5h4V21H3zM10 9.5h3.8v1.6h.06a4.2 4.2 0 0 1 3.77-2.07c4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-legal">
+      <span>&copy; 2026 Mix4Services LLC. All rights reserved.</span>
+      <span>Serving Katy &amp; West Houston, Texas</span>
+    </div>
+  </div>
+</footer>
+
+<!-- =========== LEAD DIALOG =========== -->
+<dialog class="lead" id="leadDlg" aria-labelledby="lead-h">
+  <button class="lb-close" id="leadClose" aria-label="Close the request form">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+  </button>
+  <div class="lead-in">
+    <h2 id="lead-h">Book a free estimate</h2>
+    <p class="wo-next-est" id="woEst">Tell us where to reach you and we will confirm a visit.</p>
+    <form id="ctForm" novalidate>
+    <div class="form-grid">
+    <div>
+    <label class="lb" for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+    <input class="inp" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+    <p class="err" id="e-name"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>Please tell us your name.</p>
+    </div>
+    <div>
+    <label class="lb" for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+    <input class="inp" id="f-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="h-phone e-phone">
+    <p class="hint" id="h-phone">Best number to reach you on during the day.</p>
+    <p class="err" id="e-phone"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>Enter a phone number we can call back.</p>
+    </div>
+    <div>
+    <label class="lb" for="f-email">Email</label>
+    <input class="inp" id="f-email" name="email" type="email" autocomplete="email" aria-describedby="e-email">
+    <p class="err" id="e-email"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>That email address does not look right.</p>
+    </div>
+    <div>
+    <label class="lb" for="f-zip">Suburb or ZIP</label>
+    <input class="inp" id="f-zip" name="zip" type="text" autocomplete="postal-code" aria-describedby="h-zip">
+    <p class="hint" id="h-zip">Helps us schedule the right crew.</p>
+    </div>
+    <div class="f-full">
+    <label class="lb" for="f-svc">What do you need?</label>
+    <select class="inp" id="f-svc" name="service">
+    <option>Handyman &amp; mounting</option>
+              <option>Gym equipment assembly</option>
+    <option>Water softener installation</option>
+    <option>Plumbing</option>
+    <option>Electrical</option>
+    <option>Renovation &amp; remodeling</option>
+              <option>Custom furniture &amp; kitchens</option>
+    <option>Welding &amp; fabrication</option>
+    <option>Outdoor structures</option>
+    <option>Something else / not sure</option>
+    </select>
+    </div>
+    <div class="f-full">
+    <label class="lb" for="f-msg">Describe the job</label>
+    <textarea class="inp" id="f-msg" name="message" aria-describedby="h-msg"></textarea>
+    <p class="hint" id="h-msg">Age of the property, what is failing, anything you have already tried.</p>
+    </div>
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit" style="margin-top:1.3rem">Request my estimate</button>
+    <p class="status" id="ctStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</dialog>
+
+<!-- =========== A11Y PANEL =========== -->
+<dialog class="a11y" id="a11yDlg" aria-labelledby="a11y-h">
+  <div class="a11y-in">
+    <div class="a11y-hd">
+      <h2 id="a11y-h">Display settings</h2>
+      <button class="icon-btn" id="a11yClose" aria-label="Close display settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <fieldset class="fld" style="border:0;margin:0;padding:0">
+      <legend class="lbl">Text size</legend>
+      <div class="seg opts" role="radiogroup">
+        <label class="opt"><input type="radio" name="a11ySize" value="base" checked><span>Normal</span></label>
+        <label class="opt"><input type="radio" name="a11ySize" value="lg"><span>Large</span></label>
+        <label class="opt"><input type="radio" name="a11ySize" value="xl"><span>Largest</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="fld" style="border:0;margin:0;padding:0">
+      <legend class="lbl">Theme</legend>
+      <div class="seg opts" role="radiogroup">
+        <label class="opt"><input type="radio" name="a11yThm" value="auto" checked><span>Auto</span></label>
+        <label class="opt"><input type="radio" name="a11yThm" value="light"><span>Light</span></label>
+        <label class="opt"><input type="radio" name="a11yThm" value="dark"><span>Dark</span></label>
+      </div>
+    </fieldset>
+
+    <label class="sw"><span class="sw-t"><b>High contrast</b><small>Maximum contrast, solid borders</small></span><input type="checkbox" id="swContrast"><span class="sw-ui"></span></label>
+    <label class="sw"><span class="sw-t"><b>Extra letter spacing</b><small>Looser tracking and line height</small></span><input type="checkbox" id="swSpacing"><span class="sw-ui"></span></label>
+    <label class="sw"><span class="sw-t"><b>Underline all links</b><small>Never rely on colour alone</small></span><input type="checkbox" id="swUnderline"><span class="sw-ui"></span></label>
+    <label class="sw"><span class="sw-t"><b>Reduce motion</b><small>Turn off transitions and smooth scroll</small></span><input type="checkbox" id="swMotion"><span class="sw-ui"></span></label>
+
+    <button class="a11y-reset" id="a11yReset">Reset to defaults</button>
+  </div>
+</dialog>
+
+<!-- =========== LIGHTBOX =========== -->
+<dialog class="lb" id="lbDlg" aria-labelledby="lb-h">
+  <button class="lb-close" id="lbClose" aria-label="Close project">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+  </button>
+  <div class="lb-in">
+    <div class="ba" id="lbBa" style="--pos:50%;aspect-ratio:16/10;border-radius:0;box-shadow:none">
+      <img id="lbBefore" src="" alt="">
+      <img class="ba-after" id="lbAfter" src="" alt="">
+      <div class="ba-line" aria-hidden="true"></div>
+      <div class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6-5 6 5 6M15 6l5 6-5 6"/></svg></div>
+      <span class="ba-tag l" aria-hidden="true">Before</span>
+      <span class="ba-tag r" aria-hidden="true">After</span>
+      <input type="range" id="lbRange" min="0" max="100" value="50" aria-label="Reveal more of the before or after photo">
+    </div>
+    <div class="lb-body">
+      <h3 id="lb-h"></h3>
+      <p id="lbMeta"></p>
+    </div>
+  </div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script>
+(() => {
+  'use strict';
+  const $  = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const root = document.documentElement;
+  const prefersReduce = () => root.dataset.motion === 'off' ||
+    matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Declared up here because applyPrefs() runs before the smooth-scroll block
+     and would otherwise hit these in the temporal dead zone. */
+  let lenis = null, lenisRaf = 0;
+
+  /* === Display settings (persisted per visitor) === */
+  const PREF_KEY = 'm4s-prefs';
+  const defaults = { size:'base', thm:'auto', contrast:false, spacing:false, underline:false, motion:false };
+  let prefs = { ...defaults };
+  try { Object.assign(prefs, JSON.parse(localStorage.getItem(PREF_KEY) || '{}')); } catch {}
+
+  function applyPrefs() {
+    root.dataset.size = prefs.size;
+    if (prefs.thm === 'auto') delete root.dataset.theme; else root.dataset.theme = prefs.thm;
+    prefs.contrast  ? root.dataset.contrast  = 'high' : delete root.dataset.contrast;
+    prefs.spacing   ? root.dataset.spacing   = 'on'   : delete root.dataset.spacing;
+    prefs.underline ? root.dataset.underline = 'on'   : delete root.dataset.underline;
+    prefs.motion    ? root.dataset.motion    = 'off'  : delete root.dataset.motion;
+    const dark = prefs.thm === 'dark' ||
+      (prefs.thm === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+    const tb = $('#themeBtn');
+    if (tb) tb.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch {}
+    prefersReduce() ? stopLenis() : startLenis();
+  }
+  function syncPrefUI() {
+    const r1 = $(`input[name="a11ySize"][value="${prefs.size}"]`); if (r1) r1.checked = true;
+    const r2 = $(`input[name="a11yThm"][value="${prefs.thm}"]`);   if (r2) r2.checked = true;
+    $('#swContrast').checked  = prefs.contrast;
+    $('#swSpacing').checked   = prefs.spacing;
+    $('#swUnderline').checked = prefs.underline;
+    $('#swMotion').checked    = prefs.motion;
+  }
+  applyPrefs();
+
+  /* === Smooth scrolling === */
+  function startLenis() {
+    if (lenis || !window.Lenis || prefersReduce()) return;
+    lenis = new window.Lenis({ duration: 1.05, smoothWheel: true, syncTouch: false });
+    const loop = t => { if (!lenis) return; lenis.raf(t); lenisRaf = requestAnimationFrame(loop); };
+    lenisRaf = requestAnimationFrame(loop);
+    root.classList.add('lenis-on');
+  }
+  function stopLenis() {
+    if (!lenis) return;
+    cancelAnimationFrame(lenisRaf);
+    lenis.destroy(); lenis = null;
+    root.classList.remove('lenis-on');
+  }
+  /* Single entry point for every programmatic scroll on the page. */
+  function goTo(target, opts = {}) {
+    const el = typeof target === 'string' ? $(target) : target;
+    if (!el) return;
+    if (lenis) lenis.scrollTo(el, { offset: opts.offset ?? -88, duration: 1.1 });
+    else el.scrollIntoView({ behavior: prefersReduce() ? 'auto' : 'smooth', block: opts.block || 'start' });
+  }
+  /* Anchors move focus as well as the viewport - scrolling alone leaves
+     keyboard and screen-reader users where they started. */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const hash = a.getAttribute('href');
+    if (hash === '#') return;
+    const el = document.querySelector(hash);
+    if (!el) return;
+    e.preventDefault();
+    goTo(el, { offset: hash === '#main' ? 0 : -88 });
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    setTimeout(() => el.focus({ preventScroll: true }), prefersReduce() ? 0 : 620);
+  });
+
+  /* === Header: menu + theme === */
+  const burger = $('#burger'), nav = $('#nav');
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.addEventListener('click', e => {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+  $('#themeBtn').addEventListener('click', () => {
+    const dark = prefs.thm === 'dark' ||
+      (prefs.thm === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+    prefs.thm = dark ? 'light' : 'dark';
+    applyPrefs(); syncPrefUI();
+  });
+
+  /* === Accessibility dialog === */
+  const dlg = $('#a11yDlg');
+  $('#a11yOpen').addEventListener('click', () => { syncPrefUI(); dlg.showModal(); });
+  $('#a11yClose').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('change', e => {
+    const t = e.target;
+    if (t.name === 'a11ySize') prefs.size = t.value;
+    if (t.name === 'a11yThm')  prefs.thm  = t.value;
+    if (t.id === 'swContrast')  prefs.contrast  = t.checked;
+    if (t.id === 'swSpacing')   prefs.spacing   = t.checked;
+    if (t.id === 'swUnderline') prefs.underline = t.checked;
+    if (t.id === 'swMotion')    prefs.motion    = t.checked;
+    applyPrefs();
+  });
+  $('#a11yReset').addEventListener('click', () => {
+    prefs = { ...defaults }; applyPrefs(); syncPrefUI();
+  });
+
+  /* === Before / after comparison === */
+  function wireBA(wrapId, rangeId) {
+    const box = $('#' + wrapId), range = $('#' + rangeId);
+    if (!box || !range) return;
+    const paint = () => {
+      box.style.setProperty('--pos', range.value + '%');
+      range.setAttribute('aria-valuetext', `${range.value}% of the after photo shown`);
+    };
+    range.addEventListener('input', paint);
+    paint();
+    return paint;
+  }
+  wireBA('ba', 'baRange');
+  const paintLb = wireBA('lbBa', 'lbRange');
+
+  /* === Gallery === */
+  const PROJECTS = [
+    { id:'j1', title:'Softener + sediment filter', meta:'Water softener install',
+      img:'img/job-1.jpg', alt:'Installed water softener tank with sediment filter and bypass manifold in a garage.',
+      note:'Tank, brine cabinet, sediment pre-filter and a bypass, so the system can be serviced without shutting off the house.' },
+    { id:'j2', title:'Garage wall install', meta:'Water softener install',
+      img:'img/job-2.jpg', alt:'Water softener plumbed along a garage wall with an overhead bypass loop.',
+      note:'The overhead loop keeps the floor clear and puts every valve at eye level.' },
+    { id:'j3', title:'Softener beside the panel', meta:'Water softener install',
+      img:'img/job-3.jpg', alt:'Water softener installed next to an electrical panel with clearance kept around it.',
+      note:'Set clear of the panel so the electrical working space stays legal.' },
+    { id:'j4', title:'Copper manifold build', meta:'Water softener install',
+      img:'img/job-4.jpg', alt:'Copper and brass manifold feeding a water softener tank.',
+      note:'Hard-piped manifold rather than flexible hose - it will not sag or kink over time.' },
+    { id:'j5', title:'Tank and brine cabinet', meta:'Water softener install',
+      img:'img/job-5.jpg', alt:'Water softener tank and brine cabinet installed side by side in a garage.',
+      note:'Brine cabinet set where the lid opens fully for refilling.' },
+    { id:'j6', title:'Compact garage layout', meta:'Water softener install',
+      img:'img/job-6.jpg', alt:'Water softener fitted into a narrow garage corner.',
+      note:'Tight corner, so the manifold was built to the wall instead of out into the walkway.' },
+  ];
+
+  const grid = $('#galGrid');
+  function renderGallery() {
+    grid.innerHTML = PROJECTS.map(p => `
+      <button class="gal-card" data-id="${p.id}" aria-label="Open ${p.title}">
+        <span class="gal-thumb">
+          <img src="${p.img}" alt="" loading="lazy" width="640" height="853">
+        </span>
+        <span class="gal-meta"><strong>${p.title}</strong><span>${p.meta}</span></span>
+      </button>`).join('');
+  }
+  renderGallery();
+
+  /* === Lightbox === */
+  const lb = $('#lbDlg');
+  let lastFocus = null;
+  grid.addEventListener('click', e => {
+    const card = e.target.closest('.gal-card'); if (!card) return;
+    const p = PROJECTS.find(x => x.id === card.dataset.id); if (!p) return;
+    lastFocus = card;
+    $('#lbBefore').src = p.img; $('#lbBefore').alt = p.alt;
+    $('#lbAfter').src = p.img;  $('#lbAfter').alt = '';
+    $('#lb-h').textContent = p.title;
+    $('#lbMeta').textContent = p.meta + ' \u2014 ' + p.note;
+    $('#lbRange').value = 100; if (paintLb) paintLb();
+    lb.showModal();
+  });
+  $('#lbClose').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+  lb.addEventListener('close', () => { if (lastFocus) lastFocus.focus(); });
+
+  /* === Estimate sheet === */
+  const SVC = {
+    installation:{lo:120, hi:900,   lab:.78, name:'Handyman & mounting',
+      perm:'none', inc:['Fixings rated for your wall type','Packaging hauled away'], exc:['The fixture or TV bracket itself'],
+      time:['Same day','1-2 days','2-4 days']},
+    softener:{lo:450, hi:2400, lab:.45, name:'Water softener install',
+      perm:'none', inc:['Unit set, bypass valve and drain line','Old softener hauled away','Start-up and a hardness test before we leave'],
+      exc:['The softener unit, if you would rather buy your own'],
+      time:['Same day, about 3 hours','Same day','1-2 days']},
+    gym:{lo:150, hi:6000, lab:.85, name:'Gym equipment assembly',
+      perm:'none', inc:['Levelled and torqued to the manufacturer spec','Packaging and pallets taken away','Cable tension and travel checked before we go'],
+      exc:['Flooring or rubber matting, quoted separately'],
+      time:['Same day','1-2 days','2-4 days']},
+    plumbing:{lo:150, hi:2400, lab:.58, name:'Plumbing',
+      perm:'l', inc:['Shut-off, drain-down and clean re-connection','Pressure test before we leave'], exc:['Opening and patching finished walls'],
+      time:['Same day','1-3 days','3-7 days']},
+    electrical:{lo:150, hi:4000, lab:.60, name:'Electrical',
+      perm:'ml', inc:['Circuit labelled at the panel','Work left to current code'], exc:['Utility service upgrades, which the power company bills'],
+      time:['Same day','1-3 days','1-2 weeks']},
+    furniture:{lo:1500, hi:25000, lab:.55, name:'Custom furniture & kitchens',
+      perm:'none', inc:['Drawn to your room, then built to that drawing','Delivery and install included','Finish sample approved before the build'],
+      exc:['Appliances and stone worktops, quoted separately'],
+      time:['2-4 weeks','5-8 weeks','8-14 weeks']},
+    remodeling:{lo:8000, hi:55000, lab:.45, name:'Renovation & remodeling',
+      perm:'ml', inc:['Demolition and debris removal','Daily clean-up','Final punch list walkthrough'], exc:['Appliances and fittings you specify yourself'],
+      time:['2-4 days','2-3 weeks','4-8 weeks']},
+    welding:{lo:800, hi:4500, lab:.55, name:'Welding & fabrication',
+      perm:'none', inc:['On-site measure and fabrication','Primer and finish coat'], exc:['Gate automation and its power supply'],
+      time:['1-2 days','3-6 days','1-3 weeks']},
+    outdoor:{lo:3500, hi:14000, lab:.45, name:'Outdoor structures',
+      perm:'ml', inc:['Footings dug to depth for clay soil','Wind-load rated framing'], exc:['Electrical or gas runs to the structure'],
+      time:['2-4 days','1-2 weeks','2-4 weeks']},
+  };
+  const SIZE = {s:[0,.22], m:[.15,.55], l:[.5,1]};
+  const FIN  = {std:1, mid:1.22, hi:1.55};
+  const WHEN = {flex:1, soon:1.07, asap:1.22};
+  const PROP = {house:1, town:1.05, comm:1.18};
+  const LBL  = {s:'one item', m:'one room', l:'whole project',
+    std:'builder standard', mid:'mid-range', hi:'high-end',
+    flex:'flexible timing', soon:'within 2 weeks', asap:'emergency call-out',
+    house:'house', town:'townhome or condo', comm:'commercial'};
+  /* 'One item' reads wrong against a whole-house remodel, so the size
+     labels follow the trade. */
+  const SIZE_LABEL = {
+    remodeling:['single room','one floor','whole home'],
+    furniture:['one piece','one room','whole kitchen'],
+    softener:['softener only','softener + pre-filter','whole-house system'],
+    gym:['one machine','home gym','full gym floor'],
+    outdoor:['small structure','standard build','large build'],
+    welding:['single piece','standard run','full fabrication'],
+    _default:['one item','one room','whole project'],
+  };
+  const SIZEIDX = {s:0, m:1, l:2};
+
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  const roundTo = (n, st) => Math.round(n / st) * st;
+  const qForm = $('#qForm');
+  const reduce = prefersReduce;
+
+  let lastLo = 0, lastHi = 0, tweenId = 0;
+  function paintRange(lo, hi) {
+    const el = $('#qRange');
+    if (reduce()) { el.textContent = `${money(lo)} \u2013 ${money(hi)}`; lastLo = lo; lastHi = hi; return; }
+    const fromLo = lastLo, fromHi = lastHi, t0 = performance.now(), dur = 420;
+    const id = ++tweenId;
+    const step = now => {
+      if (id !== tweenId) return;
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = `${money(fromLo + (lo - fromLo) * e)} \u2013 ${money(fromHi + (hi - fromHi) * e)}`;
+      if (k < 1) requestAnimationFrame(step); else { lastLo = lo; lastHi = hi; }
+    };
+    requestAnimationFrame(step);
+  }
+
+  let current = null;
+  function quote() {
+    const v = k => qForm.querySelector(`input[name="${k}"]:checked`).value;
+    const svc = v('svc'), size = v('size'), fin = v('finish'), when = v('when'), prop = v('prop');
+    const S = SVC[svc], span = S.hi - S.lo, [a, z] = SIZE[size];
+    const m = FIN[fin] * WHEN[when] * PROP[prop];
+    /* Pick the rounding step from the actual figure, not the service ceiling -
+       a flat $250 step flattened every small-job multiplier to the same number. */
+    const rawLo = (S.lo + span * a) * m, rawHi = (S.lo + span * z) * m;
+    const step = rawHi < 1000 ? 25 : rawHi < 3000 ? 50 : rawHi < 12000 ? 250 : 500;
+    let lo = Math.max(roundTo(rawLo, step), 89);
+    let hi = Math.max(roundTo(rawHi, step), lo + step);
+
+    const permit = (S.perm === 'ml' && size !== 's') || (S.perm === 'l' && size === 'l');
+    const permLo = 90, permHi = 450;
+    const labLo = Math.round(lo * S.lab), labHi = Math.round(hi * S.lab);
+    const matLo = Math.max(0, lo - labLo - (permit ? permLo : 0));
+    const matHi = Math.max(0, hi - labHi - (permit ? permHi : 0));
+
+    paintRange(lo, hi);
+    const sizeWord = (SIZE_LABEL[svc] || SIZE_LABEL._default)[SIZEIDX[size]];
+    $('#qChips').innerHTML = [sizeWord, LBL[fin], LBL[when], LBL[prop]]
+      .map(t => `<span>${t}</span>`).join('');
+
+    const rows = [
+      ['Labour', `${money(labLo)} \u2013 ${money(labHi)}`],
+      ['Materials', `${money(matLo)} \u2013 ${money(matHi)}`],
+    ];
+    if (permit) rows.push(['Permit &amp; inspection', `${money(permLo)} \u2013 ${money(permHi)}`]);
+    rows.push(['Service call', '$89, credited to the work']);
+    $('#qBreak').innerHTML = rows.map(([k, val]) => `<div><span>${k}</span><b>${val}</b></div>`).join('')
+      + `<div class="tot"><span>Estimated total</span><b>${money(lo)} \u2013 ${money(hi)}</b></div>`;
+
+    const words = SIZE_LABEL[svc] || SIZE_LABEL._default;
+    ['szS','szM','szL'].forEach((id, n) => {
+      const el = $('#' + id);
+      el.textContent = words[n].charAt(0).toUpperCase() + words[n].slice(1);
+    });
+    $('#qTime').textContent = S.time[SIZEIDX[size]];
+    $('#qInc').innerHTML = S.inc.map(t => `<li>${t}</li>`).join('')
+      + S.exc.map(t => `<li class="no">${t}</li>`).join('');
+
+    current = { svc, label: S.name, sizeWord, fin, when, prop, lo, hi, time: S.time[SIZEIDX[size]] };
+  }
+
+  const touched = new Set();
+  /* A row in the services list is a way into the estimate, not just text. */
+  $$('.svc-hit').forEach(btn => btn.addEventListener('click', () => {
+    const radio = qForm.querySelector(`input[name="svc"][value="${btn.dataset.svc}"]`);
+    if (!radio) return;
+    radio.checked = true;
+    radio.dispatchEvent(new Event('change', { bubbles: true }));
+    goTo('#quote');
+    setTimeout(() => radio.focus({ preventScroll: true }), reduce() ? 0 : 500);
+  }));
+
+  qForm.addEventListener('change', e => {
+    const order = ['svc', 'size', 'finish', 'when', 'prop'];
+    const i = order.indexOf(e.target.name);
+    if (i > -1) touched.add(i);
+    $$('.wo-prog i').forEach((el, n) => el.classList.toggle('on', touched.has(n)));
+    quote();
+  });
+  quote();
+
+  function summary() {
+    return [
+      `Service: ${current.label}`,
+      `Size: ${current.sizeWord}`,
+      `Finish: ${LBL[current.fin]}`,
+      `Timing: ${LBL[current.when]}`,
+      `Property: ${LBL[current.prop]}`,
+      `Typical time on site: ${current.time}`,
+      `Website estimate: ${money(current.lo)} \u2013 ${money(current.hi)}`,
+    ].join('\n');
+  }
+
+  /* The button only takes people to the form - so it says that, and the
+     estimate travels as its own labelled block rather than being pasted
+     into the field where the customer is meant to write. */
+  const SVC_TO_OPTION = {
+    installation:'Handyman & mounting',
+    softener:'Water softener installation',
+    plumbing:'Plumbing',
+    electrical:'Electrical',
+    remodeling:'Renovation & remodeling',
+    gym:'Gym equipment assembly',
+    furniture:'Custom furniture & kitchens',
+    welding:'Welding & fabrication',
+    outdoor:'Outdoor structures',
+  };
+  let attached = null;
+  const leadDlg = $('#leadDlg');
+  let leadOpener = null;
+
+  function estLine() {
+    return `You are asking about <b>${current.label}</b>, ${current.sizeWord}, ` +
+      `${LBL[current.fin]} finish \u2014 estimated ` +
+      `<b>${money(current.lo)} \u2013 ${money(current.hi)}</b>. ` +
+      `We send this over with your details so nobody repeats it on the phone.`;
+  }
+
+  /* One form, opened where the visitor clicked. Duplicating the markup lower
+     down would duplicate every id and break every label-for. */
+  function openLead(withEstimate, opener) {
+    leadOpener = opener || null;
+    if (withEstimate) {
+      const sel = $('#f-svc');
+      const hit = [...sel.options].find(o => o.text === SVC_TO_OPTION[current.svc]);
+      if (hit) sel.value = hit.value || hit.text;
+      $('#woEst').innerHTML = estLine();
+      attached = summary();
+    } else {
+      $('#woEst').textContent = 'Tell us where to reach you and we will confirm a visit.';
+      attached = null;
+    }
+    $('#ctStatus').textContent = '';
+    leadDlg.showModal();
+    setTimeout(() => $('#f-name').focus({ preventScroll: true }), 40);
+  }
+
+  $('#qSend').addEventListener('click', e => openLead(true, e.currentTarget));
+  $$('[data-lead]').forEach(btn =>
+    btn.addEventListener('click', e => openLead(false, e.currentTarget)));
+  $('#leadClose').addEventListener('click', () => leadDlg.close());
+  leadDlg.addEventListener('click', e => { if (e.target === leadDlg) leadDlg.close(); });
+  leadDlg.addEventListener('close', () => { if (leadOpener) leadOpener.focus(); });
+
+  /* Keep the attached figure honest if an answer changes while it is open. */
+  qForm.addEventListener('change', () => {
+    if (leadDlg.open && attached) { $('#woEst').innerHTML = estLine(); attached = summary(); }
+  });
+
+  /* === Contact form === */
+  const ct = $('#ctForm'), status = $('#ctStatus');
+  const emailOk = s => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s);
+  function mark(el, bad) {
+    el.setAttribute('aria-invalid', String(bad));
+    return !bad;
+  }
+  ct.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#f-name'), phone = $('#f-phone'), email = $('#f-email');
+    let ok = true;
+    ok = mark(name,  !name.value.trim()) && ok;
+    ok = mark(phone, phone.value.replace(/\D/g, '').length < 7) && ok;
+    ok = mark(email, email.value.trim() !== '' && !emailOk(email.value.trim())) && ok;
+    if (!ok) {
+      status.textContent = '';
+      const first = ct.querySelector('[aria-invalid="true"]');
+      if (first) first.focus();
+      return;
+    }
+    const body = [
+      `Name: ${name.value.trim()}`,
+      `Phone: ${phone.value.trim()}`,
+      `Email: ${email.value.trim() || '-'}`,
+      `Suburb / ZIP: ${$('#f-zip').value.trim() || '-'}`,
+      `Service: ${$('#f-svc').value}`,
+      '',
+      $('#f-msg').value.trim() || '(no description given)',
+      ...(attached ? ['', '--- from the website estimate ---', attached] : []),
+    ].join('\n');
+    status.textContent = 'Opening your email app with the details filled in. If nothing happens, call 949-283-2973.';
+    window.location.href = 'mailto:mix4services@gmail.com'
+      + '?subject=' + encodeURIComponent(`Estimate request \u2014 ${$('#f-svc').value}`)
+      + '&body=' + encodeURIComponent(body);
+  });
+  ct.addEventListener('input', e => {
+    if (e.target.getAttribute('aria-invalid') === 'true') e.target.setAttribute('aria-invalid', 'false');
+  });
+
+  /* === Reviews ===
+     Verbatim from the public Google and Thumbtack profiles. Wording is
+     unaltered; long ones are trimmed at a sentence boundary. Nothing here is
+     written by us - set verified:false on anything you add by hand. */
+  const REVIEWS = [
+    { text:'I hired Azamat to install cabinets in my laundry room and I could not be happier. I had to reschedule a few times because my cabinets were backordered, and he was extremely patient throughout. He showed up exactly at 11:00 AM as promised and spent the entire day working. Everything was measured carefully, perfectly aligned and professionally balanced.',
+      name:'Shawn A.', job:'Cabinet installation \u00b7 Thumbtack', verified:true },
+    { text:'I would like to recommend Azamat for water filtration system installation. He responded to our request very quickly, arrived on time, and completed the job neatly and professionally. We are very happy with the results and can confidently recommend him to others.',
+      name:'Svetlana C.', job:'Water filtration install \u00b7 Google', verified:true },
+    { text:'Great service, work quality. Super responsive and was able to come do my furniture assembly after work. While they were here, they also changed out some light fixtures. They do a lot of different things. Highly recommended.',
+      name:'Tim H.', job:'Furniture assembly & lighting \u00b7 Thumbtack', verified:true },
+    { text:'I had a great experience with the installation of my home water filter. The work was done professionally, efficiently, and with clear attention to detail. Everything was explained in a way that was easy to understand, and the installer made sure the system was working perfectly before leaving.',
+      name:'Franck D.', job:'Home water filter install \u00b7 Google', verified:true },
+    { text:'I was recommended their services by 2 family members who have used them. I had 4 pieces of furniture picked up, delivered and assembled at another location. Mr. Azamat did all this promptly and without any issues. I was so impressed that I asked him to mount a TV - he and his team completed it in half an hour.',
+      name:'Google reviewer', job:'Delivery, assembly & TV mounting \u00b7 Google', verified:true },
+    { text:'Azamat was professional, on time and did a great job assembling our table. Will be using him again for our living room ceiling fan replacement.',
+      name:'Corey C.', job:'Furniture assembly \u00b7 Thumbtack', verified:true },
+    { text:'I utilized his service to put together several office items from IKEA. He showed up on time, worked quietly, and assembled everything perfectly. Definitely recommend.',
+      name:'Desiree M.', job:'IKEA assembly \u00b7 Thumbtack', verified:true },
+    { text:'Very good quality of work! I will definitely call again for any maintenance needs.',
+      name:'Ekaterina L.', job:'Painting \u00b7 Google', verified:true },
+  ];
+  const GOOGLE_URL = 'https://www.google.com/search?q=Mix4services+LLC';
+  const rvGrid = document.querySelector('.rv-grid');
+  if (rvGrid) {
+    rvGrid.innerHTML = REVIEWS.map(r => `
+      <article class="rv">
+        ${r.verified ? '' : '<span class="badge-demo" style="position:static;align-self:flex-start">Placeholder</span>'}
+        <q>${r.text}</q>
+        <footer><span class="rv-who">${r.name}</span><span class="rv-meta">${r.job}</span></footer>
+      </article>`).join('');
+  }
+
+  /* === Stars === */
+  const star = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9Z"/></svg>';
+  $$('.stars').forEach(s => { s.innerHTML = star.repeat(5); });
+})();
+</script>
