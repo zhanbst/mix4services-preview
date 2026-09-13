@@ -489,9 +489,12 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
    on the way up. */
 .bg-tools{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
   contain:strict}
-/* The header must keep position:sticky and the skip link position:fixed -
-   this rule had been quietly flattening both to relative. */
-body > *:not(.bg-tools):not(.skip):not(.hdr){position:relative; z-index:1}
+/* Name the two elements that need to sit above the backdrop instead of
+   excluding everything that does not. The blanket body > * rule kept
+   flattening fixed and sticky children - the skip link, then the header,
+   then the back-to-top button, which landed in the flow and pushed the
+   whole page down by its own height. */
+main,.ft{position:relative; z-index:1}
 .hdr{z-index:60}
 /* auto-hide: slides away going down, comes back going up */
 .hdr{transition:transform .32s var(--ease), background var(--dur) var(--ease)}
