@@ -1697,6 +1697,11 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
 
   /* === Back to top === */
+  /* Declared here, not down with the lead dialog's own code: syncToTop runs
+     once during this script's evaluation, and a `const` read before its
+     declaration is a ReferenceError, not undefined. That threw on load and
+     killed everything after it. */
+  const leadDlg = $('#leadDlg');
   const toTop = $('#toTop');
   toTop.hidden = false;
   function syncToTop(y) {
@@ -2355,7 +2360,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     furniture:'Custom furniture & kitchens',
   };
   let attached = null;
-  const leadDlg = $('#leadDlg');
   let leadOpener = null;
 
   function estLine() {
