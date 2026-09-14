@@ -1158,7 +1158,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
       <div class="ba-dots" id="baDots" role="group" aria-label="Choose a job"></div>
       <figcaption class="ba-cap">
         <span id="baCap">Water softener &middot; the bare wall loop, then the finished system</span>
-        <span>Drag, or use &larr; &rarr;</span>
+        <span id="baHint">Drag, or use &larr; &rarr;</span>
       </figcaption>
     </figure>
   </div>
@@ -1835,39 +1835,61 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   const paintHero = wireBA('ba', 'baRange');
   const paintLb = wireBA('lbBa', 'lbRange');
 
-  /* === Hero carousel === */
+  /* === Hero carousel ===
+     Mixed: some slides are a real before/after, some are a single photograph
+     of finished work. A slide without `b` drops the handle and the tags and
+     simply shows the result - the same treatment the lightbox uses. */
   const HERO = [
     { b:'img/hero-before.webp', a:'img/hero-after.webp',
       ab:'Bare garage wall with only the capped softener loop stubbed out through the wall plate.',
       aa:'AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.',
       cap:'Water softener &middot; the bare wall loop, then the finished system' },
+    { a:'img/sof-7-after.webp',
+      aa:'Two water softener tanks standing side by side with a shared brine cabinet.',
+      cap:'Twin-tank softener &middot; the house never drops to untreated water' },
     { b:'img/lgt-1-before.webp', a:'img/lgt-1-after.webp',
       ab:'Builder fitting hanging in a two-story stairwell rotunda.',
       aa:'Crystal cascade chandelier hung in the same rotunda.',
       cap:'Stairwell chandelier &middot; builder fitting, then the crystal cascade' },
+    { a:'img/com-1-after.webp',
+      aa:'Tiered auditorium filled with several hundred fixed seats.',
+      cap:'Auditorium seating &middot; several hundred seats set and bolted down' },
     { b:'img/gym-2-before.webp', a:'img/gym-2-after.webp',
       ab:'Bare rubber mat laid on a garage floor.',
       aa:'Smith machine and rack assembled on the same mat.',
       cap:'Gym equipment &middot; bare mat, then a leveled rack' },
+    { a:'img/asm-1-after.webp',
+      aa:'Assembled slate pool table with cues and a full rack of balls.',
+      cap:'Slate pool table &middot; delivered flat-packed, leveled and felted' },
     { b:'img/sto-1-before.webp', a:'img/sto-1-after.webp',
       ab:'Garage ceiling with bare hooks and a step ladder below it.',
       aa:'Steel overhead rack fixed to the same ceiling.',
       cap:'Garage storage &middot; bare ceiling, then the floor came back' },
+    { a:'img/sof-9-after.webp',
+      aa:'Installed softener with the brine cabinet set where its lid opens fully.',
+      cap:'Softener &middot; brine cabinet where a salt bag can actually be tipped in' },
     { b:'img/tv-1-before.webp', a:'img/tv-1-after.webp',
       ab:'Blank wall with two outlets and nothing on it.',
       aa:'Television mounted flat on the same wall.',
       cap:'TV mounting &middot; blank wall, then cables inside it' },
   ];
   let heroI = 0;
-  const heroB = $('#heroBefore'), heroA = $('#heroAfter'),
-        heroCap = $('#baCap'), heroDots = $('#baDots'), heroRange = $('#baRange');
+  const heroB = $('#heroBefore'), heroA = $('#heroAfter'), heroBa = $('#ba'),
+        heroCap = $('#baCap'), heroHint = $('#baHint'),
+        heroDots = $('#baDots'), heroRange = $('#baRange');
 
   function heroShow(i, focusDot) {
     heroI = (i + HERO.length) % HERO.length;
     const s = HERO[heroI];
-    heroB.src = s.b; heroB.alt = s.ab;
-    heroA.src = s.a; heroA.alt = s.aa;
+    const pair = Boolean(s.b);
+    heroBa.classList.toggle('ba-single', !pair);
+    heroB.src = pair ? s.b : s.a;
+    heroB.alt = pair ? s.ab : s.aa;
+    heroA.src = s.a;
+    heroA.alt = pair ? s.aa : '';
     heroCap.innerHTML = s.cap;
+    /* nothing to drag on a single photograph - say what the controls do */
+    heroHint.innerHTML = pair ? 'Drag, or use &larr; &rarr;' : 'Browse with &lsaquo; &rsaquo;';
     heroRange.value = 40; if (paintHero) paintHero();
     [...heroDots.children].forEach((d, n) =>
       d.setAttribute('aria-current', String(n === heroI)));
