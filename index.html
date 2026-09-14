@@ -257,6 +257,18 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
 .ba input[type=range]:focus-visible + .ba-line{box-shadow:0 0 0 3px var(--focus)}
 .ba-tag{position:absolute; bottom:.9rem; font-family:var(--mono); font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; padding:.35rem .6rem; border-radius:var(--r-sm); background:rgba(10,20,30,.78); color:#fff; pointer-events:none}
 .ba-tag.l{left:.9rem} .ba-tag.r{right:.9rem}
+/* Keep the whole hero on one laptop screen. The square comparison frame is
+   taller than the text column beside it, so on a 1440x760 window the trust
+   chips fell off the bottom by about 96px. Trim the frame and the section
+   padding together rather than taking it all out of the photograph. */
+@media (min-width:981px) and (max-height:900px){
+  .hero{padding-block:2rem 2.25rem}
+  .hero .ba{max-height:calc(100vh - 330px)}
+}
+@media (min-width:981px) and (max-height:700px){
+  .hero{padding-block:1.5rem 1.75rem}
+  .hero .ba{max-height:calc(100vh - 290px)}
+}
 /* hero carousel: several jobs behind one comparison frame */
 .ba-nav{position:absolute; top:50%; z-index:5; width:40px; height:40px; margin-top:-20px;
   display:grid; place-items:center; border-radius:50%; cursor:pointer;
