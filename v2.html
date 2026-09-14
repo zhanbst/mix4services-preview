@@ -257,6 +257,24 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
 .ba input[type=range]:focus-visible + .ba-line{box-shadow:0 0 0 3px var(--focus)}
 .ba-tag{position:absolute; bottom:.9rem; font-family:var(--mono); font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; padding:.35rem .6rem; border-radius:var(--r-sm); background:rgba(10,20,30,.78); color:#fff; pointer-events:none}
 .ba-tag.l{left:.9rem} .ba-tag.r{right:.9rem}
+/* hero carousel: several jobs behind one comparison frame */
+.ba-nav{position:absolute; top:50%; z-index:5; width:40px; height:40px; margin-top:-20px;
+  display:grid; place-items:center; border-radius:50%; cursor:pointer;
+  border:1px solid rgba(255,255,255,.35); background:rgba(10,20,30,.55); color:#fff;
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+  transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease)}
+.ba-nav:hover{background:rgba(10,20,30,.8); border-color:#fff}
+.ba-nav svg{width:20px; height:20px}
+.ba-nav.prev{left:.7rem} .ba-nav.next{right:.7rem}
+.ba-dots{display:flex; gap:.4rem; justify-content:center; margin-top:.7rem; flex-wrap:wrap}
+.ba-dots button{width:var(--tap); height:22px; padding:0; border:0; background:none;
+  cursor:pointer; display:grid; place-items:center}
+.ba-dots button::before{content:''; width:26px; height:4px; border-radius:2px;
+  background:var(--line-2); transition:background var(--dur) var(--ease)}
+.ba-dots button[aria-current="true"]::before{background:var(--blue)}
+.ba-dots button:hover::before{background:var(--ink-3)}
+:root[data-contrast='high'] .ba-nav{background:#000; border:2px solid #fff; backdrop-filter:none}
+@media (max-width:520px){ .ba-nav{width:36px;height:36px;margin-top:-18px} }
 .ba-cap{margin-top:.7rem; font-family:var(--mono); font-size:.73rem; color:var(--ink-3); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
 
 /* =========== TRUST STRIP =========== */
@@ -1101,18 +1119,25 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     </div>
 
     <figure style="margin:0">
-      <div class="ba" id="ba" style="--pos:50%">
-        <img src="img/hero-before.jpg" alt="Bare garage wall before the job, with only the capped softener loop stubbed out through the wall plate.">
-        <img class="ba-after" src="img/hero-after.jpg" alt="The finished install: AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.">
+      <div class="ba" id="ba" style="--pos:40%">
+        <img id="heroBefore" src="img/hero-before.jpg" alt="Bare garage wall before the job, with only the capped softener loop stubbed out through the wall plate.">
+        <img class="ba-after" id="heroAfter" src="img/hero-after.jpg" alt="The finished install: AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.">
         <div class="ba-line" aria-hidden="true"></div>
         <div class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6-5 6 5 6M15 6l5 6-5 6"/></svg></div>
         <span class="ba-tag l" aria-hidden="true">Before</span>
         <span class="ba-tag r" aria-hidden="true">After</span>
-        <input type="range" id="baRange" min="0" max="100" value="50" step="1"
+        <input type="range" id="baRange" min="0" max="100" value="40" step="1"
                aria-label="Reveal more of the before or after photo">
+        <button type="button" class="ba-nav prev" id="baPrev" aria-label="Previous job">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+        </button>
+        <button type="button" class="ba-nav next" id="baNext" aria-label="Next job">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
       </div>
+      <div class="ba-dots" id="baDots" role="group" aria-label="Choose a job"></div>
       <figcaption class="ba-cap">
-        <span>Water softener &middot; the bare wall loop, then the finished system</span>
+        <span id="baCap">Water softener &middot; the bare wall loop, then the finished system</span>
         <span>Drag, or use &larr; &rarr;</span>
       </figcaption>
     </figure>
@@ -1165,7 +1190,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-installation.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-mounting.jpg" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="installation">Handyman &amp; Mounting</button></h3>
           <p>TV brackets, ceiling fans, light fixtures, shelving, appliance hook-ups. Quick for us, miserable for a Saturday afternoon.</p>
@@ -1174,7 +1199,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-installation.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-gym.jpg" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="gym">Gym &amp; Fitness Equipment Assembly</button></h3>
           <p>Racks, cable machines, treadmills and benches, built and levelled. We have kitted out a full gym floor, so a home setup is an afternoon.</p>
@@ -1201,7 +1226,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-remodeling.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-furniture.jpg" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="furniture">Custom Furniture &amp; Kitchens</button></h3>
           <p>Non-standard kitchens, built-ins and epoxy river tables, built with a cabinetmaker who has done it his whole life. Drawn to your room, not ordered from a catalogue.</p>
@@ -1787,8 +1812,55 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     paint();
     return paint;
   }
-  wireBA('ba', 'baRange');
+  const paintHero = wireBA('ba', 'baRange');
   const paintLb = wireBA('lbBa', 'lbRange');
+
+  /* === Hero carousel === */
+  const HERO = [
+    { b:'img/hero-before.jpg', a:'img/hero-after.jpg',
+      ab:'Bare garage wall with only the capped softener loop stubbed out through the wall plate.',
+      aa:'AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.',
+      cap:'Water softener &middot; the bare wall loop, then the finished system' },
+    { b:'img/lgt-1-before.jpg', a:'img/lgt-1-after.jpg',
+      ab:'Builder fitting hanging in a two-storey stairwell rotunda.',
+      aa:'Crystal cascade chandelier hung in the same rotunda.',
+      cap:'Stairwell chandelier &middot; builder fitting, then the crystal cascade' },
+    { b:'img/gym-2-before.jpg', a:'img/gym-2-after.jpg',
+      ab:'Bare rubber mat laid on a garage floor.',
+      aa:'Smith machine and rack assembled on the same mat.',
+      cap:'Gym equipment &middot; bare mat, then a levelled rack' },
+    { b:'img/sto-1-before.jpg', a:'img/sto-1-after.jpg',
+      ab:'Garage ceiling with bare hooks and a step ladder below it.',
+      aa:'Steel overhead rack fixed to the same ceiling.',
+      cap:'Garage storage &middot; bare ceiling, then the floor came back' },
+    { b:'img/tv-1-before.jpg', a:'img/tv-1-after.jpg',
+      ab:'Blank wall with two outlets and nothing on it.',
+      aa:'Television mounted flat on the same wall.',
+      cap:'TV mounting &middot; blank wall, then cables inside it' },
+  ];
+  let heroI = 0;
+  const heroB = $('#heroBefore'), heroA = $('#heroAfter'),
+        heroCap = $('#baCap'), heroDots = $('#baDots'), heroRange = $('#baRange');
+
+  function heroShow(i, focusDot) {
+    heroI = (i + HERO.length) % HERO.length;
+    const s = HERO[heroI];
+    heroB.src = s.b; heroB.alt = s.ab;
+    heroA.src = s.a; heroA.alt = s.aa;
+    heroCap.innerHTML = s.cap;
+    heroRange.value = 40; if (paintHero) paintHero();
+    [...heroDots.children].forEach((d, n) =>
+      d.setAttribute('aria-current', String(n === heroI)));
+    if (focusDot) heroDots.children[heroI].focus();
+  }
+  heroDots.innerHTML = HERO.map((s, n) =>
+    `<button type="button" aria-current="${n === 0}" aria-label="Job ${n + 1} of ${HERO.length}"></button>`).join('');
+  heroDots.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    heroShow([...heroDots.children].indexOf(b));
+  });
+  $('#baPrev').addEventListener('click', () => heroShow(heroI - 1));
+  $('#baNext').addEventListener('click', () => heroShow(heroI + 1));
 
   /* === Gallery === */
   /* A card carries `before` only when the two frames genuinely align and the
@@ -1836,6 +1908,31 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
       altBefore:'Blank wall with two outlets and nothing on it.',
       altAfter:'Television mounted flat on the same wall.',
       note:'Bracket into the studs, cables dropped inside the wall to the outlet below.' },
+    { id:'lgt-1', cat:'lighting', title:'Stairwell chandelier', meta:'Lighting and fans',
+      before:'img/lgt-1-before.jpg', after:'img/lgt-1-after.jpg',
+      altBefore:'Small builder fitting hanging in a two-storey stairwell rotunda.',
+      altAfter:'Crystal cascade chandelier hung in the same rotunda.',
+      note:'Two-storey drop over a stair. Scaffolded rather than worked off a ladder, and the box was braced for the weight before anything went up.' },
+    { id:'lgt-2', cat:'lighting', title:'Ring chandelier, double-height room', meta:'Lighting and fans',
+      before:'img/lgt-2-before.jpg', after:'img/lgt-2-after.jpg',
+      altBefore:'Double-height living room with a ceiling fan and a scaffold tower standing under it.',
+      altAfter:'Ring chandelier hanging in the same room with the scaffold gone.',
+      note:'Fan out, chandelier in, at the top of a double-height room. Chain length set so it clears the window line.' },
+    { id:'lgt-3', cat:'lighting', title:'Dining room chandelier', meta:'Lighting and fans',
+      before:'img/lgt-3-before.jpg', after:'img/lgt-3-after.jpg',
+      altBefore:'Dining room with a bare ceiling plate where a light will go.',
+      altAfter:'Ring chandelier and glass pendants lit above the same table.',
+      note:'Centred on the table rather than the room, which is what the eye actually reads.' },
+    { id:'lgt-4', cat:'lighting', title:'Pendants over the cabinets', meta:'Lighting and fans',
+      before:'img/lgt-4-before.jpg', after:'img/lgt-4-after.jpg',
+      altBefore:'Kitchen cabinets with a bare ceiling above the counter.',
+      altAfter:'Two pendant lights hung in line above the same counter.',
+      note:'Spaced off the cabinet run, not the wall, so the line reads straight from the room.' },
+    { id:'lgt-5', cat:'lighting', title:'Ceiling fan swap', meta:'Lighting and fans',
+      before:'img/lgt-5-before.jpg', after:'img/lgt-5-after.jpg',
+      altBefore:'Round flush ceiling light on a bedroom ceiling.',
+      altAfter:'Five-blade ceiling fan installed in its place.',
+      note:'Flush light out, fan in. Box swapped for a fan-rated one, because a light box is not rated to carry a moving load.' },
     { id:'asm-1', cat:'assembly', title:'Slate pool table', meta:'Furniture assembly',
       after:'img/asm-1-after.jpg',
       altAfter:'Assembled slate pool table with cues and a full rack of balls.',
@@ -1844,7 +1941,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
       after:'img/asm-2-after.jpg',
       altAfter:'Black arched sideboard assembled and set against a wall.',
       note:'Flat-pack sideboard built, doors aligned and set against the wall.' },
-    { id:'com-1', cat:'commercial', title:'Auditorium seating', meta:'Commercial fit-out',
+    { id:'com-1', cat:'seating', title:'Auditorium seating, several hundred', meta:'Seating assembly',
       after:'img/com-1-after.jpg',
       altAfter:'Tiered auditorium filled with several hundred fixed seats.',
       note:'Several hundred fixed seats set out and bolted down across a tiered floor.' },
@@ -1852,8 +1949,8 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
   const CAT_LABEL = {
     all:'All work', softener:'Water softeners', gym:'Gym equipment',
-    assembly:'Furniture', storage:'Garage storage', mounting:'TV mounting',
-    commercial:'Commercial',
+    lighting:'Lighting and fans', assembly:'Furniture', storage:'Garage storage',
+    mounting:'TV mounting', seating:'Seating assembly',
   };
 
   const grid = $('#galGrid');
