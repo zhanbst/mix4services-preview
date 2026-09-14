@@ -145,7 +145,7 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
 .head{display:flex; flex-direction:column; gap:.85rem; margin-bottom:clamp(2rem,1.2rem + 2.5vw,3.25rem); max-width:64ch}
 
 /* =========== BUTTONS =========== */
-.btn{display:inline-flex; align-items:center; justify-content:center; gap:.55rem; min-height:var(--tap); padding:.78rem 1.4rem; border-radius:var(--r-md); font-weight:700; font-size:.98rem; text-decoration:none; border:2px solid transparent; cursor:pointer; transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.55rem; min-height:var(--tap); padding:.78rem 1.4rem; border-radius:var(--r-md); font-weight:700; font-size:.98rem; text-decoration:none; border:2px solid transparent; cursor:pointer; transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease)}
 .btn:active{transform:translateY(1px)}
 .btn-primary{background:var(--amber-bright); color:#20160A; border-color:var(--amber-bright)}
 .btn-primary:hover{background:#D4790F; border-color:#D4790F}
@@ -188,12 +188,16 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
 .nav a{display:flex; align-items:center; min-height:var(--tap); padding:0 .8rem; color:var(--ink-2); text-decoration:none; font-weight:600; font-size:.94rem; border-radius:var(--r-md)}
 /* Translucent wash, not a solid plate: an opaque rectangle on a frosted
    bar reads as a patch stuck on top of the glass. */
-.nav a{transition:background var(--dur) var(--ease), color var(--dur) var(--ease)}
+/* No transition on `color`: Chrome fails to settle a colour transition when
+   the value comes from a custom property that changes with the theme, and the
+   element sticks on the old theme's colour. Background and border are safe
+   because their tokens are swapped the same way but do not exhibit it. */
+.nav a{transition:background var(--dur) var(--ease)}
 .nav a:hover{color:var(--ink); background:color-mix(in srgb, var(--ink) 9%, transparent)}
 .nav a:active{background:color-mix(in srgb, var(--ink) 14%, transparent)}
 .hdr-cta{display:flex; align-items:center; gap:.6rem; flex:none}
 .tel{display:inline-flex; align-items:center; gap:.5rem; min-height:var(--tap); padding:0 .85rem; font-family:var(--mono); font-weight:600; font-size:1rem; color:var(--ink); text-decoration:none; border-radius:var(--r-md); border:1px solid var(--glass-edge)}
-.tel{transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease)}
+.tel{transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease)}
 .tel:hover{border-color:var(--blue); color:var(--blue);
   background:color-mix(in srgb, var(--blue) 9%, transparent)}
 .tel svg{width:17px;height:17px;flex:none}
@@ -201,7 +205,7 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
   width:var(--tap); height:var(--tap); border-radius:var(--r-md);
   border:1px solid var(--glass-edge); background:color-mix(in srgb, var(--ink) 5%, transparent);
   cursor:pointer; color:var(--ink-2);
-  transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease)}
+  transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease)}
 .icon-btn:hover{background:color-mix(in srgb, var(--ink) 11%, transparent);
   border-color:color-mix(in srgb, var(--ink) 22%, transparent); color:var(--ink)}
 .icon-btn svg{width:20px;height:20px}
@@ -234,7 +238,7 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
 .chip svg{width:13px;height:13px;color:var(--ok);flex:none}
 
 /* before/after comparison */
-.ba{position:relative; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); background:var(--slate); aspect-ratio:3/2}
+.ba{position:relative; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); background:var(--slate); aspect-ratio:1/1}
 .ba img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
 .ba-after{clip-path:inset(0 0 0 var(--pos,50%))}
 .ba-line{position:absolute; top:0; bottom:0; left:var(--pos,50%); width:3px; background:#fff; transform:translateX(-1.5px); pointer-events:none; box-shadow:0 0 0 1px rgba(0,0,0,.25)}
@@ -1001,8 +1005,8 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
     <figure style="margin:0">
       <div class="ba" id="ba" style="--pos:50%">
-        <img src="img/hero-before.jpg" alt="Water softener still boxed on the garage floor before installation.">
-        <img class="ba-after" src="img/hero-after.jpg" alt="The softener installed on the garage wall with its bypass manifold.">
+        <img src="img/hero-before.jpg" alt="Bare garage wall before the job, with only the capped softener loop stubbed out through the wall plate.">
+        <img class="ba-after" src="img/hero-after.jpg" alt="The finished install: AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.">
         <div class="ba-line" aria-hidden="true"></div>
         <div class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6-5 6 5 6M15 6l5 6-5 6"/></svg></div>
         <span class="ba-tag l" aria-hidden="true">Before</span>
@@ -1011,7 +1015,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
                aria-label="Reveal more of the before or after photo">
       </div>
       <figcaption class="ba-cap">
-        <span>Water softener &middot; delivered, then installed</span>
+        <span>Water softener &middot; the bare wall loop, then the finished system</span>
         <span>Drag, or use &larr; &rarr;</span>
       </figcaption>
     </figure>
@@ -1031,7 +1035,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 </section>
 
 <div class="mq" aria-hidden="true">
-  <div class="mq-row"><span>Handyman</span><span>Water softeners</span><span>TV mounting</span><span>Gym assembly</span><span>Plumbing</span><span>Electrical</span><span>Custom kitchens</span><span>Epoxy tables</span><span>Remodeling</span><span>Welding</span><span>Patio covers</span><span>Handyman</span><span>Water softeners</span><span>TV mounting</span><span>Gym assembly</span><span>Plumbing</span><span>Electrical</span><span>Custom kitchens</span><span>Epoxy tables</span><span>Remodeling</span><span>Welding</span><span>Patio covers</span></div>
+  <div class="mq-row"><span>Handyman</span><span>Water softeners</span><span>TV mounting</span><span>Gym assembly</span><span>Plumbing</span><span>Electrical</span><span>Custom kitchens</span><span>Epoxy tables</span><span>Remodeling</span><span>Handyman</span><span>Water softeners</span><span>TV mounting</span><span>Gym assembly</span><span>Plumbing</span><span>Electrical</span><span>Custom kitchens</span><span>Epoxy tables</span><span>Remodeling</span></div>
 </div>
 
 <!-- =========== SERVICES =========== -->
@@ -1107,24 +1111,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
         <span class="svc-cost">$1,500&ndash;$25,000<small>typical range</small>
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
-      <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-welding.jpg" alt="" loading="lazy" width="120" height="90"></span>
-        <span class="svc-txt">
-          <h3><button type="button" class="svc-hit" data-svc="welding">Welding &amp; Fabrication</button></h3>
-          <p>Most home-service companies subcontract this. We build gates and railings to your opening.</p>
-        </span>
-        <span class="svc-cost">$800&ndash;$4,500<small>typical range</small>
-          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
-      </li>
-      <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-outdoor.jpg" alt="" loading="lazy" width="120" height="90"></span>
-        <span class="svc-txt">
-          <h3><button type="button" class="svc-hit" data-svc="outdoor">Outdoor Structures</button></h3>
-          <p>Covers and pergolas rated for Gulf Coast wind, on footings that survive the clay.</p>
-        </span>
-        <span class="svc-cost">$3,500&ndash;$14,000<small>typical range</small>
-          <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
-      </li>
     </ul>
   </div>
 </section>
@@ -1152,8 +1138,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
             <label class="opt"><input type="radio" name="svc" value="electrical"><span>Electrical</span></label>
             <label class="opt"><input type="radio" name="svc" value="remodeling"><span>Remodeling</span></label>
             <label class="opt"><input type="radio" name="svc" value="furniture"><span>Custom furniture</span></label>
-            <label class="opt"><input type="radio" name="svc" value="welding"><span>Welding</span></label>
-            <label class="opt"><input type="radio" name="svc" value="outdoor"><span>Outdoor build</span></label>
           </div>
         </fieldset>
 
@@ -1368,12 +1352,14 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
       <div>
         <h3 class="ft-h">Services</h3>
         <ul>
-          <li><a href="#services">Renovation &amp; remodeling</a></li>
+          <li><a href="#services">Water softener installation</a></li>
           <li><a href="#services">Plumbing</a></li>
+          <li><a href="#services">Handyman &amp; mounting</a></li>
+          <li><a href="#services">Gym equipment assembly</a></li>
           <li><a href="#services">Electrical</a></li>
-          <li><a href="#services">Installation &amp; mounting</a></li>
-          <li><a href="#services">Welding &amp; fabrication</a></li>
-          <li><a href="#services">Outdoor structures</a></li>
+          <li><a href="#services">Renovation &amp; remodeling</a></li>
+          <li><a href="#services">Custom furniture &amp; kitchens</a></li>
+
         </ul>
       </div>
       <div>
@@ -1450,8 +1436,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     <option>Electrical</option>
     <option>Renovation &amp; remodeling</option>
               <option>Custom furniture &amp; kitchens</option>
-    <option>Welding &amp; fabrication</option>
-    <option>Outdoor structures</option>
     <option>Something else / not sure</option>
     </select>
     </div>
@@ -1511,8 +1495,8 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   </button>
   <div class="lb-in">
     <div class="ba" id="lbBa" style="--pos:50%;aspect-ratio:16/10;border-radius:0;box-shadow:none">
-      <img id="lbBefore" src="" alt="">
-      <img class="ba-after" id="lbAfter" src="" alt="">
+      <img id="lbBefore" alt="">
+      <img class="ba-after" id="lbAfter" alt="">
       <div class="ba-line" aria-hidden="true"></div>
       <div class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6-5 6 5 6M15 6l5 6-5 6"/></svg></div>
       <span class="ba-tag l" aria-hidden="true">Before</span>
@@ -1792,12 +1776,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     remodeling:{lo:8000, hi:55000, lab:.45, name:'Renovation & remodeling',
       perm:'ml', inc:['Demolition and debris removal','Daily clean-up','Final punch list walkthrough'], exc:['Appliances and fittings you specify yourself'],
       time:['2-4 days','2-3 weeks','4-8 weeks']},
-    welding:{lo:800, hi:4500, lab:.55, name:'Welding & fabrication',
-      perm:'none', inc:['On-site measure and fabrication','Primer and finish coat'], exc:['Gate automation and its power supply'],
-      time:['1-2 days','3-6 days','1-3 weeks']},
-    outdoor:{lo:3500, hi:14000, lab:.45, name:'Outdoor structures',
-      perm:'ml', inc:['Footings dug to depth for clay soil','Wind-load rated framing'], exc:['Electrical or gas runs to the structure'],
-      time:['2-4 days','1-2 weeks','2-4 weeks']},
   };
   const SIZE = {s:[0,.22], m:[.15,.55], l:[.5,1]};
   const FIN  = {std:1, mid:1.22, hi:1.55};
@@ -1814,8 +1792,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     furniture:['one piece','one room','whole kitchen'],
     softener:['softener only','softener + pre-filter','whole-house system'],
     gym:['one machine','home gym','full gym floor'],
-    outdoor:['small structure','standard build','large build'],
-    welding:['single piece','standard run','full fabrication'],
     _default:['one item','one room','whole project'],
   };
   const SIZEIDX = {s:0, m:1, l:2};
@@ -1928,8 +1904,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     remodeling:'Renovation & remodeling',
     gym:'Gym equipment assembly',
     furniture:'Custom furniture & kitchens',
-    welding:'Welding & fabrication',
-    outdoor:'Outdoor structures',
   };
   let attached = null;
   const leadDlg = $('#leadDlg');
