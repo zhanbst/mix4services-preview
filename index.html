@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0B63CE">
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="img/favicon-180.png">
+<link rel="icon" href="img/favicon-512.png" sizes="512x512" type="image/png">
 <title>Water Softener Installation &mdash; Greater Houston</title>
 <meta name="description" content="Whole-house water softener and pre-filter installation across Greater Houston. Installed and tested in a day. Rated 5.0 across 74 reviews on Thumbtack and Google.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -261,13 +262,18 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
    taller than the text column beside it, so on a 1440x760 window the trust
    chips fell off the bottom by about 96px. Trim the frame and the section
    padding together rather than taking it all out of the photograph. */
+/* aspect-ratio:auto, not max-height: with the ratio still in force the frame
+   kept its square shape by shrinking its WIDTH, so it sat narrower than its
+   column with dead space down the right-hand side. Filling the column and
+   trimming the height instead keeps its right edge on the same line as the
+   trust strip below it. */
 @media (min-width:981px) and (max-height:900px){
   .hero{padding-block:2rem 2.25rem}
-  .hero .ba{max-height:calc(100vh - 330px)}
+  .hero .ba{aspect-ratio:auto; height:calc(100vh - 330px)}
 }
 @media (min-width:981px) and (max-height:700px){
   .hero{padding-block:1.5rem 1.75rem}
-  .hero .ba{max-height:calc(100vh - 290px)}
+  .hero .ba{aspect-ratio:auto; height:calc(100vh - 290px)}
 }
 /* hero carousel: several jobs behind one comparison frame */
 .ba-nav{position:absolute; top:50%; z-index:5; width:40px; height:40px; margin-top:-20px;
@@ -379,8 +385,11 @@ fieldset.fld{border:0; margin:0; padding:0; min-width:0}
     .rail-fill{animation:railFill linear both; animation-timeline:scroll(root block)}
     .rail-tool{animation:railDrive cubic-bezier(.4,.1,.3,1) both;
       animation-timeline:scroll(root block)}
-    .rail-bitspin{animation:railSpin linear both; animation-timeline:scroll(root block);
-      transform-box:fill-box; transform-origin:center}
+    /* The thread travels down the shaft; the screw itself stays upright.
+       Rotating the whole group in the picture plane, which is what this did
+       before, reads as the screw tumbling rather than being driven. */
+    .rail-thread{animation:railThread linear both; animation-timeline:scroll(root block);
+      transform-box:view-box}
   }
 }
 @keyframes railDrive{
@@ -393,10 +402,11 @@ fieldset.fld{border:0; margin:0; padding:0; min-width:0}
   9%   {transform:scaleY(0)}
   100% {transform:scaleY(1)}
 }
-@keyframes railSpin{from{transform:rotate(0)} to{transform:rotate(1440deg)}}
+@keyframes railThread{from{transform:translateY(0)} to{transform:translateY(36px)}}
 /* Motion off: park it at the top, no thread, never stranded mid-page. */
 :root[data-motion='off'] .rail-fill{transform:scaleY(0) !important}
 :root[data-motion='off'] .rail-tool{top:0 !important; scale:1 !important}
+:root[data-motion='off'] .rail-thread{transform:none !important}
 
 /* =========== SECTION TRANSITIONS =========== */
 /* Every reveal is expressed ONLY through keyframes - never as a static
@@ -995,9 +1005,9 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 <header class="hdr" tabindex="-1">
   <div class="wrap hdr-in">
     <a class="brand" href="#main">
-      <img class="logo-lt" src="img/logo-original.png" alt="Mix4Services &mdash; construction and repair"
+      <img class="logo-lt" src="img/logo-original.webp" alt="Mix4Services &mdash; construction and repair"
            width="393" height="200">
-      <img class="logo-dk" src="img/logo-original-light.png" alt="" aria-hidden="true"
+      <img class="logo-dk" src="img/logo-original-light.webp" alt="" aria-hidden="true"
            width="393" height="200">
     </a>
 
@@ -1036,11 +1046,26 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   <span class="rail-tool">
     <svg viewBox="0 0 34 44" fill="none" stroke="currentColor" stroke-width="2.4"
          stroke-linejoin="round" stroke-linecap="round">
-      <g class="rail-bitspin">
-        <path d="M17 4 L17 30" />
-        <path d="M11 11 L23 14 M11 17 L23 20 M11 23 L23 26" stroke-width="1.7" opacity=".8"/>
-        <path d="M17 40 L12 30 L22 30 Z" fill="currentColor" stroke="none"/>
+      <defs>
+        <clipPath id="railShaft"><rect x="9" y="5" width="16" height="26"/></clipPath>
+      </defs>
+      <path d="M17 4 L17 30"/>
+      <g class="rail-thread" clip-path="url(#railShaft)" stroke-width="1.7" opacity=".8">
+          <path d="M11 -37 L23 -34"/>
+          <path d="M11 -31 L23 -28"/>
+          <path d="M11 -25 L23 -22"/>
+          <path d="M11 -19 L23 -16"/>
+          <path d="M11 -13 L23 -10"/>
+          <path d="M11 -7 L23 -4"/>
+          <path d="M11 -1 L23 2"/>
+          <path d="M11 5 L23 8"/>
+          <path d="M11 11 L23 14"/>
+          <path d="M11 17 L23 20"/>
+          <path d="M11 23 L23 26"/>
+          <path d="M11 29 L23 32"/>
+          <path d="M11 35 L23 38"/>
       </g>
+      <path d="M17 40 L12 30 L22 30 Z" fill="currentColor" stroke="none"/>
     </svg>
   </span>
 </div>
@@ -1070,8 +1095,8 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
     <figure style="margin:0">
       <div class="ba" id="ba" style="--pos:40%">
-        <img id="heroBefore" src="img/hero-before.jpg" alt="Bare garage wall before the job, with only the capped softener loop stubbed out through the wall plate.">
-        <img class="ba-after" id="heroAfter" src="img/hero-after.jpg" alt="The finished install: AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.">
+        <img id="heroBefore" src="img/hero-before.webp" alt="Bare garage wall before the job, with only the capped softener loop stubbed out through the wall plate.">
+        <img class="ba-after" id="heroAfter" src="img/hero-after.webp" alt="The finished install: AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.">
         <div class="ba-line" aria-hidden="true"></div>
         <div class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6-5 6 5 6M15 6l5 6-5 6"/></svg></div>
         <span class="ba-tag l" aria-hidden="true">Before</span>
@@ -1121,7 +1146,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
     <ul class="svc-list">
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-softener.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-softener.webp" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="softener">Water Softener Installation</button></h3>
           <p>Houston sits on hard water, and it is what kills heaters, fixtures and appliances early. A softener swap needs no plumbing licence, so we do it same day.</p>
@@ -1130,7 +1155,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-plumbing.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-plumbing.webp" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="plumbing">Plumbing</button></h3>
           <p>Freeze events and hard water are rough on supply lines. We say plainly when replacing beats repairing.</p>
@@ -1139,7 +1164,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-mounting.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-mounting.webp" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="installation">Handyman &amp; Mounting</button></h3>
           <p>TV brackets, ceiling fans, light fixtures, shelving, appliance hook-ups. Quick for us, miserable for a Saturday afternoon.</p>
@@ -1148,7 +1173,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-gym.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-gym.webp" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="gym">Gym &amp; Fitness Equipment Assembly</button></h3>
           <p>Racks, cable machines, treadmills and benches, built and levelled. We have kitted out a full gym floor, so a home setup is an afternoon.</p>
@@ -1157,7 +1182,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-electrical.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-electrical.webp" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="electrical">Electrical</button></h3>
           <p>Older West Houston stock runs out of panel capacity long before it runs out of life.</p>
@@ -1166,7 +1191,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-remodeling.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-remodeling.webp" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="remodeling">Renovation &amp; Remodeling</button></h3>
           <p>Demolition through final punch list. Bathrooms finish in two to three weeks; kitchens in four to eight.</p>
@@ -1175,7 +1200,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
           <span class="svc-go" aria-hidden="true">Price this &rarr;</span></span>
       </li>
       <li class="svc-row">
-        <span class="svc-thumb"><img src="img/svc-furniture.jpg" alt="" loading="lazy" width="120" height="90"></span>
+        <span class="svc-thumb"><img src="img/svc-furniture.webp" alt="" loading="lazy" width="120" height="90"></span>
         <span class="svc-txt">
           <h3><button type="button" class="svc-hit" data-svc="furniture">Custom Furniture &amp; Kitchens</button></h3>
           <p>Non-standard kitchens, built-ins and epoxy river tables, built with a cabinetmaker who has done it his whole life. Drawn to your room, not ordered from a catalogue.</p>
@@ -1415,7 +1440,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   <div class="wrap">
     <div class="ft-grid">
       <div class="ft-brand">
-        <img class="ft-logo" src="img/logo-original-light.png" alt="Mix4Services" width="393" height="200">
+        <img class="ft-logo" src="img/logo-original-light.webp" alt="Mix4Services" width="393" height="200">
         <p style="color:var(--on-dark-2);font-size:.9rem;margin-top:1rem;max-width:34ch">Whole-house water softener and pre-filter installation across Greater Houston, plus the handyman work we have always done.</p>
         <div class="ft-proof">
           <a href="https://www.thumbtack.com/tx/katy/handyman/mix4services-installation-delivery/service/551977354051584000" rel="noopener" target="_blank"><span>5.0</span> &middot; 58 reviews on Thumbtack</a>
@@ -1773,23 +1798,23 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
   /* === Hero carousel === */
   const HERO = [
-    { b:'img/hero-before.jpg', a:'img/hero-after.jpg',
+    { b:'img/hero-before.webp', a:'img/hero-after.webp',
       ab:'Bare garage wall with only the capped softener loop stubbed out through the wall plate.',
       aa:'AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.',
       cap:'Water softener &middot; the bare wall loop, then the finished system' },
-    { b:'img/lgt-1-before.jpg', a:'img/lgt-1-after.jpg',
+    { b:'img/lgt-1-before.webp', a:'img/lgt-1-after.webp',
       ab:'Builder fitting hanging in a two-storey stairwell rotunda.',
       aa:'Crystal cascade chandelier hung in the same rotunda.',
       cap:'Stairwell chandelier &middot; builder fitting, then the crystal cascade' },
-    { b:'img/gym-2-before.jpg', a:'img/gym-2-after.jpg',
+    { b:'img/gym-2-before.webp', a:'img/gym-2-after.webp',
       ab:'Bare rubber mat laid on a garage floor.',
       aa:'Smith machine and rack assembled on the same mat.',
       cap:'Gym equipment &middot; bare mat, then a levelled rack' },
-    { b:'img/sto-1-before.jpg', a:'img/sto-1-after.jpg',
+    { b:'img/sto-1-before.webp', a:'img/sto-1-after.webp',
       ab:'Garage ceiling with bare hooks and a step ladder below it.',
       aa:'Steel overhead rack fixed to the same ceiling.',
       cap:'Garage storage &middot; bare ceiling, then the floor came back' },
-    { b:'img/tv-1-before.jpg', a:'img/tv-1-after.jpg',
+    { b:'img/tv-1-before.webp', a:'img/tv-1-after.webp',
       ab:'Blank wall with two outlets and nothing on it.',
       aa:'Television mounted flat on the same wall.',
       cap:'TV mounting &middot; blank wall, then cables inside it' },
@@ -1824,81 +1849,81 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
      work - a slider over two unrelated angles is worse than no slider. */
   const PROJECTS = [
     { id:'sof-1', cat:'softener', title:'Softener, filter and brine tank', meta:'Water softener install',
-      before:'img/sof-1-before.jpg', after:'img/sof-1-after.jpg',
+      before:'img/sof-1-before.webp', after:'img/sof-1-after.webp',
       altBefore:'Boxed water softener and pre-filter standing against a bare garage wall.',
       altAfter:'The same wall with the tank, brine cabinet and pre-filter installed.',
       note:'Whole-house softener with a sediment pre-filter and a bypass loop, so the system can be serviced without shutting the house off.' },
     { id:'sof-2', cat:'softener', title:'Softener and pre-filter in line', meta:'Water softener install',
-      after:'img/sof-2-after.jpg',
+      after:'img/sof-2-after.webp',
       altAfter:'Water softener, pre-filter and brine tank plumbed along a garage wall.',
       note:'Tank, brine cabinet and pre-filter set along one wall, with every valve left at eye level.' },
     { id:'sof-3', cat:'softener', title:'Corner install, floor kept clear', meta:'Water softener install',
-      after:'img/sof-3-after.jpg',
+      after:'img/sof-3-after.webp',
       altAfter:'Softener and brine cabinet fitted into a garage corner with an overhead bypass loop.',
       note:'Overhead loop rather than a floor run, so nothing sits in the walkway.' },
     { id:'sof-4', cat:'softener', title:'Kept clear of the panel', meta:'Water softener install',
-      after:'img/sof-4-after.jpg',
+      after:'img/sof-4-after.webp',
       altAfter:'Water softener installed to one side of a garage electrical panel.',
       note:'Set to one side so the working space in front of the electrical panel stays legal.' },
     { id:'sof-5', cat:'softener', title:'Whole-house Harmony series', meta:'Water softener install',
-      after:'img/sof-5-after.jpg',
+      after:'img/sof-5-after.webp',
       altAfter:'Whole-house water softener with the pre-filter plumbed ahead of it.',
       note:'Whole-house softener with the pre-filter ahead of it and the bypass built tight to the wall.' },
     { id:'gym-1', cat:'gym', title:'Home gym, full rack', meta:'Gym equipment assembly',
-      before:'img/gym-1-before.jpg', after:'img/gym-1-after.jpg',
+      before:'img/gym-1-before.webp', after:'img/gym-1-after.webp',
       altBefore:'Empty garage corner with rubber matting down and nothing on it.',
       altAfter:'Power rack with cable arms assembled in the same corner.',
       note:'Rack, cable arms and plate storage built on the matted floor and torqued to the manufacturer spec.' },
     { id:'gym-2', cat:'gym', title:'Smith machine and rack', meta:'Gym equipment assembly',
-      before:'img/gym-2-before.jpg', after:'img/gym-2-after.jpg',
+      before:'img/gym-2-before.webp', after:'img/gym-2-after.webp',
       altBefore:'Bare rubber mat laid on a garage floor.',
       altAfter:'Smith machine and rack standing assembled on the same mat.',
       note:'Levelled on the mat, with cable tension and bar travel checked before we left.' },
     { id:'sto-1', cat:'storage', title:'Overhead garage racks', meta:'Garage storage',
-      before:'img/sto-1-before.jpg', after:'img/sto-1-after.jpg',
+      before:'img/sto-1-before.webp', after:'img/sto-1-after.webp',
       altBefore:'Garage ceiling with bare hooks and a step ladder standing below it.',
       altAfter:'Steel overhead rack fixed to the same ceiling.',
       note:'Racks lagged into the ceiling joists rather than the drywall, so the floor came back.' },
     { id:'tv-1', cat:'mounting', title:'TV mount, cables in the wall', meta:'TV and wall mounting',
-      before:'img/tv-1-before.jpg', after:'img/tv-1-after.jpg',
+      before:'img/tv-1-before.webp', after:'img/tv-1-after.webp',
       altBefore:'Blank wall with two outlets and nothing on it.',
       altAfter:'Television mounted flat on the same wall.',
       note:'Bracket into the studs, cables dropped inside the wall to the outlet below.' },
     { id:'lgt-1', cat:'lighting', title:'Stairwell chandelier', meta:'Lighting and fans',
-      before:'img/lgt-1-before.jpg', after:'img/lgt-1-after.jpg',
+      before:'img/lgt-1-before.webp', after:'img/lgt-1-after.webp',
       altBefore:'Small builder fitting hanging in a two-storey stairwell rotunda.',
       altAfter:'Crystal cascade chandelier hung in the same rotunda.',
       note:'Two-storey drop over a stair. Scaffolded rather than worked off a ladder, and the box was braced for the weight before anything went up.' },
     { id:'lgt-2', cat:'lighting', title:'Ring chandelier, double-height room', meta:'Lighting and fans',
-      before:'img/lgt-2-before.jpg', after:'img/lgt-2-after.jpg',
+      before:'img/lgt-2-before.webp', after:'img/lgt-2-after.webp',
       altBefore:'Double-height living room with a ceiling fan and a scaffold tower standing under it.',
       altAfter:'Ring chandelier hanging in the same room with the scaffold gone.',
       note:'Fan out, chandelier in, at the top of a double-height room. Chain length set so it clears the window line.' },
     { id:'lgt-3', cat:'lighting', title:'Dining room chandelier', meta:'Lighting and fans',
-      before:'img/lgt-3-before.jpg', after:'img/lgt-3-after.jpg',
+      before:'img/lgt-3-before.webp', after:'img/lgt-3-after.webp',
       altBefore:'Dining room with a bare ceiling plate where a light will go.',
       altAfter:'Ring chandelier and glass pendants lit above the same table.',
       note:'Centred on the table rather than the room, which is what the eye actually reads.' },
     { id:'lgt-4', cat:'lighting', title:'Pendants over the cabinets', meta:'Lighting and fans',
-      before:'img/lgt-4-before.jpg', after:'img/lgt-4-after.jpg',
+      before:'img/lgt-4-before.webp', after:'img/lgt-4-after.webp',
       altBefore:'Kitchen cabinets with a bare ceiling above the counter.',
       altAfter:'Two pendant lights hung in line above the same counter.',
       note:'Spaced off the cabinet run, not the wall, so the line reads straight from the room.' },
     { id:'lgt-5', cat:'lighting', title:'Ceiling fan swap', meta:'Lighting and fans',
-      before:'img/lgt-5-before.jpg', after:'img/lgt-5-after.jpg',
+      before:'img/lgt-5-before.webp', after:'img/lgt-5-after.webp',
       altBefore:'Round flush ceiling light on a bedroom ceiling.',
       altAfter:'Five-blade ceiling fan installed in its place.',
       note:'Flush light out, fan in. Box swapped for a fan-rated one, because a light box is not rated to carry a moving load.' },
     { id:'asm-1', cat:'assembly', title:'Slate pool table', meta:'Furniture assembly',
-      after:'img/asm-1-after.jpg',
+      after:'img/asm-1-after.webp',
       altAfter:'Assembled slate pool table with cues and a full rack of balls.',
       note:'Delivered flat-packed, then levelled across the slate and felted in the game room.' },
     { id:'asm-2', cat:'assembly', title:'Sideboard build', meta:'Furniture assembly',
-      after:'img/asm-2-after.jpg',
+      after:'img/asm-2-after.webp',
       altAfter:'Black arched sideboard assembled and set against a wall.',
       note:'Flat-pack sideboard built, doors aligned and set against the wall.' },
     { id:'com-1', cat:'seating', title:'Auditorium seating, several hundred', meta:'Seating assembly',
-      after:'img/com-1-after.jpg',
+      after:'img/com-1-after.webp',
       altAfter:'Tiered auditorium filled with several hundred fixed seats.',
       note:'Several hundred fixed seats set out and bolted down across a tiered floor.' },
   ];
