@@ -765,8 +765,9 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
 .gal-bar{display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.6rem}
 .gal-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(288px,1fr)); gap:1.1rem}
 .gal-card{position:relative; padding:0; border-radius:var(--r-lg); overflow:hidden; background:var(--surface); cursor:pointer; text-align:left; font:inherit; color:inherit; transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease)}
-/* portrait: the equipment is tall, a 4:3 crop threw most of it away */
-.gal-thumb{display:block; position:relative; aspect-ratio:3/4; overflow:hidden; background:var(--surface-3)}
+/* square: the gallery mixes tall subjects (softener tanks) with wide ones
+   (a TV, a pool table), and a portrait frame cut the wide ones in half */
+.gal-thumb{display:block; position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--surface-3)}
 .gal-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   transition:transform var(--dur) var(--ease)}
 .gal-card:hover .gal-thumb img{transform:scale(1.04)}
@@ -791,9 +792,16 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
 .ba-single .ba-after{clip-path:none}
 .badge-demo{position:absolute; top:.65rem; right:.65rem; z-index:2; font-family:var(--mono); font-size:.62rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; background:var(--amber-soft); color:var(--amber); border:1px solid var(--amber-bright); padding:.25rem .45rem; border-radius:var(--r-sm)}
 
-dialog.lb{border:0; padding:0; background:transparent; max-width:min(1100px,94vw); max-height:94vh; overflow:visible}
+dialog.lb{border:0; padding:0; background:transparent; max-width:min(880px,94vw); max-height:94vh; overflow:visible}
 dialog.lb::backdrop{background:rgba(8,16,24,.86); backdrop-filter:blur(3px)}
-.lb-in{background:var(--surface); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3)}
+/* The dialog used to size the photo by WIDTH, so a square or portrait frame
+   grew taller than the screen and the caption fell off the bottom. Size it by
+   height instead and let the width follow the aspect ratio. */
+.lb-in{background:var(--surface); border-radius:var(--r-lg); overflow:hidden;
+  box-shadow:var(--shadow-3); display:flex; flex-direction:column; max-height:94vh}
+#lbBa{flex:none; align-self:center; width:auto; height:min(58vh, 80vw); aspect-ratio:1/1}
+.lb-body{overflow-y:auto; flex:1 1 auto}
+@media (max-height:560px){ #lbBa{height:min(48vh, 70vw)} }
 .lb-close{position:absolute; top:-.5rem; right:-.5rem; z-index:3; width:var(--tap); height:var(--tap); border-radius:50%; border:0; background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:var(--shadow-2); display:grid; place-items:center}
 .lb-close svg{width:20px;height:20px}
 .lb-body{padding:1.1rem 1.25rem 1.35rem}
@@ -1522,7 +1530,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
   </button>
   <div class="lb-in">
-    <div class="ba" id="lbBa" style="--pos:50%;aspect-ratio:3/4;border-radius:0;box-shadow:none">
+    <div class="ba" id="lbBa" style="--pos:50%;border-radius:0;box-shadow:none">
       <img id="lbBefore" alt="">
       <img class="ba-after" id="lbAfter" alt="">
       <div class="ba-line" aria-hidden="true"></div>
@@ -1727,61 +1735,51 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   const paintLb = wireBA('lbBa', 'lbRange');
 
   /* === Gallery === */
+  /* A card carries `before` only when the two frames genuinely align and the
+     comparison reads. Everything else is a single photograph of the finished
+     work - a slider over two unrelated angles is worse than no slider. */
   const PROJECTS = [
     { id:'sof-1', cat:'softener', title:'Softener, filter and brine tank', meta:'Water softener install',
       before:'img/sof-1-before.jpg', after:'img/sof-1-after.jpg',
-      altBefore:'Boxed water softener and pre-filter standing in an empty garage before installation.',
-      altAfter:'The same garage wall with the softener, pre-filter and brine tank plumbed in.',
+      altBefore:'Boxed water softener and pre-filter standing against a bare garage wall.',
+      altAfter:'The same wall with the tank, brine cabinet and pre-filter installed.',
       note:'Whole-house softener with a sediment pre-filter and a bypass loop, so the system can be serviced without shutting the house off.' },
-    { id:'sof-2', cat:'softener', title:'Delivered morning, running by evening', meta:'Water softener install',
-      before:'img/sof-2-before.jpg', after:'img/sof-2-after.jpg',
-      altBefore:'Water softener still in its carton inside a garage.',
-      altAfter:'The finished softener and brine tank on the same garage wall that evening.',
-      note:'Dropped off in the morning and softening water the same evening, tested before we left.' },
-    { id:'sof-3', cat:'softener', title:'Softener and pre-filter in line', meta:'Water softener install',
-      before:'img/sof-3-before.jpg', after:'img/sof-3-after.jpg',
-      altBefore:'Cartons for a water softener and pre-filter against a bare garage wall.',
-      altAfter:'Softener, brine cabinet and pre-filter installed along the same wall.',
+    { id:'sof-2', cat:'softener', title:'Softener and pre-filter in line', meta:'Water softener install',
+      after:'img/sof-2-after.jpg',
+      altAfter:'Water softener, pre-filter and brine tank plumbed along a garage wall.',
       note:'Tank, brine cabinet and pre-filter set along one wall, with every valve left at eye level.' },
+    { id:'sof-3', cat:'softener', title:'Corner install, floor kept clear', meta:'Water softener install',
+      after:'img/sof-3-after.jpg',
+      altAfter:'Softener and brine cabinet fitted into a garage corner with an overhead bypass loop.',
+      note:'Overhead loop rather than a floor run, so nothing sits in the walkway.' },
     { id:'sof-4', cat:'softener', title:'Kept clear of the panel', meta:'Water softener install',
-      before:'img/sof-4-before.jpg', after:'img/sof-4-after.jpg',
-      altBefore:'Bare garage wall with an electrical panel and a stubbed water line.',
-      altAfter:'Softener installed on the same wall, set to one side of the electrical panel.',
+      after:'img/sof-4-after.jpg',
+      altAfter:'Water softener installed to one side of a garage electrical panel.',
       note:'Set to one side so the working space in front of the electrical panel stays legal.' },
     { id:'sof-5', cat:'softener', title:'Whole-house Harmony series', meta:'Water softener install',
       after:'img/sof-5-after.jpg',
       altAfter:'Whole-house water softener with the pre-filter plumbed ahead of it.',
-      note:'Whole-house softener with the pre-filter plumbed ahead of it and the bypass built to the wall.' },
-    { id:'sof-6', cat:'softener', title:'Outdoor install on the brick', meta:'Water softener install',
-      before:'img/sof-6-before.jpg', after:'img/sof-6-after.jpg',
-      altBefore:'Boxed softener standing on grass beside an exterior brick wall.',
-      altAfter:'Softener installed against the brick with insulated pipework and weather covers.',
-      note:'No garage space on this one, so the system went on the exterior wall with insulated line and weather covers.' },
+      note:'Whole-house softener with the pre-filter ahead of it and the bypass built tight to the wall.' },
     { id:'gym-1', cat:'gym', title:'Home gym, full rack', meta:'Gym equipment assembly',
       before:'img/gym-1-before.jpg', after:'img/gym-1-after.jpg',
       altBefore:'Empty garage corner with rubber matting down and nothing on it.',
-      altAfter:'Power rack with cable arms assembled on the same matting.',
+      altAfter:'Power rack with cable arms assembled in the same corner.',
       note:'Rack, cable arms and plate storage built on the matted floor and torqued to the manufacturer spec.' },
     { id:'gym-2', cat:'gym', title:'Smith machine and rack', meta:'Gym equipment assembly',
       before:'img/gym-2-before.jpg', after:'img/gym-2-after.jpg',
       altBefore:'Bare rubber mat laid on a garage floor.',
-      altAfter:'Smith machine and rack standing assembled on the mat.',
+      altAfter:'Smith machine and rack standing assembled on the same mat.',
       note:'Levelled on the mat, with cable tension and bar travel checked before we left.' },
     { id:'sto-1', cat:'storage', title:'Overhead garage racks', meta:'Garage storage',
       before:'img/sto-1-before.jpg', after:'img/sto-1-after.jpg',
-      altBefore:'Garage corner with a step ladder and loose panels before the racks went up.',
-      altAfter:'Overhead steel rack fixed to the ceiling in the same corner.',
+      altBefore:'Garage ceiling with bare hooks and a step ladder standing below it.',
+      altAfter:'Steel overhead rack fixed to the same ceiling.',
       note:'Racks lagged into the ceiling joists rather than the drywall, so the floor came back.' },
     { id:'tv-1', cat:'mounting', title:'TV mount, cables in the wall', meta:'TV and wall mounting',
       before:'img/tv-1-before.jpg', after:'img/tv-1-after.jpg',
-      altBefore:'Blank wall with two outlets and loose cables on the floor.',
-      altAfter:'Television mounted flat on the same wall with the cables gone.',
+      altBefore:'Blank wall with two outlets and nothing on it.',
+      altAfter:'Television mounted flat on the same wall.',
       note:'Bracket into the studs, cables dropped inside the wall to the outlet below.' },
-    { id:'plb-1', cat:'plumbing', title:'Bidet toilet swap', meta:'Plumbing',
-      before:'img/plb-1-before.jpg', after:'img/plb-1-after.jpg',
-      altBefore:'Open toilet flange taped off on a tiled bathroom floor.',
-      altAfter:'New bidet toilet set and sealed over the same flange.',
-      note:'Old unit out, new bidet unit set and sealed, supply and power tidied behind it.' },
     { id:'asm-1', cat:'assembly', title:'Slate pool table', meta:'Furniture assembly',
       after:'img/asm-1-after.jpg',
       altAfter:'Assembled slate pool table with cues and a full rack of balls.',
@@ -1799,7 +1797,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   const CAT_LABEL = {
     all:'All work', softener:'Water softeners', gym:'Gym equipment',
     assembly:'Furniture', storage:'Garage storage', mounting:'TV mounting',
-    plumbing:'Plumbing', commercial:'Commercial',
+    commercial:'Commercial',
   };
 
   const grid = $('#galGrid');
@@ -1819,7 +1817,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     grid.innerHTML = list.map(p => `
       <button class="gal-card glass" data-id="${p.id}" aria-label="Open ${p.title}">
         <span class="gal-thumb">
-          <img src="${p.after}" alt="" loading="lazy" width="820" height="1093">
+          <img src="${p.after}" alt="" loading="lazy" width="1000" height="1000">
         </span>
         ${p.before ? '<span class="gal-ba" aria-hidden="true">Before / after</span>' : ''}
         <span class="gal-meta"><strong>${p.title}</strong><span>${p.meta}</span></span>
