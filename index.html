@@ -810,6 +810,19 @@ dialog.lead::backdrop{background:rgba(8,16,24,.72); backdrop-filter:blur(3px)}
 .gal-meta{padding:.9rem 1rem 1rem; display:flex; flex-direction:column; gap:.25rem}
 .gal-meta strong{font-size:1rem; font-weight:700}
 .gal-meta span{font-family:var(--mono); font-size:.76rem; color:var(--ink-3)}
+.gal-pages{display:flex; align-items:center; justify-content:center; gap:.35rem;
+  flex-wrap:wrap; margin-top:1.6rem}
+.gal-p{min-width:var(--tap); min-height:var(--tap); padding:0 .6rem; border-radius:var(--r-md);
+  border:1px solid var(--line-2); background:var(--surface); color:var(--ink-2);
+  font-weight:600; font-size:.92rem; font-variant-numeric:tabular-nums; cursor:pointer;
+  transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease)}
+.gal-p:hover:not(:disabled){border-color:var(--ink-3)}
+.gal-p:disabled{opacity:.4; cursor:default}
+.gal-p.is-cur{background:var(--blue); border-color:var(--blue); color:#fff}
+:root[data-theme='dark'] .gal-p.is-cur{color:#06182C}
+.gal-count{margin-left:.6rem; font-size:.82rem; color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+@media (max-width:520px){ .gal-count{width:100%; text-align:center; margin:.4rem 0 0} }
 .gal-f{display:inline-flex; align-items:center; gap:.4rem; min-height:var(--tap);
   padding:.4rem .85rem; border-radius:var(--r-md); border:1px solid var(--line-2);
   background:var(--surface); color:var(--ink-2); font-weight:600; font-size:.9rem;
@@ -1298,6 +1311,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
     <div class="gal-bar" id="galBar" role="group" aria-label="Filter projects by trade"></div>
     <div class="gal-grid stagger" id="galGrid"></div>
+    <div class="gal-pages" id="galPages" role="group" aria-label="Gallery pages" hidden></div>
   </div>
 </section>
 
@@ -1948,6 +1962,151 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
       after:'img/asm-2-after.webp',
       altAfter:'Black arched sideboard assembled and set against a wall.',
       note:'Flat-pack sideboard built, doors aligned and set against the wall.' },
+    { id:'plb-1', cat:'plumbing', title:'Burst backflow preventer', meta:'Plumbing',
+      before:'img/plb-1-before.webp', after:'img/plb-1-after.webp',
+      altBefore:'Split backflow preventer spraying water at the side of a house.',
+      altAfter:'The same assembly rebuilt and wrapped in insulation.',
+      note:'Freeze split the brass. Rebuilt and insulated, because the cheap part of this job is the insulation and the expensive part is doing it twice.' },
+    { id:'plb-2', cat:'plumbing', title:'Backflow re-piped on the brick', meta:'Plumbing',
+      before:'img/plb-2-before.webp', after:'img/plb-2-after.webp',
+      altBefore:'Irrigation backflow on a brick wall wrapped in loose tape and torn insulation.',
+      altAfter:'The same wall with the pipework rebuilt and cleanly insulated.',
+      note:'The old wrap had gone to rags, which is how a backflow survives one winter and not the next.' },
+    { id:'plb-3', cat:'plumbing', title:'Bidet toilet swap', meta:'Plumbing',
+      before:'img/plb-3-before.webp', after:'img/plb-3-after.webp',
+      altBefore:'Open toilet flange taped off on a tiled bathroom floor.',
+      altAfter:'New bidet unit set and sealed over the same flange.',
+      note:'Old unit out, bidet unit set and sealed, with the supply and the power tidied behind it.' },
+    { id:'plb-4', cat:'plumbing', title:'Kitchen sink and disposal', meta:'Plumbing',
+      before:'img/plb-4-before.webp', after:'img/plb-4-after.webp',
+      altBefore:'Open kitchen cabinet under a sink before the new plumbing went in.',
+      altAfter:'The same cabinet with the trap, disposal and supply lines reworked.',
+      note:'Trap, disposal and supplies redone together - piecemeal is how you end up under the sink twice.' },
+    { id:'dr-1', cat:'doors', title:'Pet door into an existing door', meta:'Doors and windows',
+      before:'img/dr-1-before.webp', after:'img/dr-1-after.webp',
+      altBefore:'Plain white interior door beside a laundry machine.',
+      altAfter:'The same door with a pet door fitted into the lower panel.',
+      note:'Cut into the existing door rather than replacing it, and framed so the panel keeps its strength.' },
+    { id:'dr-2', cat:'doors', title:'Front doors refinished', meta:'Doors and windows',
+      before:'img/dr-2-before.webp', after:'img/dr-2-after.webp',
+      altBefore:'Weathered grey double entry door with faded finish.',
+      altAfter:'The same doors refinished in deep black.',
+      note:'Stripped and refinished in place. Replacing a solid door is usually money spent on a problem the finish caused.' },
+    { id:'dr-3', cat:'doors', title:'Exterior door replaced', meta:'Doors and windows',
+      before:'img/dr-3-before.webp', after:'img/dr-3-after.webp',
+      altBefore:'Old exterior door taken off and leaning against the wall outside.',
+      altAfter:'New door hung in the same opening.',
+      note:'New slab hung in the existing opening, squared and weather-sealed.' },
+    { id:'dr-4', cat:'doors', title:'Blinds across a window wall', meta:'Doors and windows',
+      before:'img/dr-4-before.webp', after:'img/dr-4-after.webp',
+      altBefore:'Row of bare windows along a wall with no covering.',
+      altAfter:'The same windows with blinds fitted and aligned.',
+      note:'Run of blinds set to one line across the wall, which is the part people notice when it is wrong.' },
+    { id:'dr-5', cat:'doors', title:'Floor-to-ceiling curtains', meta:'Doors and windows',
+      before:'img/dr-5-before.webp', after:'img/dr-5-after.webp',
+      altBefore:'Tall window in a dark room with a ladder standing beside it.',
+      altAfter:'The same window with full-height curtains hung.',
+      note:'Track set near the ceiling rather than the frame, so the window reads taller than it is.' },
+    { id:'out-1', cat:'outdoor', title:'Cedar gate built and stained', meta:'Fencing and decking',
+      before:'img/out-1-before.webp', after:'img/out-1-after.webp',
+      altBefore:'Newly framed cedar gate in bare timber.',
+      altAfter:'The same gate stained and hung.',
+      note:'Built, then stained once the timber had dried - staining wet cedar is how you get a blotchy gate.' },
+    { id:'out-2', cat:'outdoor', title:'Deck boards replaced', meta:'Fencing and decking',
+      before:'img/out-2-before.webp', after:'img/out-2-after.webp',
+      altBefore:'Old weathered deck boards with tools laid out on them.',
+      altAfter:'The same deck with fresh boards down.',
+      note:'Boards replaced over the existing frame after checking the joists were still sound.' },
+    { id:'rem-1', cat:'remodel', title:'Kitchenette rebuilt', meta:'Renovation',
+      before:'img/rem-1-before.webp', after:'img/rem-1-after.webp',
+      altBefore:'Kitchenette stripped back to the studs with the plumbing exposed.',
+      altAfter:'The same corner finished with cabinets, counter and sink.',
+      note:'Back to the studs, then cabinets, counter and sink. Four days, same crew start to finish.' },
+    { id:'rem-2', cat:'remodel', title:'Slat accent wall', meta:'Renovation',
+      before:'img/rem-2-before.webp', after:'img/rem-2-after.webp',
+      altBefore:'Two-storey wall sheeted in plastic with scaffold standing against it.',
+      altAfter:'The same wall finished in black vertical slats around a fireplace.',
+      note:'Full-height slats around a fireplace. Set out from the centre line so the end slats match.' },
+    { id:'rem-3', cat:'remodel', title:'Backsplash and cooktop', meta:'Renovation',
+      before:'img/rem-3-before.webp', after:'img/rem-3-after.webp',
+      altBefore:'Kitchen wall stripped behind the range, covered in sheeting.',
+      altAfter:'The same wall tiled with a geometric backsplash and the cooktop back in.',
+      note:'Pattern set out dry first so the cuts land at the edges, not in the middle of the wall.' },
+    { id:'asm-3', cat:'assembly', title:'Upholstered bed frame', meta:'Furniture assembly',
+      before:'img/asm-3-before.webp', after:'img/asm-3-after.webp',
+      altBefore:'Flat-pack bed frame carton lying on a bedroom floor.',
+      altAfter:'The assembled upholstered bed frame with slats in place.',
+      note:'Built in the room it lives in, because a made-up frame does not come through a bedroom door.' },
+    { id:'asm-4', cat:'assembly', title:'Portable basketball hoop', meta:'Furniture assembly',
+      before:'img/asm-4-before.webp', after:'img/asm-4-after.webp',
+      altBefore:'Boxed portable basketball hoop on a paved drive.',
+      altAfter:'The hoop assembled and standing on the same drive.',
+      note:'Base filled and the backboard squared. Most of this job is the hour nobody wants to spend on the base.' },
+    { id:'asm-5', cat:'assembly', title:'Standing desk', meta:'Furniture assembly',
+      before:'img/asm-5-before.webp', after:'img/asm-5-after.webp',
+      altBefore:'Flat carton for a height-adjustable desk on a wooden floor.',
+      altAfter:'The assembled standing desk in the same room.',
+      note:'Frame squared before the top went on, so the lift runs true.' },
+    { id:'asm-6', cat:'assembly', title:'Lakeside patio set', meta:'Furniture assembly',
+      before:'img/asm-6-before.webp', after:'img/asm-6-after.webp',
+      altBefore:'Flat-packed patio furniture stacked on a deck above the water.',
+      altAfter:'The same deck with the patio set built and laid out.',
+      note:'Built on the deck and laid out to the view rather than to the railing.' },
+    { id:'asm-7', cat:'assembly', title:'Pool table and benches', meta:'Furniture assembly',
+      before:'img/asm-7-before.webp', after:'img/asm-7-after.webp',
+      altBefore:'Pool table frame part-built on a carpeted floor.',
+      altAfter:'The finished table with its matching benches.',
+      note:'Levelled across the slate, then the benches. A table that is level everywhere but the break spot is not level.' },
+    { id:'gym-3', cat:'gym', title:'Wall-mounted rack', meta:'Gym equipment assembly',
+      before:'img/gym-3-before.webp', after:'img/gym-3-after.webp',
+      altBefore:'Garage corner with boxed equipment and matting rolled out.',
+      altAfter:'A folding rack bolted to the same wall above the mat.',
+      note:'Bolted into the studs, not the drywall - a folding rack carries its whole load on those fixings.' },
+    { id:'gym-4', cat:'gym', title:'Multi-station home gym', meta:'Gym equipment assembly',
+      before:'img/gym-4-before.webp', after:'img/gym-4-after.webp',
+      altBefore:'Boxed multi-station gym lying flat on a carpeted floor.',
+      altAfter:'The assembled machine standing in the same room.',
+      note:'Cable routing checked station by station before the shrouds went on.' },
+    { id:'gym-5', cat:'gym', title:'Adjustable bench and weights', meta:'Gym equipment assembly',
+      before:'img/gym-5-before.webp', after:'img/gym-5-after.webp',
+      altBefore:'Bench parts and adjustable dumbbells still in their carton.',
+      altAfter:'The bench assembled with the dumbbells racked beside it.',
+      note:'Bench built and the dumbbell trays set where they can be reached from it.' },
+    { id:'lgt-6', cat:'lighting', title:'Exterior flood light', meta:'Lighting and fans',
+      before:'img/lgt-6-before.webp', after:'img/lgt-6-after.webp',
+      altBefore:'House soffit with a bare hole where a light will go.',
+      altAfter:'A twin-head flood light fitted to the same soffit.',
+      note:'Aimed down the drive, not out at the neighbours - the part of exterior lighting most people get wrong.' },
+    { id:'lgt-7', cat:'lighting', title:'Second stairwell chandelier', meta:'Lighting and fans',
+      before:'img/lgt-7-before.webp', after:'img/lgt-7-after.webp',
+      altBefore:'Tall stairwell lit by a single small ceiling fitting.',
+      altAfter:'A crystal chandelier hanging in the same stairwell.',
+      note:'Another two-storey drop. Box braced for the weight before anything was hung on it.' },
+    { id:'sto-2', cat:'storage', title:'Freestanding storage racks', meta:'Garage storage',
+      before:'img/sto-2-before.webp', after:'img/sto-2-after.webp',
+      altBefore:'Boxed storage racks stacked on a garage floor.',
+      altAfter:'The same racks built and standing along the wall.',
+      note:'Built and set square to the wall so the shelves take load evenly.' },
+    { id:'sto-3', cat:'storage', title:'Retractable hose reel', meta:'Garage storage',
+      before:'img/sto-3-before.webp', after:'img/sto-3-after.webp',
+      altBefore:'Exterior wall with the hose reel bracket going up.',
+      altAfter:'The reel mounted and plumbed with the hose run in.',
+      note:'Fixed into the masonry and plumbed to the spigot, so the hose stops living on the ground.' },
+    { id:'sto-4', cat:'storage', title:'Garage wall organized', meta:'Garage storage',
+      before:'img/sto-4-before.webp', after:'img/sto-4-after.webp',
+      altBefore:'Bare garage wall with tools leaning against it.',
+      altAfter:'The same wall with track storage and everything hung.',
+      note:'Track system into the studs, then everything off the floor and onto it.' },
+    { id:'sto-5', cat:'storage', title:'Overhead racks, second garage', meta:'Garage storage',
+      before:'img/sto-5-before.webp', after:'img/sto-5-after.webp',
+      altBefore:'Garage with a ladder standing under a bare ceiling.',
+      altAfter:'Overhead racks fixed to the same ceiling.',
+      note:'Lagged into the joists. Ceiling storage that is only in the drywall comes down eventually.' },
+    { id:'tv-2', cat:'mounting', title:'TV over the fireplace', meta:'TV and wall mounting',
+      before:'img/tv-2-before.webp', after:'img/tv-2-after.webp',
+      altBefore:'Large flat carton leaning on a wooden floor before the mount went up.',
+      altAfter:'The television mounted above an electric fireplace console.',
+      note:'Mounted above a heat source, so the bracket height keeps the panel out of the rising air.' },
     { id:'com-1', cat:'seating', title:'Auditorium seating, several hundred', meta:'Seating assembly',
       after:'img/com-1-after.webp',
       altAfter:'Tiered auditorium filled with several hundred fixed seats.',
@@ -1955,15 +2114,22 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
   ];
 
   const CAT_LABEL = {
-    all:'All work', softener:'Water softeners', gym:'Gym equipment',
-    lighting:'Lighting and fans', assembly:'Furniture', storage:'Garage storage',
-    mounting:'TV mounting', seating:'Seating assembly',
+    all:'All work', softener:'Water softeners', plumbing:'Plumbing',
+    gym:'Gym equipment', lighting:'Lighting and fans', assembly:'Furniture',
+    storage:'Garage storage', mounting:'TV mounting', doors:'Doors and windows',
+    outdoor:'Fencing and decking', remodel:'Renovation', seating:'Seating assembly',
   };
 
-  const grid = $('#galGrid');
-  const bar  = $('#galBar');
+  const grid  = $('#galGrid');
+  const bar   = $('#galBar');
+  const pager = $('#galPages');
+  const PER_PAGE = 12;
   let galFilter = 'all';
+  let galPage = 1;
 
+  function galList() {
+    return galFilter === 'all' ? PROJECTS : PROJECTS.filter(p => p.cat === galFilter);
+  }
   function renderFilters() {
     const cats = ['all', ...[...new Set(PROJECTS.map(p => p.cat))]];
     bar.innerHTML = cats.map(c => {
@@ -1973,8 +2139,11 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     }).join('');
   }
   function renderGallery() {
-    const list = galFilter === 'all' ? PROJECTS : PROJECTS.filter(p => p.cat === galFilter);
-    grid.innerHTML = list.map(p => `
+    const list = galList();
+    const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+    if (galPage > pages) galPage = pages;
+    const start = (galPage - 1) * PER_PAGE;
+    grid.innerHTML = list.slice(start, start + PER_PAGE).map(p => `
       <button class="gal-card glass" data-id="${p.id}" aria-label="Open ${p.title}">
         <span class="gal-thumb">
           <img src="${p.after}" alt="" loading="lazy" width="1000" height="1000">
@@ -1982,11 +2151,34 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
         ${p.before ? '<span class="gal-ba" aria-hidden="true">Before / after</span>' : ''}
         <span class="gal-meta"><strong>${p.title}</strong><span>${p.meta}</span></span>
       </button>`).join('');
+    renderPager(pages, list.length, start);
+  }
+  function renderPager(pages, total, start) {
+    if (pages < 2) { pager.innerHTML = ''; pager.hidden = true; return; }
+    pager.hidden = false;
+    const btn = (label, page, opts = {}) =>
+      `<button type="button" class="gal-p${opts.cur ? ' is-cur' : ''}" data-page="${page}"`
+      + `${opts.cur ? ' aria-current="true"' : ''}${opts.dis ? ' disabled' : ''}`
+      + ` aria-label="${opts.aria || ('Page ' + page)}">${label}</button>`;
+    let out = btn('&lsaquo;', galPage - 1, { dis: galPage === 1, aria: 'Previous page' });
+    for (let n = 1; n <= pages; n++) out += btn(String(n), n, { cur: n === galPage });
+    out += btn('&rsaquo;', galPage + 1, { dis: galPage === pages, aria: 'Next page' });
+    const last = Math.min(start + PER_PAGE, total);
+    out += `<span class="gal-count">${start + 1}&ndash;${last} of ${total}</span>`;
+    pager.innerHTML = out;
   }
   bar.addEventListener('click', e => {
     const b = e.target.closest('.gal-f'); if (!b) return;
     galFilter = b.dataset.cat;
+    galPage = 1;                       /* a new filter starts at its first page */
     renderFilters(); renderGallery();
+  });
+  pager.addEventListener('click', e => {
+    const b = e.target.closest('.gal-p'); if (!b || b.disabled) return;
+    galPage = Number(b.dataset.page);
+    renderGallery();
+    /* keep the grid where the eye already is instead of jumping to the top */
+    grid.scrollIntoView({ block: 'start', behavior: prefersReduce() ? 'auto' : 'smooth' });
   });
   renderFilters();
   renderGallery();
