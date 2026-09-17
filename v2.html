@@ -271,6 +271,13 @@ h3{font-size:clamp(1.45rem,1.25rem + .8vw,1.9rem)}
   .hero{padding-block:2rem 2.25rem}
   .hero .ba{aspect-ratio:auto; height:calc(100vh - 345px)}
 }
+/* Tablet portrait: the hero stacks, so the frame goes full width and 4:5
+   made it 910px tall on a 1024px iPad screen - one photograph filling the
+   whole view. Cap it by height here too. Phones are left alone: they are
+   narrow enough that full width is already a sensible size. */
+@media (min-width:641px) and (max-width:980px){
+  .hero .ba{aspect-ratio:auto; height:min(56vh, 88vw)}
+}
 @media (min-width:981px) and (max-height:700px){
   .hero{padding-block:1.5rem 1.75rem}
   .hero .ba{aspect-ratio:auto; height:calc(100vh - 300px)}
