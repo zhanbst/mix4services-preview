@@ -368,7 +368,7 @@ fieldset.fld{border:0; margin:0; padding:0; min-width:0}
    Position is bound to scroll, so scrolling back up reverses all of it.
    Decorative and aria-hidden - the scrollbar carries the same information. */
 .rail{display:none}
-@media (min-width:1440px){
+@media (min-width:1340px){
   .rail{
     display:block; position:fixed; z-index:40;
     right:calc((100vw - var(--container))/2 - 52px);
@@ -393,7 +393,7 @@ fieldset.fld{border:0; margin:0; padding:0; min-width:0}
   }
 }
 @supports (animation-timeline: scroll(root)) {
-  @media (min-width:1440px) and (prefers-reduced-motion: no-preference) {
+  @media (min-width:1340px) and (prefers-reduced-motion: no-preference) {
     /* Both linear. They map the same quantity - scroll position - and the
        eased one used to run ahead of the other, leaving the string ending
        well above the bob it was supposed to be holding. */
