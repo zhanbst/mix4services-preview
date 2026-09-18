@@ -1183,8 +1183,8 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
     <figure style="margin:0">
       <div class="ba" id="ba" style="--pos:40%">
-        <img id="heroBefore" src="img/hero-before.webp?v=2a6e949f" alt="Bare garage wall before the job, with only the capped softener loop stubbed out through the wall plate.">
-        <img class="ba-after" id="heroAfter" src="img/hero-after.webp?v=874ecf26" alt="The finished install: AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.">
+        <img id="heroBefore" src="img/sof-4-before.webp?v=14d244bd" alt="Bare garage wall before the job, with only the capped softener loop stubbed out through the wall plate.">
+        <img class="ba-after" id="heroAfter" src="img/sof-4-after.webp?v=75929db8" alt="The finished install: softener, pre-filter and brine tank plumbed into the same wall loop.">
         <div class="ba-line" aria-hidden="true"></div>
         <div class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6-5 6 5 6M15 6l5 6-5 6"/></svg></div>
         <span class="ba-tag l" aria-hidden="true">Before</span>
@@ -1470,7 +1470,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
 
 <!-- =========== REVIEWS =========== -->
 <section class="has-sketch band band-tint screen screen-photo" id="reviews" aria-labelledby="r-h">
-  <div class="bg-layer" aria-hidden="true"><img src="img/hero-after.webp?v=874ecf26" alt="" loading="lazy"></div>
+  <div class="bg-layer" aria-hidden="true"><img src="img/sof-8-after.webp?v=874ecf26" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="head rise">
       <p class="eyebrow">What customers say</p>
@@ -1931,9 +1931,9 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
      of finished work. A slide without `b` drops the handle and the tags and
      simply shows the result - the same treatment the lightbox uses. */
   const HERO = [
-    { b:'img/hero-before.webp?v=2a6e949f', a:'img/hero-after.webp?v=874ecf26',
+    { b:'img/sof-4-before.webp?v=14d244bd', a:'img/sof-4-after.webp?v=75929db8',
       ab:'Bare garage wall with only the capped softener loop stubbed out through the wall plate.',
-      aa:'AquaSure resin tank, pre-filter and brine tank tied into the wall loop with an insulated bypass.',
+      aa:'Softener, pre-filter and brine tank plumbed into the same loop, with the bay door open behind them.',
       cap:'Water softener &middot; the bare wall loop, then the finished system' },
     { b:'img/gym-2-before.webp?v=ffdc0ebe', a:'img/gym-2-after.webp?v=1e349583',
       ab:'Bare rubber mat laid on a garage floor.',
@@ -1942,7 +1942,7 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
     { b:'img/lgt-1-before.webp?v=b65f0d29', a:'img/lgt-1-after.webp?v=a836e2f5',
       ab:'Builder fitting hanging in a two-story stairwell rotunda.',
       aa:'Crystal cascade chandelier hung in the same rotunda.',
-      cap:'Stairwell chandelier &middot; builder fitting, then the crystal cascade' },
+      cap:'Large chandelier &middot; builder fitting, then the crystal cascade' },
     { b:'img/sto-1-before.webp?v=eac15034', a:'img/sto-1-after.webp?v=cbf8f628',
       ab:'Garage ceiling with bare hooks and a step ladder below it.',
       aa:'Steel overhead rack fixed to the same ceiling.',
@@ -1951,26 +1951,6 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
       ab:'Kitchenette stripped back to the studs with the plumbing exposed.',
       aa:'The same corner finished with cabinets, counter and sink.',
       cap:'Kitchen installation &middot; back to the studs, then cabinets and counter' },
-    { b:'img/sof-7-before.webp?v=4da4044a', a:'img/sof-7-after.webp?v=e635c839',
-      ab:'Two ageing resin tanks and a brine cabinet taking up a garage wall.',
-      aa:'One new softener in their place, with a pre-filter and an overhead bypass.',
-      cap:'Water softener &middot; two old tanks out, one new system in' },
-    { b:'img/com-1-before.webp?v=e91c60ef', a:'img/com-1-after.webp?v=a9769bec',
-      ab:'Empty tiered floor of a church sanctuary before the seating went in.',
-      aa:'The same tiers filled with several hundred fixed seats.',
-      cap:'Church sanctuary &middot; empty tiers, then several hundred seats' },
-    { b:'img/sof-6-before.webp?v=13c8fff7', a:'img/sof-6-after.webp?v=d35720cf',
-      ab:'Bare garage wall with the softener still in its cartons on the floor.',
-      aa:'The same wall with the system installed on an insulated bypass loop.',
-      cap:'Water softener &middot; boxes on the floor, then a finished loop' },
-    { b:'img/rem-4-before.webp?v=6a593b08', a:'img/rem-4-after.webp?v=adbf5395',
-      ab:'Bare utility room wall with the electrical panel exposed.',
-      aa:'The same wall with white cabinets hung and a granite counter fitted.',
-      cap:'Utility room &middot; bare wall, then cabinets and counter' },
-    { b:'img/tv-1-before.webp?v=fd84b1a0', a:'img/tv-1-after.webp?v=1fbe2a1e',
-      ab:'Blank wall with two outlets and nothing on it.',
-      aa:'Television mounted flat on the same wall.',
-      cap:'TV mounting &middot; blank wall, then cables inside it' },
   ];
   let heroI = 0;
   const heroB = $('#heroBefore'), heroA = $('#heroAfter'), heroBa = $('#ba'),
@@ -2043,6 +2023,11 @@ dialog.a11y::backdrop{background:rgba(8,16,24,.5)}
       altBefore:'Two ageing resin tanks and a brine cabinet taking up the whole garage wall.',
       altAfter:'One new softener in their place, with a pre-filter and an overhead bypass.',
       note:'Two tanks came out, one went back. Smaller footprint, and the bypass means the house keeps water while the unit is serviced.' },
+    { id:'sof-8', cat:'softener', title:'Bare wall to a finished loop', meta:'Water softener install',
+      before:'img/sof-8-before.webp?v=2a6e949f', after:'img/sof-8-after.webp?v=874ecf26',
+      altBefore:'Bare garage wall with only the capped softener loop stubbed out through the wall plate.',
+      altAfter:'Resin tank, pre-filter and brine tank tied into the same loop on an insulated bypass.',
+      note:'The builder leaves a capped loop in the wall and nothing else. This is what goes on the end of it.' },
     { id:'sof-10', cat:'softener', title:'Outdoor install on the brick', meta:'Water softener install',
       before:'img/sof-10-before.webp?v=7f6c74c3', after:'img/sof-10-after.webp?v=e31c756f',
       altBefore:'Boxed water softener standing on the grass beside an exterior brick wall.',
